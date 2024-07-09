@@ -1,1 +1,0 @@
-ALTER SEQUENCE linkedin_profile_id_seq RESTART

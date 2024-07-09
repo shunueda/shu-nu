@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8644d502-d0f1-491e-82fb-f6872ffbb99e" name="Changes" comment="" />
+    <list default="true" id="990addb1-750f-45b6-a9be-cac4c508212a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/app/api/resume/improve/route.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resume/builder/page.module.scss" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,93 +23,102 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiPersistence">{}</component>
-  <component name="KubernetesApiProvider">{
-  &quot;isMigrated&quot;: true
-}</component>
   <component name="PackageJsonUpdateNotifier">
-    <dismissed value="$PROJECT_DIR$/apps/actions/package.json" />
-    <dismissed value="$PROJECT_DIR$/apps/extension/package.json" />
-    <dismissed value="$PROJECT_DIR$/apps/frontend/package.json" />
     <dismissed value="$PROJECT_DIR$/package.json" />
-  </component>
-  <component name="ProjectCodeStyleSettingsMigration">
-    <option name="version" value="2" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
-  <component name="ProjectId" id="2gIjy1ZK4HBTN2Bpds2i16Tvm62" />
+  <component name="ProjectId" id="2ilkYbN7T80VjWgi4cnPnldboet" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/me/dev/shunueda/shu-nu/apps/actions&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/me/dev/shunueda/shu-nu/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.typescriptcompiler&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/me/dev/shunueda/shu-nu/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/me/dev/shunueda/shu-nu/app/resume/builder",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "pnpm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/me/dev/shunueda/shu-nu/node_modules/prettier",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/Users/me/dev/shunueda/shu-nu/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
-      &quot;PostgreSQL&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "JSON"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/apps/actions" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/apps/extension" />
-      <recent name="$PROJECT_DIR$/apps/test" />
-      <recent name="$PROJECT_DIR$/apps/actions/pdf" />
+      <recent name="$PROJECT_DIR$/app/resume/builder" />
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/app/api/resume/improve" />
+      <recent name="$PROJECT_DIR$/assets" />
+      <recent name="$PROJECT_DIR$/public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/apps/frontend/public" />
-      <recent name="$PROJECT_DIR$/apps/actions/src" />
-      <recent name="$PROJECT_DIR$/apps/extension" />
-      <recent name="$PROJECT_DIR$/apps/extension/src" />
-      <recent name="$PROJECT_DIR$/assets" />
+      <recent name="$PROJECT_DIR$/app/resume/extract" />
+      <recent name="$PROJECT_DIR$/assets/templates" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="LATEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory">
+      <texify>
+        <compiler>PDFLATEX</compiler>
+        <compiler-path />
+        <sumatra-path />
+        <pdf-viewer>NONE</pdf-viewer>
+        <viewer-command />
+        <compiler-arguments />
+        <envs />
+        <before-run-command />
+        <main-file />
+        <output-path>{projectDir}/out</output-path>
+        <auxil-path>{projectDir}/auxil</auxil-path>
+        <compile-twice>false</compile-twice>
+        <output-format>PDF</output-format>
+        <latex-distribution>TEXLIVE</latex-distribution>
+        <has-been-run>false</has-been-run>
+        <bib-run-config>[]</bib-run-config>
+        <makeindex-run-config>[]</makeindex-run-config>
+      </texify>
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8644d502-d0f1-491e-82fb-f6872ffbb99e" name="Changes" comment="" />
-      <created>1715392236974</created>
+      <changelist id="990addb1-750f-45b6-a9be-cac4c508212a" name="Changes" comment="" />
+      <created>1720072600575</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1715392236974</updated>
-      <workItem from="1715392238091" duration="35513000" />
-      <workItem from="1715616293584" duration="6635000" />
-      <workItem from="1716519703244" duration="2909000" />
-      <workItem from="1716966400366" duration="4000" />
-      <workItem from="1716973315039" duration="1684000" />
-      <workItem from="1717013681154" duration="2191000" />
-      <workItem from="1717026306313" duration="7226000" />
-      <workItem from="1717133516882" duration="934000" />
+      <updated>1720072600575</updated>
+      <workItem from="1720072602087" duration="4772000" />
+      <workItem from="1720123030297" duration="12404000" />
+      <workItem from="1720136980997" duration="5191000" />
     </task>
     <servers />
   </component>
