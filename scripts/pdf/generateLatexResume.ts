@@ -32,6 +32,7 @@ export default async function generateLatexResume(
     - Do not output any instructions or notes; only output the LaTeX code.
     - Ensure the final output is a clean, formatted LaTeX document.
     - Make sure to escape special characters properly.
+    - Do not include the triple quotes in the output.
     
     Please begin the conversion now.
   `
