@@ -4,6 +4,8 @@ import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
 import type { ReactNode } from 'react'
 import { cn } from '#lib/utils'
+import { Footer } from '../components/footer'
+import { Nav } from '../components/nav'
 import classes from './layout.module.scss'
 
 export const metadata: Metadata = {
@@ -21,7 +23,11 @@ export default function Layout({ children }: Props) {
       <body
         className={cn(GeistSans.variable, GeistMono.variable, 'antialiased')}
       >
-        <main className={classes.main}>{children}</main>
+        <main className={classes.main}>
+          <Nav />
+          {children}
+          <Footer />
+        </main>
       </body>
     </html>
   )
