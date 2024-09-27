@@ -1,7 +1,5 @@
-import { cookies } from 'next/headers'
 import Link from 'next/link'
-import { Cookie } from '../lib/Cookie'
-import { Lang, isJapanese } from '../lib/Lang'
+import { Lang, isJapanese, setLangCookie } from '../lib/i18n'
 import classes from './nav.module.scss'
 import { Label } from './ui/label'
 import { Switch } from './ui/switch'
@@ -25,8 +23,7 @@ const items: NavItem[] = [
 export async function Nav() {
   async function handleSwitch(checked: boolean) {
     'use server'
-    const cookie = await cookies()
-    cookie.set(Cookie.LANG, checked ? Lang.JA : Lang.EN)
+    await setLangCookie(checked ? Lang.JA : Lang.EN)
   }
   return (
     <nav className={classes.nav}>
