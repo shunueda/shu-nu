@@ -1,0 +1,40 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <option name="scopesOrder">
+      <list>
+        <option value="All Changed Files" />
+        <option value="Open Files" />
+        <option value="Production" />
+        <option value="Project Files" />
+        <option value="Scratches and Consoles" />
+        <option value="Tests" />
+      </list>
+    </option>
+    <inspection_tool class="KotlinDeprecation" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SSBasedInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <replaceConfiguration name="Replace runCatching/mapCatching calls" uuid="d6d62241-317c-3c9f-96c8-e0ac60a763a0" description="#runCatching and #mapCatching is too eager, catching throwables and exceptions that should never be caught, such as Temporal comms throwables (which can break Temporal workflows) and CancelationException (which can break coroutines).&#10;&#10;Instead use our internal #runCatchingException and #mapCatchingException helpers, which do not catch throwables or CancelationException." suppressId="AvoidUsingRunCatching" problemDescriptor="Use our improved #runCatchingException / #mapCatchingException wherever possible." text="runCatching { $runCatchingStatement$ }" recursive="false" caseInsensitive="true" type="Kotlin" pattern_context="default" reformatAccordingToStyle="true" shortenFQN="true" replacement="runCatchingException { $runCatchingStatement$ }">
+        <constraint name="__context__" within="" contains="" />
+        <constraint name="runCatchingStatement" within="" contains="" />
+      </replaceConfiguration>
+      <replaceConfiguration name="Replace runCatching/mapCatching calls" uuid="d6d62241-317c-3c9f-96c8-e0ac60a763a0" text="runCatching {&#10;    $runCatchingStatement$&#10;}" recursive="false" caseInsensitive="true" type="Kotlin" pattern_context="default" reformatAccordingToStyle="true" shortenFQN="true" replacement="runCatchingException {&#10;    $runCatchingStatement$&#10;}">
+        <constraint name="__context__" within="" contains="" />
+        <constraint name="runCatchingStatement" within="" contains="" />
+      </replaceConfiguration>
+      <replaceConfiguration name="Replace runCatching/mapCatching calls" uuid="d6d62241-317c-3c9f-96c8-e0ac60a763a0" text="mapCatching { $mapCatchingStatement$ }" recursive="false" caseInsensitive="true" type="Kotlin" pattern_context="default" reformatAccordingToStyle="true" shortenFQN="true" replacement="mapCatchingException { $mapCatchingStatement$ }">
+        <constraint name="__context__" within="" contains="" />
+        <constraint name="mapCatchingStatement" within="" contains="" />
+      </replaceConfiguration>
+      <replaceConfiguration name="Replace runCatching/mapCatching calls" uuid="d6d62241-317c-3c9f-96c8-e0ac60a763a0" text="mapCatching {&#10;    $mapCatchingStatement$&#10;}" recursive="false" caseInsensitive="true" type="Kotlin" pattern_context="default" reformatAccordingToStyle="true" shortenFQN="true" replacement="mapCatchingException {&#10;    $mapCatchingStatement$&#10;}">
+        <constraint name="__context__" within="" contains="" />
+        <constraint name="mapCatchingStatement" within="" contains="" />
+      </replaceConfiguration>
+      <replaceConfiguration name="Use Mockito's whenever instead of `when`" description="Use Mockito's whenever instead of `when`" suppressId="AvoidUsingEscapedWhen" problemDescriptor="Use Mockito's whenever instead of `when`" text="$Before$.`when`($Parameter$)" recursive="false" caseInsensitive="true" type="Kotlin" pattern_context="default" reformatAccordingToStyle="false" shortenFQN="true" replacement="$Before$.whenever($Parameter$)">
+        <constraint name="__context__" within="" contains="" />
+        <constraint name="Before" regexp="Mockito" minCount="0" within="" contains="" />
+        <constraint name="Parameter" minCount="0" within="" contains="" />
+      </replaceConfiguration>
+    </inspection_tool>
+    <inspection_tool class="d6d62241-317c-3c9f-96c8-e0ac60a763a0" enabled="true" level="SERVER PROBLEM" enabled_by_default="true" editorAttributes="GENERIC_SERVER_ERROR_OR_WARNING" />
+  </profile>
+</component>
