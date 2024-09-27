@@ -1,7 +1,9 @@
+import classes from './footer.module.scss'
+
 export function Footer() {
   return (
-    <footer>
-      <p>© 2021</p>
+    <footer className={classes.footer}>
+      © {new Date().getUTCFullYear()} Shun Ueda
     </footer>
   )
 }
