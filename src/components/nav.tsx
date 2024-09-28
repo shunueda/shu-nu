@@ -28,7 +28,7 @@ export async function Nav() {
   return (
     <nav className={classes.nav}>
       {items.map(({ href, label }) => (
-        <Link className={classes.item} href={href} key={href}>
+        <Link className={classes.item} href={href} key={href} prefetch>
           {label}
         </Link>
       ))}
