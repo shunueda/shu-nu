@@ -33,6 +33,13 @@ export async function getBlog(slug: string, lang: Lang): Promise<BlogPost> {
     lang,
     `${slug}.md`,
   )
+  if (!existsSync(path)) {
+    return {
+      slug,
+      content: 'Nothing ... yet.',
+      frontMatter: frontMatter.create({ title: 'Not Found', date: new Date() }),
+    }
+  }
   const { data, content } = matter((await readFile(path)).toString().trim())
   return {
     slug,

@@ -1,11 +1,11 @@
-import profile from '../assets/profile.json'
-import { useI18n } from '../lib/i18n'
-import classes from './footer.module.scss'
+import profile from '#assets/profile.json'
+import { useI18n } from '#lib/i18n'
+import styles from './footer.module.scss'
 
 export async function Footer() {
   return (
-    <footer className={classes.footer}>
+    <div className={styles.footer}>
       © {new Date().getUTCFullYear()} {await useI18n(profile.name)}.
-    </footer>
+    </div>
   )
 }

@@ -8,6 +8,9 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    experimental: {
+      uniformColorPalette: true,
+    },
     extend: {
       fontFamily: {
         sans: ['var(--font-geist-sans)'],
@@ -62,6 +65,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
 }
 export default config
