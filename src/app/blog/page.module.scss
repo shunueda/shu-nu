@@ -1,16 +1,14 @@
-.content {
-  h3 {
-    margin-top: -0.25rem;
-    font-size: 0.8rem;
-    letter-spacing: -0.075rem;
+.list {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .date {
+    color: #757575;
   }
 
-  .info {
-    margin-top: 1rem;
-    font-size: 1rem;
+  .title {
 
-    p + p {
-      margin-top: 0.5rem;
-    }
   }
 }

@@ -3,9 +3,9 @@ import './globals.css'
 import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
 import type { ReactNode } from 'react'
+import { Footer } from '#components/footer'
+import { Nav } from '#components/nav'
 import { cn } from '#lib/utils'
-import { Footer } from '../components/footer'
-import { Nav } from '../components/nav'
 import classes from './layout.module.scss'
 
 export const metadata: Metadata = {

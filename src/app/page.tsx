@@ -1,7 +1,7 @@
 import profile from '#assets/profile.json'
+import { Title } from '#components/title'
+import { useI18n } from '#lib/i18n'
 import { key } from '#lib/utils'
-import { Title } from '../components/title'
-import { useI18n } from '../lib/i18n'
 import classes from './page.module.scss'
 
 export default async function Page() {

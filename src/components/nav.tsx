@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Lang, isJapanese, setLangCookie } from '../lib/i18n'
+import { Lang, isJapanese, setLangCookie } from '#lib/i18n'
 import classes from './nav.module.scss'
 import { Label } from './ui/label'
 import { Switch } from './ui/switch'
