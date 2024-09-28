@@ -1,46 +1,55 @@
-import { existsSync, readdirSync } from 'node:fs'
-import { readFile } from 'node:fs/promises'
-import { join } from 'node:path'
+import { existsSync, readFileSync } from 'node:fs'
+import { readdir } from 'node:fs/promises'
+import { basename, join } from 'node:path'
 import matter from 'gray-matter'
 import { type BlogPost, frontMatter } from '#models/BlogPost'
-import type { Lang } from './i18n'
+import { type I18nElement, Lang } from './i18n'
 import { stripExtension } from './utils'
 
-export async function getAllBlogs(lang: Lang): Promise<BlogPost[]> {
-  const path = join(process.cwd(), 'src', 'assets', 'blog', 'posts', lang)
-  const files = readdirSync(path)
-  return await Promise.all(
-    files.map(async file => {
-      const { data, content } = matter(
-        (await readFile(join(path, file))).toString().trim(),
-      )
-      return {
-        slug: stripExtension(file),
-        content,
-        frontMatter: frontMatter.create(data),
-      } satisfies BlogPost
-    }),
-  )
+const postPath = join(process.cwd(), 'src', 'assets', 'blog', 'posts')
+
+const files = [
+  ...new Set(
+    (
+      await readdir(postPath, {
+        recursive: true,
+      })
+    )
+      .filter(it => it.endsWith('.md'))
+      .map(it => basename(it)),
+  ),
+]
+
+export const slugs = files.map(stripExtension)
+
+export const allBlogs: I18nElement<BlogPost>[] = await Promise.all(
+  files.map(async file => {
+    return {
+      [Lang.EN]: readBlogPost(Lang.EN, file),
+      [Lang.JA]: readBlogPost(Lang.JA, file),
+    } satisfies I18nElement<BlogPost>
+  }),
+)
+
+export function getBlogFromSlug(lang: Lang, slug: string): BlogPost {
+  // biome-ignore lint/style/noNonNullAssertion: checked at [readBlogPost]
+  return allBlogs.find(it => it[lang].slug === slug)![lang]
 }
 
-export async function getBlog(slug: string, lang: Lang): Promise<BlogPost> {
-  const path = join(
-    process.cwd(),
-    'src',
-    'assets',
-    'blog',
-    'posts',
-    lang,
-    `${slug}.md`,
-  )
+function readBlogPost(lang: Lang, file: string) {
+  const path = join(postPath, lang, file)
+  const slug = stripExtension(file)
   if (!existsSync(path)) {
     return {
       slug,
       content: 'Nothing ... yet.',
-      frontMatter: frontMatter.create({ title: 'Not Found', date: new Date() }),
-    }
+      frontMatter: frontMatter.create({
+        title: 'Not Found',
+        date: new Date(),
+      }),
+    } satisfies BlogPost
   }
-  const { data, content } = matter((await readFile(path)).toString().trim())
+  const { content, data } = matter(readFileSync(path).toString())
   return {
     slug,
     content,

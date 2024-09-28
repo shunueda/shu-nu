@@ -23,7 +23,7 @@ export async function setLangCookie(lang: Lang) {
   return (await cookies()).set(langKey, lang)
 }
 
-interface I18nElement<T> {
+export interface I18nElement<T> {
   [Lang.EN]: T
   [Lang.JA]: T
 }
