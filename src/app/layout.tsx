@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
 import type { ReactNode } from 'react'
@@ -28,6 +30,8 @@ export default function Layout({ children }: Props) {
           {children}
           <Footer />
         </main>
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   )
