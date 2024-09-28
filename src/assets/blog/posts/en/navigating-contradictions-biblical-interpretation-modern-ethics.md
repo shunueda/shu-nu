@@ -1,5 +1,5 @@
 ---
-title: The Problem of Contradictions and Convenient Applications in Biblical Interpretation
+title: 'Beyond Literalism: Addressing Contradictions and Selective Interpretations in Christianity'
 date: 2024-09-27
 ---
 
@@ -28,9 +28,9 @@ inconsistencies in the Bible. That is, God's will cannot be fully understood by 
 perceive are merely part of God's larger plan. This argument seems very powerful at first glance. If God is omniscient
 and omnipotent, it is difficult to deny the logic that our limited understanding cannot grasp His intentions or plan.
 
-However, I believe this puts the concept of "free will," which is central to Christian faith, at risk. If God's will is
+However, this puts the concept of "free will," which is central to Christian faith, at risk. If God's will is
 unknowable, or if we depend on the "incomprehensibility" of God leading us to the best path, what meaning does human
-free will hold? Without the respect for free will, acts of faith and moral choices may lose their significance. The same
+free will hold? Without respect for free will, acts of faith and moral choices may lose their significance. The same
 applies to the "guidance of the Holy Spirit" in Protestantism. If God is guiding everything behind the scenes, then the
 value of human effort, ethical judgment, and even biblical study itself may be diminished.
 
@@ -41,17 +41,17 @@ faith at all?
 
 ### Solution
 
-Looking toward the future of Christianity, I believe liberal theology (Liberal Protestantism) offers the most realistic
-and sustainable solution in modern times. In the Middle Ages, education and research were limited, and it was common to
-take the Bible literally. Moreover, the abuse of power by the Catholic Church created fertile ground for the rise of
+Looking toward the future of Christianity, liberal theology (Liberal Protestantism) offers the most realistic and
+sustainable solution in modern times. In the Middle Ages, education and research were limited, and it was common to take
+the Bible literally. Moreover, the abuse of power by the Catholic Church created fertile ground for the rise of
 evangelicalism. However, in the modern era, with advances in science and ethics, we now have the intellectual freedom to
 reevaluate religious beliefs.
 
-Therefore, to resolve the inconsistencies in the Bible, we need an approach that interprets the Bible as allegory or
-symbolism, seeking the universal ethics and divine intentions behind it. Rather than viewing the Bible as absolute
-historical or ethical truth, we should understand the concepts of God and salvation more flexibly, in a philosophical or
-allegorical sense. By doing so, we can recognize the contradictions and ethical issues within the Bible while
-maintaining religious belief and preserving our relationship with God.
+To resolve the inconsistencies in the Bible, we need an approach that interprets the Bible as allegory or symbolism,
+seeking the universal ethics and divine intentions behind it. Rather than viewing the Bible as absolute historical or
+ethical truth, we should understand the concepts of God and salvation more flexibly, in a philosophical or allegorical
+sense. By doing so, we can recognize the contradictions and ethical issues within the Bible while maintaining religious
+belief and preserving our relationship with God.
 
 Furthermore, instead of outright rejecting the "incomprehensibility of God's will," we can consider using it
 constructively. Rather than using the claim that "God's plan is unknowable" as an excuse, it should be employed to
