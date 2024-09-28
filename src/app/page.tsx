@@ -7,7 +7,7 @@ import classes from './page.module.scss'
 export default async function Page() {
   return (
     <section className={classes.content}>
-      <Title>{await useI18n(profile.name)}</Title>
+      <Title>{`${await useI18n(profile.name)}.`}</Title>
       <div className={classes.info}>
         {(await useI18n(profile.introduction)).map(paragraph => (
           <p key={key()}>{paragraph}</p>
