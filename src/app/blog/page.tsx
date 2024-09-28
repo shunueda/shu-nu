@@ -20,7 +20,12 @@ export default async function Page() {
               b.frontMatter.date.getTime() - a.frontMatter.date.getTime(),
           )
           .map(({ slug, frontMatter }) => (
-            <Link key={slug} href={`/blog/${slug}`} className={classes.entry}>
+            <Link
+              key={slug}
+              href={`/blog/${slug}`}
+              className={classes.entry}
+              prefetch
+            >
               <p className={classes.date}>{formatDate(frontMatter.date)}</p>
               <p className={classes.title}>{frontMatter.title}</p>
             </Link>
