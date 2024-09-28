@@ -1,9 +1,17 @@
 import { notFound } from 'next/navigation'
 import { Title } from '#components/title'
-import { getBlog } from '#lib/blogs'
-import { getLang } from '#lib/i18n'
+import { getAllBlogs, getBlog } from '#lib/blogs'
+import { Lang, getLang } from '#lib/i18n'
 import { formatDate } from '#lib/utils'
 import classes from './page.module.scss'
+
+export async function generateStaticParams() {
+  return await Promise.all(
+    Object.values(Lang).flatMap(async lang =>
+      (await getAllBlogs(lang)).map(({ slug }) => ({ slug })),
+    ),
+  )
+}
 
 interface Props {
   params: Promise<{
