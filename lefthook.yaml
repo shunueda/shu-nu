@@ -4,5 +4,5 @@ pre-commit:
     type-check:
       run: pnpm type-check
     check:
-      run: pnpx @biomejs/biome check
+      run: pnpm check
       stage_fixed: true
