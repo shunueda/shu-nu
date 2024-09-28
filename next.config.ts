@@ -1,3 +1,7 @@
 import type { NextConfig } from 'next'
 
-export default {} satisfies NextConfig
+export default {
+  sassOptions: {
+    implementation: 'sass-embedded',
+  },
+} satisfies NextConfig
