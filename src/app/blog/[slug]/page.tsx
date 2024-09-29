@@ -16,8 +16,8 @@ interface Props {
 }
 
 export default async function Page({ params }: Props) {
-  const { slug } = await params
   const lang = await getLang()
+  const { slug } = await params
   const { frontMatter, rendered } =
     getRenderedBlogFromSlug(lang, slug) || redirect('/blog')
   return (

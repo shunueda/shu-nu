@@ -8,7 +8,7 @@ import {
   type RenderedBlogPost,
   frontMatter,
 } from '#models/BlogPost'
-import { Mdx } from '../components/Mdx'
+import { Mdx } from '../components/mdx'
 import { type I18nElement, Lang } from './i18n'
 import { stripExtension } from './utils'
 

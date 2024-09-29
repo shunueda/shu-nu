@@ -21,10 +21,6 @@ const items: NavItem[] = [
 ]
 
 export async function Nav() {
-  async function handleSwitch(checked: boolean) {
-    'use server'
-    await setLangCookie(checked ? Lang.JA : Lang.EN)
-  }
   return (
     <nav className={classes.nav}>
       {items.map(({ href, label }) => (
@@ -34,7 +30,13 @@ export async function Nav() {
       ))}
       <div className={classes.lang}>
         <Label>{Lang.EN}</Label>
-        <Switch checked={await isJapanese()} onCheckedChange={handleSwitch} />
+        <Switch
+          checked={await isJapanese()}
+          onCheckedChange={async (checked: boolean) => {
+            'use server'
+            await setLangCookie(checked ? Lang.JA : Lang.EN)
+          }}
+        />
         <Label>{Lang.JA}</Label>
       </div>
     </nav>
