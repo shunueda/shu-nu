@@ -1,7 +1,8 @@
+import { redirect } from 'next/navigation'
 import { Title } from '#components/title'
+import { getRenderedBlogFromSlug, slugs } from '#lib/blogs'
 import { getLang } from '#lib/i18n'
 import { cn, formatDate } from '#lib/utils'
-import { getRenderedBlogFromSlug, slugs } from '../../../lib/blogs'
 import classes from './page.module.scss'
 
 export async function generateStaticParams() {
@@ -17,7 +18,8 @@ interface Props {
 export default async function Page({ params }: Props) {
   const { slug } = await params
   const lang = await getLang()
-  const { frontMatter, rendered } = getRenderedBlogFromSlug(lang, slug)
+  const { frontMatter, rendered } =
+    getRenderedBlogFromSlug(lang, slug) || redirect('/blog')
   return (
     <>
       <Title level={2}>{frontMatter.title}</Title>

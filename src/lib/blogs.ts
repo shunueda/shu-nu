@@ -2,7 +2,6 @@ import { existsSync, readFileSync } from 'node:fs'
 import { readdir } from 'node:fs/promises'
 import { basename, join } from 'node:path'
 import matter from 'gray-matter'
-import { MDXRemote } from 'next-mdx-remote/rsc'
 import { createElement } from 'react'
 import {
   type BlogPost,
@@ -38,14 +37,12 @@ export const allBlogs: I18nElement<BlogPost>[] = await Promise.all(
   }),
 )
 
-export function getRenderedBlogFromSlug(
-  lang: Lang,
-  targetSlug: string,
-): RenderedBlogPost {
-  // biome-ignore lint/style/noNonNullAssertion: checked at [readBlogPost]
-  const { slug, frontMatter, source } = allBlogs.find(
-    it => it[lang].slug === targetSlug,
-  )![lang]
+export function getRenderedBlogFromSlug(lang: Lang, targetSlug: string) {
+  const blogPost = allBlogs.find(it => it[lang].slug === targetSlug)
+  if (!blogPost) {
+    return
+  }
+  const { slug, frontMatter, source } = blogPost[lang]
   return {
     slug,
     frontMatter,
