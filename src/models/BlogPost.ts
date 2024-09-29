@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import {
   type Infer,
   boolean,
@@ -11,7 +12,13 @@ import {
 export interface BlogPost {
   slug: string
   frontMatter: Infer<typeof frontMatter>
-  content: string
+  source: string
+}
+
+export interface RenderedBlogPost {
+  slug: string
+  frontMatter: Infer<typeof frontMatter>
+  rendered: ReactNode
 }
 
 export const frontMatter = object({

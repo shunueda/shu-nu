@@ -2,7 +2,13 @@ import { existsSync, readFileSync } from 'node:fs'
 import { readdir } from 'node:fs/promises'
 import { basename, join } from 'node:path'
 import matter from 'gray-matter'
-import { type BlogPost, frontMatter } from '#models/BlogPost'
+import { MDXRemote } from 'next-mdx-remote/rsc'
+import { createElement } from 'react'
+import {
+  type BlogPost,
+  type RenderedBlogPost,
+  frontMatter,
+} from '#models/BlogPost'
 import { type I18nElement, Lang } from './i18n'
 import { stripExtension } from './utils'
 
@@ -31,9 +37,19 @@ export const allBlogs: I18nElement<BlogPost>[] = await Promise.all(
   }),
 )
 
-export function getBlogFromSlug(lang: Lang, slug: string): BlogPost {
+export function getRenderedBlogFromSlug(
+  lang: Lang,
+  targetSlug: string,
+): RenderedBlogPost {
   // biome-ignore lint/style/noNonNullAssertion: checked at [readBlogPost]
-  return allBlogs.find(it => it[lang].slug === slug)![lang]
+  const { slug, frontMatter, source } = allBlogs.find(
+    it => it[lang].slug === targetSlug,
+  )![lang]
+  return {
+    slug,
+    frontMatter,
+    rendered: createElement(MDXRemote, { source }),
+  } satisfies RenderedBlogPost
 }
 
 function readBlogPost(lang: Lang, file: string) {
@@ -42,7 +58,7 @@ function readBlogPost(lang: Lang, file: string) {
   if (!existsSync(path)) {
     return {
       slug,
-      content: 'Nothing ... yet.',
+      source: 'Nothing ... yet.',
       frontMatter: frontMatter.create({
         title: 'Not Found',
         date: new Date(),
@@ -52,7 +68,7 @@ function readBlogPost(lang: Lang, file: string) {
   const { content, data } = matter(readFileSync(path).toString())
   return {
     slug,
-    content,
+    source: content,
     frontMatter: frontMatter.create(data),
   } satisfies BlogPost
 }

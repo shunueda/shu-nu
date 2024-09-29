@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export function key() {
+export function randomKey() {
   return Math.random().toString(36).substring(2, 10)
 }
 

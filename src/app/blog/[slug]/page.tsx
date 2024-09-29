@@ -1,8 +1,7 @@
-import { MDXRemote } from 'next-mdx-remote/rsc'
 import { Title } from '#components/title'
 import { getLang } from '#lib/i18n'
 import { cn, formatDate } from '#lib/utils'
-import { getBlogFromSlug, slugs } from '../../../lib/blogs'
+import { getRenderedBlogFromSlug, slugs } from '../../../lib/blogs'
 import classes from './page.module.scss'
 
 export async function generateStaticParams() {
@@ -18,7 +17,7 @@ interface Props {
 export default async function Page({ params }: Props) {
   const { slug } = await params
   const lang = await getLang()
-  const { frontMatter, content } = getBlogFromSlug(lang, slug)
+  const { frontMatter, rendered } = getRenderedBlogFromSlug(lang, slug)
   return (
     <>
       <Title level={2}>{frontMatter.title}</Title>
@@ -33,7 +32,7 @@ export default async function Page({ params }: Props) {
             'after:prose-p:content-none',
           )}
         >
-          <MDXRemote source={content} />
+          {rendered}
         </article>
       </section>
     </>
