@@ -15,7 +15,7 @@ Furthermore, the discrepancy between the Catholic Church, which includes the Apo
 
 > "Trust in the LORD with all thine heart; and lean not unto thine own understanding." 
 > 
-> **—Proverbs 3:5**
+> **— Proverbs 3:5**
 
 #### Returning to Dialogue
 
@@ -24,6 +24,8 @@ The issue is not whether the Apocrypha or Pseudepigrapha are “wrong” or “i
 For postmodern Christians, trusting in the Holy Spirit and exploring God’s intent through personal ethical reflection may offer a more constructive approach than depending solely on scripture. We cannot fully comprehend God’s plan, and the exclusion of certain texts—whether it be the Apocrypha or Pseudepigrapha—might have served a purpose in the broader history of faith. Their rejection may not have been a mere accident of history but a part of God's greater intention.
 
 #### "Through a glass, darkly"
+
+> **— 1 Corinthians 13:12**
 
 Curiously, atheists and Christians, though starting from fundamentally different worldviews, may face similar ethical challenges. Atheists often base their ethics on human reason, while Christians seek guidance from divine inspiration. But both groups, ultimately, live by their own ethical judgments. This parallel underscores a shared truth: whether one believes in God or not, ethical responsibility lies with the individual.
 
