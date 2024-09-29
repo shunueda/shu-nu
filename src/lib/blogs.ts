@@ -9,6 +9,7 @@ import {
   type RenderedBlogPost,
   frontMatter,
 } from '#models/BlogPost'
+import { Mdx } from '../components/Mdx'
 import { type I18nElement, Lang } from './i18n'
 import { stripExtension } from './utils'
 
@@ -48,7 +49,7 @@ export function getRenderedBlogFromSlug(
   return {
     slug,
     frontMatter,
-    rendered: createElement(MDXRemote, { source }),
+    rendered: createElement(Mdx, { source }),
   } satisfies RenderedBlogPost
 }
 
