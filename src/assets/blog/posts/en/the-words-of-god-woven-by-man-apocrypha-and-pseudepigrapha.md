@@ -3,7 +3,7 @@ title: The Words of God Woven by Man — The Problem of Apocrypha and Pseudepigr
 date: 2024-09-29
 ---
 
-Following [the previous article](https://shu.nu/blog/navigating-contradictions-biblical-interpretation-modern-ethics), this time we explore how the biblical canon was shaped by human hands, focusing on the Apocrypha and Pseudepigrapha. We’ll examine the impact of their exclusion on the legitimacy of Christian faith and how evangelicals might confront this issue today.
+Following [the previous article](/blog/navigating-contradictions-biblical-interpretation-modern-ethics), this time we explore how the biblical canon was shaped by human hands, focusing on the Apocrypha and Pseudepigrapha. We’ll examine the impact of their exclusion on the legitimacy of Christian faith and how evangelicals might confront this issue today.
 
 In Christianity, the Apocrypha and Pseudepigrapha are two categories of texts that were not universally accepted into the biblical canon. The Apocrypha, while accepted by the Catholic and Orthodox Churches as part of a secondary canon, are rejected by Protestant churches (based on _sola scriptura_). The Pseudepigrapha, a broader collection, was entirely excluded by all major Christian traditions. Investigating why these texts were rejected as the "Word of God" reveals the depth of human involvement in the canonization process. Although canon selection is often claimed to be guided by divine revelation, historical analysis suggests that it was heavily influenced by the church's doctrinal and political agendas, raising questions about the foundation of faith.
 
