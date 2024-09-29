@@ -11,7 +11,7 @@ export async function Mdx({ source }: Props) {
       source={source}
       components={{
         a: ({ href, children }) => (
-          <Link prefetch href={''}>
+          <Link prefetch href={href || ''}>
             {children}
           </Link>
         ),
