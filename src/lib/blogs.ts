@@ -3,12 +3,12 @@ import { readdir } from 'node:fs/promises'
 import { basename, join } from 'node:path'
 import matter from 'gray-matter'
 import { createElement } from 'react'
+import { Mdx } from '#components/mdx'
 import {
   type BlogPost,
   type RenderedBlogPost,
   frontMatter,
 } from '#models/BlogPost'
-import { Mdx } from '../components/mdx'
 import { type I18nElement, Lang } from './i18n'
 import { stripExtension } from './utils'
 

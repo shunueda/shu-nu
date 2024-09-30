@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import info from '#assets/blog/info.json'
 import { Separator } from '#components/ui/separator'
+import { allBlogs } from '#lib/blogs'
 import { getLang, useI18n } from '#lib/i18n'
 import { formatDate } from '#lib/utils'
-import { allBlogs } from '../../lib/blogs'
 import classes from './page.module.scss'
 
 export default async function Page() {
