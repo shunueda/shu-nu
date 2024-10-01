@@ -38,6 +38,19 @@ export const allBlogs: I18nElement<BlogPost>[] = await Promise.all(
 )
 
 export function getRenderedBlogFromSlug(lang: Lang, targetSlug: string) {
+  const blogPost = getBlogFromSlug(lang, targetSlug)
+  if (!blogPost) {
+    return
+  }
+  const { slug, frontMatter, source } = blogPost
+  return {
+    slug,
+    frontMatter,
+    rendered: createElement(Mdx, { source }),
+  } satisfies RenderedBlogPost
+}
+
+export function getBlogFromSlug(lang: Lang, targetSlug: string) {
   const blogPost = allBlogs.find(it => it[lang].slug === targetSlug)
   if (!blogPost) {
     return
@@ -46,8 +59,8 @@ export function getRenderedBlogFromSlug(lang: Lang, targetSlug: string) {
   return {
     slug,
     frontMatter,
-    rendered: createElement(Mdx, { source }),
-  } satisfies RenderedBlogPost
+    source,
+  } satisfies BlogPost
 }
 
 function readBlogPost(lang: Lang, file: string) {

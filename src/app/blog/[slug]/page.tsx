@@ -1,18 +1,33 @@
 import { redirect } from 'next/navigation'
 import { Title } from '#components/title'
-import { getRenderedBlogFromSlug, slugs } from '#lib/blogs'
+import { getBlogFromSlug, getRenderedBlogFromSlug, slugs } from '#lib/blogs'
 import { getLang } from '#lib/i18n'
 import { cn, formatDate } from '#lib/utils'
 import classes from './page.module.scss'
-
-export async function generateStaticParams() {
-  return slugs.map(slug => ({ slug }))
-}
 
 interface Props {
   params: Promise<{
     slug: string
   }>
+}
+
+export async function generateStaticParams() {
+  return slugs.map(slug => ({ slug }))
+}
+
+export async function generateMetadata({ params }: Props) {
+  const lang = await getLang()
+  const { slug } = await params
+  const blog = getBlogFromSlug(lang, slug)
+  if (!blog) {
+    return {
+      title: 'Not Found',
+    }
+  }
+  return {
+    title: blog.frontMatter.title,
+    description: blog.source,
+  }
 }
 
 export default async function Page({ params }: Props) {
