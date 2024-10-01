@@ -20,6 +20,18 @@ export async function generateMetadata() {
   return {
     title: await useI18n(profile.name),
     description: (await useI18n(profile.introduction)).join(' '),
+    robots: {
+      index: true,
+      follow: true,
+      nocache: false,
+      googleBot: {
+        index: true,
+        follow: true,
+        noimageindex: false,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
   } satisfies Metadata
 }
 

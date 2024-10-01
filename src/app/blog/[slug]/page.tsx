@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 import { Title } from '#components/title'
 import { getBlogFromSlug, getRenderedBlogFromSlug, slugs } from '#lib/blogs'
@@ -27,7 +28,7 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: blog.frontMatter.title,
     description: blog.source,
-  }
+  } satisfies Metadata
 }
 
 export default async function Page({ params }: Props) {
