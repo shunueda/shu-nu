@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import info from '#assets/blog/info.json'
+import config from '#assets/config.json'
 import { Separator } from '#components/ui/separator'
 import { allBlogs } from '#lib/blogs'
 import { getLang, useI18n } from '#lib/i18n'
@@ -10,7 +10,9 @@ export default async function Page() {
   const lang = await getLang()
   return (
     <>
-      <p className={classes.description}>{await useI18n(info.description)}</p>
+      <p className={classes.description}>
+        {await useI18n(config.blog.description)}
+      </p>
       <Separator className="my-4" />
       <div className={classes.list}>
         {allBlogs

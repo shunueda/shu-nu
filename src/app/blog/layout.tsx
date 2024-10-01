@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
-import info from '#assets/blog/info.json'
-import profile from '#assets/profile.json'
+import config from '#assets/config.json'
 import { Title } from '#components/title'
-import { useI18n } from '../../lib/i18n'
+import { useI18n } from '#lib/i18n'
 
 interface Props {
   children: ReactNode
@@ -11,8 +10,8 @@ interface Props {
 
 export async function generateMetadata() {
   return {
-    title: `${await useI18n(profile.name)} | Blog`,
-    description: await useI18n(info.description),
+    title: `${await useI18n(config.name)} | Blog`,
+    description: await useI18n(config.blog.description),
   } satisfies Metadata
 }
 

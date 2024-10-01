@@ -1,4 +1,5 @@
 {
+  "url": "https://shu.nu",
   "name": {
     "en": "Shun Ueda",
     "ja": "Shun Ueda"
@@ -12,5 +13,11 @@
       "ソフトウェアエンジニア。DevOps が得意。",
       "数学（構造）、関数型プログラミング、倫理学、弁証学、無神論について。"
     ]
+  },
+  "blog": {
+    "description": {
+      "en": "Faith within non-belief — seeking harmony between Religion and Ethics",
+      "ja": "無信仰の中にある信仰 — 宗教と倫理の調和を求めて。無神論者の視点から、共存を追究する。"
+    }
   }
 }
