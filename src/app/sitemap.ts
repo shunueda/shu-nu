@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { url } from '#assets/config.json'
+import config from '#assets/config.json'
 import { slugs } from '#lib/blogs'
 import { Lang } from '#lib/i18n'
 
@@ -32,12 +32,12 @@ const entries: Entry[] = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return entries.map(({ href, priority, changeFrequency }) => ({
-    url: new URL(href, url).href,
+    url: new URL(href, config.url).href,
     lastModified: new Date(),
     alternates: {
       languages: {
-        [Lang.EN]: new URL(`${Lang.EN}${href}`, url).href,
-        [Lang.JA]: new URL(`${Lang.JA}${href}`, url).href,
+        [Lang.EN]: new URL(`${Lang.EN}${href}`, config.url).href,
+        [Lang.JA]: new URL(`${Lang.JA}${href}`, config.url).href,
       },
     },
     priority,
