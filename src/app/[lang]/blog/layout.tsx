@@ -2,16 +2,21 @@ import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import config from '#assets/config.json'
 import { Title } from '#components/title'
-import { useI18n } from '#lib/i18n'
+import { type Lang, useI18nElement } from '#lib/i18n'
 
 interface Props {
   children: ReactNode
+  params: Promise<{
+    lang: Lang
+    slug: string
+  }>
 }
 
-export async function generateMetadata() {
+export async function generateMetadata({ params }: Props) {
+  const { lang } = await params
   return {
-    title: `${await useI18n(config.name)} | Blog`,
-    description: await useI18n(config.blog.description),
+    title: `${config.name} | Blog`,
+    description: useI18nElement(config.blog.description, lang),
   } satisfies Metadata
 }
 

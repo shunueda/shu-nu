@@ -2,12 +2,13 @@ import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 import { Title } from '#components/title'
 import { getBlogFromSlug, getRenderedBlogFromSlug, slugs } from '#lib/blogs'
-import { getLang } from '#lib/i18n'
 import { cn, formatDate } from '#lib/utils'
+import type { Lang } from '../../../../lib/i18n'
 import classes from './page.module.scss'
 
 interface Props {
   params: Promise<{
+    lang: Lang
     slug: string
   }>
 }
@@ -17,9 +18,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props) {
-  const lang = await getLang()
-  const { slug } = await params
-  const blog = getBlogFromSlug(lang, slug)
+  const { slug, lang } = await params
+  const blog = getBlogFromSlug(slug, lang)
   if (!blog) {
     return {
       title: 'Not Found',
@@ -32,10 +32,9 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default async function Page({ params }: Props) {
-  const lang = await getLang()
-  const { slug } = await params
+  const { slug, lang } = await params
   const { frontMatter, rendered } =
-    getRenderedBlogFromSlug(lang, slug) || redirect('/blog')
+    getRenderedBlogFromSlug(slug, lang) || redirect('/blog')
   return (
     <>
       <Title level={2}>{frontMatter.title}</Title>

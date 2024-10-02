@@ -1,5 +1,7 @@
+'use client'
 import Link from 'next/link'
-import { Lang, isJapanese, setLangCookie } from '#lib/i18n'
+import { redirect } from 'next/navigation'
+import { Lang } from '../lib/i18n'
 import classes from './nav.module.scss'
 import { Label } from './ui/label'
 import { Switch } from './ui/switch'
@@ -20,21 +22,33 @@ const items: NavItem[] = [
   },
 ]
 
-export async function Nav() {
+interface Props {
+  lang: Lang
+}
+
+export function Nav({ lang }: Props) {
   return (
     <nav className={classes.nav}>
       {items.map(({ href, label }) => (
-        <Link className={classes.item} href={href} key={href} prefetch>
+        <Link
+          prefetch
+          className={classes.item}
+          href={`/${lang}${href}`}
+          key={href}
+        >
           {label}
         </Link>
       ))}
       <div className={classes.lang}>
         <Label>{Lang.EN}</Label>
         <Switch
-          checked={await isJapanese()}
-          onCheckedChange={async (checked: boolean) => {
-            'use server'
-            await setLangCookie(checked ? Lang.JA : Lang.EN)
+          checked={lang === Lang.JA}
+          onCheckedChange={async checked => {
+            redirect(
+              `/${checked ? Lang.JA : Lang.EN}/${location.pathname.substring(
+                `/${Lang.EN}/`.length,
+              )}`,
+            )
           }}
         />
         <Label>{Lang.JA}</Label>
