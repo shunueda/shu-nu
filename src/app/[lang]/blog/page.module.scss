@@ -2,23 +2,19 @@
 }
 
 .description {
-  margin-top: 1rem;
-  display: block;
+  @apply mt-4 block;
 }
 
 .list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  @apply flex flex-col gap-4;
 
   .date {
-    color: #757575;
+    @apply text-gray-600;
     font-size: 0.9rem;
   }
 
   .title {
-    color: #3a3a3a;
-    font-weight: bolder;
+    @apply font-semibold;
     font-size: 0.95rem;
   }
 }

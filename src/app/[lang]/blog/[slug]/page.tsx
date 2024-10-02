@@ -19,7 +19,7 @@ export default async function Page({ params }: Props) {
   return (
     <>
       <Title level={2}>{frontMatter.title}</Title>
-      <Title level={3}>{`— ${formatDate(frontMatter.date)}`}</Title>
+      <Title level={3}>— {formatDate(frontMatter.date)}</Title>
       <section className={classes.content}>
         <article
           className={cn(

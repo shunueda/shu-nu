@@ -1,6 +1,4 @@
 .main {
   width: min(35rem, 85%);
-  margin-top: 2rem;
-  margin-right: auto;
-  margin-left: auto;
+  @apply mt-8 mx-auto;
 }

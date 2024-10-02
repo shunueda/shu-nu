@@ -10,17 +10,12 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props) {
   const { slug, lang } = await params
   const blog = getBlogFromSlug(slug, lang)
-  if (!blog) {
-    return {
-      title: 'Not Found',
-    }
-  }
   return {
-    title: blog.frontMatter.title,
-    description: blog.source,
+    title: blog?.frontMatter?.title,
+    description: blog?.source,
   } satisfies Metadata
 }
 
 export default function Layout({ children }: LayoutProps & Props) {
-  return children
+  return <>{children}</>
 }
