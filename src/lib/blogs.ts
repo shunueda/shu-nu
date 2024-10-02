@@ -8,7 +8,7 @@ import {
   type BlogPost,
   type RenderedBlogPost,
   frontMatter,
-} from '../models/blog-post'
+} from '../types/blog-post'
 import { type I18nElement, Lang } from './i18n'
 import { stripExtension } from './utils'
 

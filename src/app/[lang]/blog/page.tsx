@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import type { ReactNode } from 'react'
 import config from '#assets/config.json'
 import { Separator } from '#components/ui/separator'
 import { allBlogs } from '#lib/blogs'
@@ -7,8 +6,7 @@ import { type Lang, useI18nElement } from '#lib/i18n'
 import { formatDate } from '#lib/utils'
 import classes from './page.module.scss'
 
-interface Props {
-  children: ReactNode
+export interface Props {
   params: Promise<{
     lang: Lang
   }>

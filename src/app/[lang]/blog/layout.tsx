@@ -1,16 +1,9 @@
 import type { Metadata } from 'next'
-import type { ReactNode } from 'react'
 import config from '#assets/config.json'
 import { Title } from '#components/title'
-import { type Lang, useI18nElement } from '#lib/i18n'
-
-interface Props {
-  children: ReactNode
-  params: Promise<{
-    lang: Lang
-    slug: string
-  }>
-}
+import { useI18nElement } from '#lib/i18n'
+import type { LayoutProps } from '#types/props'
+import type { Props } from './page'
 
 export async function generateMetadata({ params }: Props) {
   const { lang } = await params
@@ -20,7 +13,7 @@ export async function generateMetadata({ params }: Props) {
   } satisfies Metadata
 }
 
-export default function Layout({ children }: Props) {
+export default function Layout({ children }: LayoutProps & Props) {
   return (
     <section>
       <Title>Blog.</Title>

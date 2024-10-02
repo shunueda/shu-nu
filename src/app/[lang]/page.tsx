@@ -4,7 +4,7 @@ import { type Lang, useI18nElement } from '#lib/i18n'
 import { randomKey } from '#lib/utils'
 import classes from './page.module.scss'
 
-interface Props {
+export interface Props {
   params: Promise<{
     lang: Lang
   }>
