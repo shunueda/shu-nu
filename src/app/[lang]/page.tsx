@@ -14,7 +14,7 @@ export default async function Page({ params }: Props) {
   const { lang } = await params
   return (
     <section className={classes.content}>
-      <Title>Shun Ueda.</Title>
+      <Title>${config.name}.</Title>
       <div className={classes.info}>
         {useI18nElement(config.introduction, lang).map(it => (
           <p key={randomKey()}>{it}</p>
