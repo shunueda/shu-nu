@@ -8,7 +8,7 @@ import {
   type BlogPost,
   type RenderedBlogPost,
   frontMatter,
-} from '#models/BlogPost'
+} from '../types/blog-post'
 import { type I18nElement, Lang } from './i18n'
 import { stripExtension } from './utils'
 
@@ -37,8 +37,8 @@ export const allBlogs: I18nElement<BlogPost>[] = await Promise.all(
   }),
 )
 
-export function getRenderedBlogFromSlug(lang: Lang, targetSlug: string) {
-  const blogPost = getBlogFromSlug(lang, targetSlug)
+export function getRenderedBlogFromSlug(targetSlug: string, lang: Lang) {
+  const blogPost = getBlogFromSlug(targetSlug, lang)
   if (!blogPost) {
     return
   }
@@ -46,11 +46,11 @@ export function getRenderedBlogFromSlug(lang: Lang, targetSlug: string) {
   return {
     slug,
     frontMatter,
-    rendered: createElement(Mdx, { source }),
+    rendered: createElement(Mdx, { source, lang }),
   } satisfies RenderedBlogPost
 }
 
-export function getBlogFromSlug(lang: Lang, targetSlug: string) {
+export function getBlogFromSlug(targetSlug: string, lang: Lang) {
   const blogPost = allBlogs.find(it => it[lang].slug === targetSlug)
   if (!blogPost) {
     return

@@ -1,15 +1,22 @@
 import config from '#assets/config.json'
 import { Title } from '#components/title'
-import { useI18n } from '#lib/i18n'
+import { type Lang, useI18nElement } from '#lib/i18n'
 import { randomKey } from '#lib/utils'
 import classes from './page.module.scss'
 
-export default async function Page() {
+export interface Props {
+  params: Promise<{
+    lang: Lang
+  }>
+}
+
+export default async function Page({ params }: Props) {
+  const { lang } = await params
   return (
     <section className={classes.content}>
-      <Title>{`${await useI18n(config.name)}.`}</Title>
+      <Title>Shun Ueda.</Title>
       <div className={classes.info}>
-        {(await useI18n(config.introduction)).map(it => (
+        {useI18nElement(config.introduction, lang).map(it => (
           <p key={randomKey()}>{it}</p>
         ))}
       </div>

@@ -1,9 +1,6 @@
 {
   "url": "https://shu.nu",
-  "name": {
-    "en": "Shun Ueda",
-    "ja": "Shun Ueda"
-  },
+  "name": "Shun Ueda",
   "introduction": {
     "en": [
       "Software engineer. Passionate about using technology to solve real-world problems.",
