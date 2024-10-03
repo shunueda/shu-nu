@@ -40,7 +40,7 @@ export function createElement(size: number) {
       <div
         style={{
           color: '#eeeeee',
-          fontSize: `${size * 0.6}px`
+          fontSize: '100cqh'
         }}
       >
         :)
