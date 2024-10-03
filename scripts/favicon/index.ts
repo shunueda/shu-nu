@@ -1,40 +1,14 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises'
-import { join, parse } from 'node:path'
-import satori from 'satori'
+import { writeFile } from 'node:fs/promises'
 import sharp from 'sharp'
 import toIco from 'to-ico'
-import { createElement } from './createElement'
+import { createIconSvg } from '#lib/icon'
 
 const sizes = [16, 32, 48, 64]
-
-const paths = {
-  font: 'node_modules/geist/dist/fonts/geist-sans/Geist-Bold.ttf',
-  out: 'out',
-  favicon: 'src/app/favicon.ico'
-}
-
-await mkdir(paths.out, {
-  recursive: true
-})
-
-async function createSvg(size: number) {
-  return satori(createElement(size), {
-    width: size,
-    height: size,
-    fonts: [
-      {
-        ...parse(paths.font),
-        data: (await readFile(paths.font)).buffer
-      }
-    ]
-  })
-}
-
-await writeFile(join(paths.out, 'favicon.svg'), await createSvg(512))
+const faviconPath = 'src/app/favicon.ico'
 
 const pngs = await Promise.all(
   sizes.map(async size => {
-    const svg = await createSvg(size)
+    const svg = await createIconSvg(size)
     return new Promise<Buffer>(resolve => {
       sharp(Buffer.from(svg))
         .png()
@@ -45,4 +19,4 @@ const pngs = await Promise.all(
   })
 )
 
-await writeFile(paths.favicon, await toIco(pngs))
+await writeFile(faviconPath, await toIco(pngs))

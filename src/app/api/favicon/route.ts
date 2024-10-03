@@ -1,8 +1,10 @@
-import { readFile } from 'node:fs/promises'
 import { type NextRequest, NextResponse } from 'next/server'
+import { createIconSvg } from '#lib/icon'
+
+const size = 512
+const svg = await createIconSvg(size)
 
 export async function GET(_: NextRequest) {
-  const svg = await readFile('out/favicon.svg')
   return new NextResponse(svg, {
     status: 200,
     headers: {
