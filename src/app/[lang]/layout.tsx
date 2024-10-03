@@ -6,11 +6,16 @@ import type { Metadata } from 'next'
 import config from '#assets/config.json'
 import { Footer } from '#components/footer'
 import { Nav } from '#components/nav'
-import { langs, useI18nElement } from '#lib/i18n'
+import { type Lang, langs, useI18nElement } from '#lib/i18n'
 import { cn } from '#lib/utils'
 import type { LayoutProps } from '#types/props'
 import classes from './layout.module.scss'
-import type { Props } from './page'
+
+export interface Props {
+  params: Promise<{
+    lang: Lang
+  }>
+}
 
 export async function generateStaticParams() {
   return langs.map(lang => ({ lang }))

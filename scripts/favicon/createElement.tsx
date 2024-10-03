@@ -1,3 +1,6 @@
+// biome-ignore lint/correctness/noUnusedImports: required
+import React from 'react'
+
 export function createElement(size: number) {
   return (
     <section

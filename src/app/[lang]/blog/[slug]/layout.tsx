@@ -1,8 +1,14 @@
 import type { Metadata } from 'next'
 import { getBlogFromSlug, slugs } from '#lib/blogs'
+import type { Lang } from '#lib/i18n'
 import type { LayoutProps } from '#types/props'
-import type { Props } from './page'
 
+export interface Props {
+  params: Promise<{
+    lang: Lang
+    slug: string
+  }>
+}
 export async function generateStaticParams() {
   return slugs.map(slug => ({ slug }))
 }

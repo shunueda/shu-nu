@@ -1,14 +1,9 @@
 import config from '#assets/config.json'
 import { Title } from '#components/title'
-import { type Lang, useI18nElement } from '#lib/i18n'
+import { useI18nElement } from '#lib/i18n'
 import { randomKey } from '#lib/utils'
+import type { Props } from './layout'
 import classes from './page.module.scss'
-
-export interface Props {
-  params: Promise<{
-    lang: Lang
-  }>
-}
 
 export default async function Page({ params }: Props) {
   const { lang } = await params

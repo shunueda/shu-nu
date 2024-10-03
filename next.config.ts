@@ -4,5 +4,8 @@ export default {
   sassOptions: {
     implementation: 'sass-embedded',
     silenceDeprecations: ['legacy-js-api']
+  },
+  experimental: {
+    typedRoutes: true
   }
 } satisfies NextConfig

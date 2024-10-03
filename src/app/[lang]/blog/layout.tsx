@@ -1,9 +1,14 @@
 import type { Metadata } from 'next'
 import config from '#assets/config.json'
 import { Title } from '#components/title'
-import { useI18nElement } from '#lib/i18n'
+import { type Lang, useI18nElement } from '#lib/i18n'
 import type { LayoutProps } from '#types/props'
-import type { Props } from './page'
+
+export interface Props {
+  params: Promise<{
+    lang: Lang
+  }>
+}
 
 export async function generateMetadata({ params }: Props) {
   const { lang } = await params

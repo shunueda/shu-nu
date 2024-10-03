@@ -2,15 +2,10 @@ import Link from 'next/link'
 import config from '#assets/config.json'
 import { Separator } from '#components/ui/separator'
 import { allBlogs } from '#lib/blogs'
-import { type Lang, useI18nElement } from '#lib/i18n'
+import { useI18nElement } from '#lib/i18n'
 import { formatDate } from '#lib/utils'
+import type { Props } from './layout'
 import classes from './page.module.scss'
-
-export interface Props {
-  params: Promise<{
-    lang: Lang
-  }>
-}
 
 export default async function Page({ params }: Props) {
   const { lang } = await params

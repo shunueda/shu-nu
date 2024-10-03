@@ -3,14 +3,8 @@ import { Title } from '#components/title'
 import { getRenderedBlogFromSlug } from '#lib/blogs'
 import type { Lang } from '#lib/i18n'
 import { cn, formatDate } from '#lib/utils'
+import type { Props } from './layout'
 import classes from './page.module.scss'
-
-export interface Props {
-  params: Promise<{
-    lang: Lang
-    slug: string
-  }>
-}
 
 export default async function Page({ params }: Props) {
   const { slug, lang } = await params
