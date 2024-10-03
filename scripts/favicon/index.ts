@@ -1,5 +1,5 @@
-import { readFileSync, writeFileSync } from 'node:fs'
-import { parse } from 'node:path'
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import { join, parse } from 'node:path'
 import satori from 'satori'
 import sharp from 'sharp'
 import toIco from 'to-ico'
@@ -9,21 +9,32 @@ const sizes = [16, 32, 48, 64]
 
 const paths = {
   font: 'node_modules/geist/dist/fonts/geist-sans/Geist-Bold.ttf',
+  out: 'out',
   favicon: 'src/app/favicon.ico'
 }
 
+await mkdir(paths.out, {
+  recursive: true
+})
+
+async function createSvg(size: number) {
+  return satori(createElement(size), {
+    width: size,
+    height: size,
+    fonts: [
+      {
+        ...parse(paths.font),
+        data: (await readFile(paths.font)).buffer
+      }
+    ]
+  })
+}
+
+await writeFile(join(paths.out, 'favicon.svg'), await createSvg(512))
+
 const pngs = await Promise.all(
   sizes.map(async size => {
-    const svg = await satori(createElement(size), {
-      width: size,
-      height: size,
-      fonts: [
-        {
-          ...parse(paths.font),
-          data: readFileSync(paths.font).buffer
-        }
-      ]
-    })
+    const svg = await createSvg(size)
     return new Promise<Buffer>(resolve => {
       sharp(Buffer.from(svg))
         .png()
@@ -34,5 +45,4 @@ const pngs = await Promise.all(
   })
 )
 
-const ico = await toIco(pngs)
-writeFileSync(paths.favicon, ico)
+await writeFile(paths.favicon, await toIco(pngs))
