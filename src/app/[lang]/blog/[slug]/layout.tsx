@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: Props) {
   const blog = getBlogFromSlug(slug, lang)
   return {
     title: blog?.frontMatter?.title,
-    description: blog?.source,
+    description: blog?.source
   } satisfies Metadata
 }
 

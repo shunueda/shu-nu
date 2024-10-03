@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: Props) {
   const { lang } = await params
   return {
     title: `${config.name} | Blog`,
-    description: useI18nElement(config.blog.description, lang),
+    description: useI18nElement(config.blog.description, lang)
   } satisfies Metadata
 }
 

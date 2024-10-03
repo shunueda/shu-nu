@@ -6,7 +6,7 @@ import {
   date,
   defaulted,
   object,
-  string,
+  string
 } from 'superstruct'
 
 export interface BlogPost {
@@ -24,5 +24,5 @@ export interface RenderedBlogPost {
 export const frontMatter = object({
   title: string(),
   date: coerce(date(), string(), it => new Date(it)),
-  draft: defaulted(boolean(), false),
+  draft: defaulted(boolean(), false)
 })

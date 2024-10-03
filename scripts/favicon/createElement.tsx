@@ -1,6 +1,3 @@
-import React from 'react'
-import type { Locale } from 'satori'
-
 export function createElement(size: number) {
   return (
     <section
@@ -14,13 +11,13 @@ export function createElement(size: number) {
         justifyContent: 'center',
         borderRadius: '20%',
         background:
-          'linear-gradient(60deg, rgba(110,179,204,1) 0%, rgba(224,162,224,1) 100%)',
+          'linear-gradient(60deg, rgba(110,179,204,1) 0%, rgba(224,162,224,1) 100%)'
       }}
     >
       <div
         style={{
           color: '#eeeeee',
-          fontSize: `${size * 0.6}px`,
+          fontSize: `${size * 0.6}px`
         }}
       >
         :)

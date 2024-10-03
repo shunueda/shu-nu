@@ -7,7 +7,7 @@ import { Mdx } from '#components/mdx'
 import {
   type BlogPost,
   type RenderedBlogPost,
-  frontMatter,
+  frontMatter
 } from '../types/blog-post'
 import { type I18nElement, Lang } from './i18n'
 import { stripExtension } from './utils'
@@ -18,12 +18,12 @@ const files = [
   ...new Set(
     (
       await readdir(postPath, {
-        recursive: true,
+        recursive: true
       })
     )
       .filter(it => it.endsWith('.md'))
-      .map(it => basename(it)),
-  ),
+      .map(it => basename(it))
+  )
 ]
 
 export const slugs = files.map(stripExtension)
@@ -32,9 +32,9 @@ export const allBlogs: I18nElement<BlogPost>[] = await Promise.all(
   files.map(async file => {
     return {
       [Lang.EN]: readBlogPost(Lang.EN, file),
-      [Lang.JA]: readBlogPost(Lang.JA, file),
+      [Lang.JA]: readBlogPost(Lang.JA, file)
     } satisfies I18nElement<BlogPost>
-  }),
+  })
 )
 
 export function getRenderedBlogFromSlug(targetSlug: string, lang: Lang) {
@@ -46,7 +46,7 @@ export function getRenderedBlogFromSlug(targetSlug: string, lang: Lang) {
   return {
     slug,
     frontMatter,
-    rendered: createElement(Mdx, { source, lang }),
+    rendered: createElement(Mdx, { source, lang })
   } satisfies RenderedBlogPost
 }
 
@@ -59,7 +59,7 @@ export function getBlogFromSlug(targetSlug: string, lang: Lang) {
   return {
     slug,
     frontMatter,
-    source,
+    source
   } satisfies BlogPost
 }
 
@@ -72,14 +72,14 @@ function readBlogPost(lang: Lang, file: string) {
       source: 'Nothing ... yet.',
       frontMatter: frontMatter.create({
         title: 'Not Found',
-        date: new Date(),
-      }),
+        date: new Date()
+      })
     } satisfies BlogPost
   }
   const { content, data } = matter(readFileSync(path).toString())
   return {
     slug,
     source: content,
-    frontMatter: frontMatter.create(data),
+    frontMatter: frontMatter.create(data)
   } satisfies BlogPost
 }

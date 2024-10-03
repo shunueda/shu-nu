@@ -16,7 +16,7 @@ export async function Mdx({ source, lang }: Props) {
           <Link prefetch href={`/${lang}${href}` || ''}>
             {children}
           </Link>
-        ),
+        )
       }}
     />
   )

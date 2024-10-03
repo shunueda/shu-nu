@@ -25,7 +25,7 @@ export default async function Page({ params }: Props) {
           .map(it => it[lang])
           .sort(
             (a, b) =>
-              b.frontMatter.date.getTime() - a.frontMatter.date.getTime(),
+              b.frontMatter.date.getTime() - a.frontMatter.date.getTime()
           )
           .map(({ slug, frontMatter }) => (
             <Link

@@ -14,9 +14,9 @@ export const metadata: Metadata = {
     canonical: '/',
     languages: {
       [Lang.EN]: `/${Lang.EN}`,
-      [Lang.JA]: `/${Lang.JA}`,
-    },
-  },
+      [Lang.JA]: `/${Lang.JA}`
+    }
+  }
 }
 
 export default function Layout({ children }: LayoutProps) {

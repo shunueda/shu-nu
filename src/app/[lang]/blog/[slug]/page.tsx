@@ -27,7 +27,7 @@ export default async function Page({ params }: Props) {
             'prose-blockquote:not-italic',
             'prose-blockquote:text-sm',
             'before:prose-p:content-none',
-            'after:prose-p:content-none',
+            'after:prose-p:content-none'
           )}
         >
           {rendered}

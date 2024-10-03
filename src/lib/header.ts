@@ -1,3 +1,3 @@
 export enum Header {
-  ACCEPT_LANGUAGE = 'accept-language',
+  ACCEPT_LANGUAGE = 'accept-language'
 }

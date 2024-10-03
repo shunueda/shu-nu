@@ -14,12 +14,12 @@ interface NavItem {
 const items: NavItem[] = [
   {
     label: 'home',
-    href: '/',
+    href: '/'
   },
   {
     label: 'blog',
-    href: '/blog',
-  },
+    href: '/blog'
+  }
 ]
 
 interface Props {
@@ -46,8 +46,8 @@ export function Nav({ lang }: Props) {
           onCheckedChange={async checked => {
             redirect(
               `/${checked ? Lang.JA : Lang.EN}/${location.pathname.substring(
-                `/${Lang.EN}/`.length,
-              )}`,
+                `/${Lang.EN}/`.length
+              )}`
             )
           }}
         />

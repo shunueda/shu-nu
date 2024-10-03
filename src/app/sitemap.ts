@@ -13,21 +13,21 @@ const entries: Entry[] = [
   {
     href: '',
     priority: 1,
-    changeFrequency: 'monthly',
+    changeFrequency: 'monthly'
   },
   {
     href: '/blog',
     priority: 0.9,
-    changeFrequency: 'weekly',
+    changeFrequency: 'weekly'
   },
   ...slugs.map(
     slug =>
       ({
         href: `/blog/${slug}`,
         priority: 0.8,
-        changeFrequency: 'monthly',
-      }) satisfies Entry,
-  ),
+        changeFrequency: 'monthly'
+      }) satisfies Entry
+  )
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -37,10 +37,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: {
       languages: {
         [Lang.EN]: new URL(`${Lang.EN}${href}`, config.url).href,
-        [Lang.JA]: new URL(`${Lang.JA}${href}`, config.url).href,
-      },
+        [Lang.JA]: new URL(`${Lang.JA}${href}`, config.url).href
+      }
     },
     priority,
-    changeFrequency,
+    changeFrequency
   }))
 }

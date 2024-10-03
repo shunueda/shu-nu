@@ -1,4 +1,4 @@
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { readFileSync, writeFileSync } from 'node:fs'
 import { parse } from 'node:path'
 import satori from 'satori'
 import sharp from 'sharp'
@@ -9,7 +9,7 @@ const sizes = [16, 32, 48, 64]
 
 const paths = {
   font: 'node_modules/geist/dist/fonts/geist-sans/Geist-Bold.ttf',
-  favicon: 'src/app/favicon.ico',
+  favicon: 'src/app/favicon.ico'
 }
 
 const pngs = await Promise.all(
@@ -20,9 +20,9 @@ const pngs = await Promise.all(
       fonts: [
         {
           ...parse(paths.font),
-          data: readFileSync(paths.font).buffer,
-        },
-      ],
+          data: readFileSync(paths.font).buffer
+        }
+      ]
     })
     return new Promise<Buffer>(resolve => {
       sharp(Buffer.from(svg))
@@ -31,7 +31,7 @@ const pngs = await Promise.all(
           resolve(buffer)
         })
     })
-  }),
+  })
 )
 
 const ico = await toIco(pngs)

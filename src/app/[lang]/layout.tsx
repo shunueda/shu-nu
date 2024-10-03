@@ -20,13 +20,13 @@ export async function generateMetadata({ params }: Props) {
   const { lang } = await params
   return {
     title: config.name,
-    description: useI18nElement(config.blog.description, lang),
+    description: useI18nElement(config.blog.description, lang)
   } satisfies Metadata
 }
 
 export default async function Layout({
   children,
-  params,
+  params
 }: LayoutProps & Props) {
   const { lang } = await params
   return (

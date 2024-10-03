@@ -3,7 +3,7 @@ import Negotiator from 'negotiator'
 import {
   type MiddlewareConfig,
   type NextRequest,
-  NextResponse,
+  NextResponse
 } from 'next/server'
 import { Cookie } from '#lib/cookie'
 import { Header } from '#lib/header'
@@ -30,8 +30,8 @@ function getUserLang(request: NextRequest) {
   const languages = new Negotiator({
     headers: {
       [Header.ACCEPT_LANGUAGE]:
-        request.headers.get(Header.ACCEPT_LANGUAGE) || '',
-    },
+        request.headers.get(Header.ACCEPT_LANGUAGE) || ''
+    }
   }).languages()
   return match(languages, langs, Lang.EN)
 }
@@ -45,6 +45,6 @@ export const config = {
      * - _next/image (image optimization files)
      * - favicon.ico, sitemap.xml, robots.txt (metadata files)
      */
-    '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)',
-  ],
+    '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)'
+  ]
 } satisfies MiddlewareConfig

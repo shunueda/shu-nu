@@ -1,6 +1,6 @@
 export enum Lang {
   EN = 'en',
-  JA = 'ja',
+  JA = 'ja'
 }
 
 export const langs: readonly Lang[] = Object.values(Lang)
