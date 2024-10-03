@@ -9,13 +9,7 @@ const faviconPath = 'src/app/favicon.ico'
 const pngs = await Promise.all(
   sizes.map(async size => {
     const svg = await createIconSvg(size)
-    return new Promise<Buffer>(resolve => {
-      sharp(Buffer.from(svg))
-        .png()
-        .toBuffer((_, buffer) => {
-          resolve(buffer)
-        })
-    })
+    return sharp(Buffer.from(svg)).png().toBuffer()
   })
 )
 
