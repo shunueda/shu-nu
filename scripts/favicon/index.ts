@@ -21,12 +21,13 @@ await writeFile(faviconPath, await toIco(pngs))
 const out = 'out'
 const size = 256
 
+const svg = await createIconSvg(size)
+const buffer = Buffer.from(svg)
 await mkdir(out, {
   recursive: true
 })
 
-const svg = await createIconSvg(size)
 await Promise.all([
   writeFile(`${out}/icon.svg`, svg),
-  writeFile(`${out}/icon.png`, await sharp(Buffer.from(svg)).png().toBuffer())
+  writeFile(`${out}/icon.png`, await sharp(buffer).png().toBuffer())
 ])
