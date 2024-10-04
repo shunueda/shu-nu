@@ -30,12 +30,7 @@ export function Nav({ lang }: Props) {
   return (
     <nav className={classes.nav}>
       {items.map(({ href, label }) => (
-        <Link
-          prefetch
-          className={classes.item}
-          href={`/${lang}${href}`}
-          key={href}
-        >
+        <Link className={classes.item} href={`/${lang}${href}`} key={href}>
           {label}
         </Link>
       ))}

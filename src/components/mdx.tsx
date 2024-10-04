@@ -13,9 +13,7 @@ export async function Mdx({ source, lang }: Props) {
       source={source}
       components={{
         a: ({ href, children }) => (
-          <Link prefetch href={`/${lang}${href}` || ''}>
-            {children}
-          </Link>
+          <Link href={`/${lang}${href}` || ''}>{children}</Link>
         )
       }}
     />

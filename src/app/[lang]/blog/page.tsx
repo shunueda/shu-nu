@@ -24,7 +24,6 @@ export default async function Page({ params }: Props) {
           )
           .map(({ slug, frontMatter }) => (
             <Link
-              prefetch
               key={slug}
               href={`/${lang}/blog/${slug}`}
               className={classes.entry}
