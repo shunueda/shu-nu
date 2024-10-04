@@ -1,27 +1,11 @@
 // biome-ignore lint/correctness/noUnusedImports: required for script
 import React from 'react'
 
-import { parse } from 'node:path'
-import satori from 'satori'
-
-const fontUrl =
-  'https://github.com/vercel/geist-font/raw/refs/heads/main/out/proof/Geist-Bold.ttf'
-const fontData = await fetch(fontUrl).then(it => it.arrayBuffer())
-
-export async function createIconSvg(size: number) {
-  return satori(createElement(size), {
-    width: size,
-    height: size,
-    fonts: [
-      {
-        ...parse(fontUrl),
-        data: fontData
-      }
-    ]
-  })
+interface Props {
+  size: number
 }
 
-export function createElement(size: number) {
+export function Icon({ size }: Props) {
   return (
     <section
       lang="ja-JP"
