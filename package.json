@@ -1,20 +1,25 @@
 {
   "name": "shu-nu",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "prepare": "lefthook install",
-    "dev": "next dev",
     "build": "pnpm build:icon && next build",
     "build:icon": "tsx scripts/icon",
-    "start": "next start",
+    "check": "biome check --write && sort-package-json",
+    "commit": "git add --all && cz",
+    "dev": "next dev",
     "format": "biome format --write",
     "lint": "biome lint --write",
-    "check": "biome check --write",
-    "type-check": "tsc",
     "lt": "lt --port 3000",
-    "commit": "git add --all && cz"
+    "prepare": "lefthook install",
+    "start": "next start",
+    "type-check": "tsc"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.4",
@@ -58,13 +63,9 @@
     "negotiator": "^0.6.3",
     "postcss": "^8.4.47",
     "sass-embedded": "^1.79.4",
+    "sort-package-json": "^2.10.1",
     "tailwindcss": "^3.4.13",
     "typescript": "^5.6.2"
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
   },
   "packageManager": "pnpm@9.10.0"
 }
