@@ -6,8 +6,8 @@
   "scripts": {
     "prepare": "lefthook install",
     "dev": "next dev",
-    "build": "pnpm build:favicon && next build",
-    "build:favicon": "tsx scripts/favicon",
+    "build": "pnpm build:icon && next build",
+    "build:icon": "tsx scripts/icon",
     "start": "next start",
     "format": "biome format --write",
     "lint": "biome lint --write",
