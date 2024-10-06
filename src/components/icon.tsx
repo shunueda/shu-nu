@@ -8,7 +8,6 @@ interface Props {
 export function Icon({ size }: Props) {
   return (
     <section
-      lang="ja-JP"
       style={{
         height: '100%',
         width: '100%',

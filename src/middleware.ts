@@ -1,5 +1,4 @@
-import { match } from '@formatjs/intl-localematcher'
-import Negotiator from 'negotiator'
+import AcceptLanguage from 'accept-language'
 import {
   type MiddlewareConfig,
   type NextRequest,
@@ -8,6 +7,12 @@ import {
 import { Cookie } from '#lib/cookie'
 import { Header } from '#lib/header'
 import { Lang, langs } from '#lib/i18n'
+
+AcceptLanguage.languages(langs as string[])
+
+export const config = {
+  matcher: ['/', '/blog/:path*']
+} satisfies MiddlewareConfig
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
@@ -23,28 +28,9 @@ export function middleware(request: NextRequest) {
 }
 
 function getUserLang(request: NextRequest) {
-  const cookieLang = request.cookies.get(Cookie.LANG)?.value
-  if (cookieLang) {
-    return cookieLang as Lang
-  }
-  const languages = new Negotiator({
-    headers: {
-      [Header.ACCEPT_LANGUAGE]:
-        request.headers.get(Header.ACCEPT_LANGUAGE) || ''
-    }
-  }).languages()
-  return match(languages, langs, Lang.EN)
+  return (
+    request.cookies.get(Cookie.LANG)?.value ??
+    AcceptLanguage.get(request.headers.get(Header.ACCEPT_LANGUAGE)) ??
+    Lang.EN
+  )
 }
-
-export const config = {
-  matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - api (API routes)
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico, sitemap.xml, robots.txt (metadata files)
-     */
-    '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)'
-  ]
-} satisfies MiddlewareConfig

@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from 'next/server'
 import { createIconSvg } from '#lib/icon'
 
-const size = 96
+const size = 192
 const svg = await createIconSvg(size)
 
 export async function GET(_: NextRequest) {
