@@ -1,6 +1,6 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import Link from 'next/link'
-import type { Lang } from '../lib/i18n'
+import type { Lang } from '#lib/i18n'
 
 interface Props {
   source: string

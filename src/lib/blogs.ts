@@ -8,11 +8,11 @@ import {
   type BlogPost,
   type RenderedBlogPost,
   frontMatter
-} from '../types/blog-post'
+} from '#types/blog-post'
 import { type I18nElement, Lang } from './i18n'
 import { stripExtension } from './utils'
 
-const postPath = join(process.cwd(), 'src', 'assets', 'blog', 'posts')
+const postPath = join(process.cwd(), 'src', 'blog')
 
 const files = [
   ...new Set(

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import config from '#assets/config.json'
+import config from '~/config.json'
 
 export default function robots(): MetadataRoute.Robots {
   return {

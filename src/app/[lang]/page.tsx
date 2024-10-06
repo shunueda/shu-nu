@@ -1,4 +1,4 @@
-import config from '#assets/config.json'
+import config from '~/config.json'
 import { Title } from '#components/title'
 import { useI18nElement } from '#lib/i18n'
 import { randomKey } from '#lib/utils'

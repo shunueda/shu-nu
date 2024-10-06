@@ -1,4 +1,4 @@
-import profile from '../assets/config.json'
+import profile from '~/config.json'
 import styles from './footer.module.scss'
 
 export async function Footer() {

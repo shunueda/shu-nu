@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import config from '#assets/config.json'
+import config from '~/config.json'
 import { Title } from '#components/title'
 import { type Lang, useI18nElement } from '#lib/i18n'
 import type { LayoutProps } from '#types/props'

@@ -1,12 +1,12 @@
 import type { MetadataRoute } from 'next'
-import config from '#assets/config.json'
+import config from '~/config.json'
 import { slugs } from '#lib/blogs'
 import { Lang } from '#lib/i18n'
 
 interface Entry {
   href: string
   priority: number
-  changeFrequency: MetadataRoute.Sitemap[0]['changeFrequency']
+  changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency']
 }
 
 const entries: Entry[] = [

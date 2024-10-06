@@ -1,7 +1,7 @@
 import './globals.css'
 import { EOL } from 'node:os'
 import type { Metadata } from 'next'
-import config from '#assets/config.json'
+import config from '~/config.json'
 import { langs } from '#lib/i18n'
 import type { LayoutProps } from '#types/props'
 
