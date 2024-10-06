@@ -6,7 +6,7 @@ import { Lang } from '#lib/i18n'
 interface Entry {
   href: string
   priority: number
-  changeFrequency: MetadataRoute.Sitemap[0]['changeFrequency']
+  changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency']
 }
 
 const entries: Entry[] = [
