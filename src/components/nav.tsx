@@ -1,10 +1,7 @@
-'use client'
 import Link from 'next/link'
-import { redirect } from 'next/navigation'
-import { Lang } from '../lib/i18n'
+import type { Lang } from '#lib/i18n'
+import { LanguageSwitch } from './language-switch'
 import classes from './nav.module.scss'
-import { Label } from './ui/label'
-import { Switch } from './ui/switch'
 
 interface NavItem {
   label: string
@@ -35,18 +32,7 @@ export function Nav({ lang }: Props) {
         </Link>
       ))}
       <div className={classes.lang}>
-        <Label>{Lang.EN}</Label>
-        <Switch
-          checked={lang === Lang.JA}
-          onCheckedChange={async checked => {
-            redirect(
-              `/${checked ? Lang.JA : Lang.EN}/${location.pathname.substring(
-                `/${Lang.EN}/`.length
-              )}`
-            )
-          }}
-        />
-        <Label>{Lang.JA}</Label>
+        <LanguageSwitch lang={lang} />
       </div>
     </nav>
   )
