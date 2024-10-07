@@ -3,13 +3,14 @@ import { readdir } from 'node:fs/promises'
 import { basename, join } from 'node:path'
 import matter from 'gray-matter'
 import { createElement } from 'react'
+import config from '~/config.json'
 import { Mdx } from '#components/mdx'
 import {
   type BlogPost,
   type RenderedBlogPost,
   frontMatter
 } from '#types/blog-post'
-import { type I18nElement, Lang, useI18nElement } from './i18n'
+import { type I18nElement, type Lang, langs, useI18nElement } from './i18n'
 import { stripExtension } from './utils'
 
 const postPath = join(process.cwd(), 'src', 'blog')
@@ -30,10 +31,9 @@ export const slugs = files.map(stripExtension)
 
 export const allBlogs: I18nElement<BlogPost>[] = await Promise.all(
   files.map(async file => {
-    return {
-      [Lang.EN]: readBlogPost(Lang.EN, file),
-      [Lang.JA]: readBlogPost(Lang.JA, file)
-    } satisfies I18nElement<BlogPost>
+    return Object.fromEntries(
+      langs.map(lang => [lang, readBlogPost(file, lang)])
+    ) as I18nElement<BlogPost>
   })
 )
 
@@ -63,34 +63,11 @@ export function getBlogFromSlug(targetSlug: string, lang: Lang) {
   } satisfies BlogPost
 }
 
-function readBlogPost(lang: Lang, file: string) {
+function readBlogPost(file: string, lang: Lang) {
   const path = join(postPath, lang, file)
   const slug = stripExtension(file)
   if (!existsSync(path)) {
-    return useI18nElement(
-      {
-        en: {
-          slug,
-          source:
-            'Please select another language from the switch on the top right',
-          frontMatter: {
-            title: 'Not available in this language',
-            date: new Date(),
-            draft: true
-          }
-        },
-        ja: {
-          slug,
-          source: '右上のスイッチから他の言語を選択してください',
-          frontMatter: frontMatter.create({
-            title: 'この言語では利用できません',
-            date: new Date(),
-            draft: true
-          })
-        }
-      } satisfies I18nElement<BlogPost>,
-      lang
-    )
+    return createLangNotAvailableBlogPost(slug, lang)
   }
   const { content, data } = matter(readFileSync(path).toString())
   return {
@@ -98,4 +75,24 @@ function readBlogPost(lang: Lang, file: string) {
     source: content,
     frontMatter: frontMatter.create(data)
   } satisfies BlogPost
+}
+
+function createLangNotAvailableBlogPost(slug: string, lang: Lang) {
+  return useI18nElement(
+    Object.fromEntries(
+      langs.map(lang => [
+        lang,
+        {
+          slug,
+          source: useI18nElement(config.blog.langNotAvailable.source, lang),
+          frontMatter: {
+            title: useI18nElement(config.blog.langNotAvailable.title, lang),
+            date: new Date(),
+            draft: true
+          }
+        }
+      ])
+    ) as I18nElement<BlogPost>,
+    lang
+  )
 }

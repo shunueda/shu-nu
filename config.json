@@ -15,6 +15,16 @@
     "description": {
       "en": "Faith within non-belief — seeking harmony between Religion and Ethics",
       "ja": "無信仰の中にある信仰 — 宗教と倫理の調和を求めて。無神論者の視点から、共存を追究する。"
+    },
+    "langNotAvailable": {
+      "title": {
+        "en": "Not available in this language",
+        "ja": "この言語では利用できません"
+      },
+      "source": {
+        "en": "Please select another language from the switch on the top right",
+        "ja": "右上のスイッチから他の言語を選択してください"
+      }
     }
   }
 }
