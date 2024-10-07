@@ -22,7 +22,6 @@ export async function generateMetadata({ params }: Props) {
 export default function Layout({ children }: LayoutProps & Props) {
   return (
     <section>
-      <p>Hello</p>
       <Title>Blog.</Title>
       {children}
     </section>
