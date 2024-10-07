@@ -7,10 +7,14 @@ interface Props {
   lang: Lang
 }
 
+function clean(source: string) {
+  return source.replaceAll('「', ' 「').replaceAll('」', '」 ')
+}
+
 export async function Mdx({ source, lang }: Props) {
   return (
     <MDXRemote
-      source={source}
+      source={clean(source)}
       components={{
         a: ({ href, children }) => (
           <Link href={`/${lang}${href}` || ''}>{children}</Link>
