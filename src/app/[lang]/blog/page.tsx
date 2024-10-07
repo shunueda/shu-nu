@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Separator } from '#components/ui/separator'
-import { i18nConfig } from '#i18n-config'
+import { i18nConfig } from '#config/i18n'
 import { allBlogs } from '#lib/blogs'
 import { useI18nElement } from '#lib/i18n'
 import { formatDate } from '#lib/utils'

@@ -2,7 +2,7 @@ import './globals.css'
 import { EOL } from 'node:os'
 import type { Metadata } from 'next'
 import pkg from '~/package.json'
-import { i18nConfig } from '#i18n-config'
+import { i18nConfig } from '#config/i18n'
 import { langs } from '#lib/i18n'
 import type { LayoutProps } from '#types/props'
 

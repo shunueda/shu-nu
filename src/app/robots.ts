@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import pkg from '~/package.json'
+import { config } from '#config'
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/'
     },
-    sitemap: `${pkg.homepage}/sitemap.xml`
+    sitemap: `${config.url}/sitemap.xml`
   }
 }

@@ -4,7 +4,7 @@ import { basename, join } from 'node:path'
 import matter from 'gray-matter'
 import { createElement } from 'react'
 import { Mdx } from '#components/mdx'
-import { i18nConfig } from '#i18n-config'
+import { i18nConfig } from '#config/i18n'
 import {
   type BlogPost,
   type RenderedBlogPost,
