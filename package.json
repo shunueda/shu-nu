@@ -9,6 +9,7 @@
     "check": "biome check --write && sort-package-json",
     "commit": "git add --all && cz",
     "dev": "next dev",
+    "dev:local": "next dev -H $(ifconfig | grep 'inet ' | grep -v '127.0.0.1' | awk '{print $2}')",
     "format": "biome format --write",
     "lint": "biome lint --write",
     "lt": "lt --port 3000",
