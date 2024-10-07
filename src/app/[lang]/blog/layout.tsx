@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
+import type { PushSubscription } from 'web-push'
 import { NotificationRequester } from '#components/notification-requester'
 import { Title } from '#components/title'
 import { config } from '#config'
 import { i18nConfig } from '#config/i18n'
+import { database } from '#database'
 import { type Lang, useI18nElement } from '#lib/i18n'
 import type { LayoutProps } from '#types/props'
 
@@ -27,7 +29,16 @@ export default async function Layout({
   const { lang } = await params
   return (
     <section>
-      <NotificationRequester lang={lang} />
+      <NotificationRequester
+        lang={lang}
+        saveSubscriptionAction={async (subscription: PushSubscription) => {
+          'use server'
+          await database
+            .insertInto('subscriptions')
+            .values({ subscription })
+            .execute()
+        }}
+      />
       <div className="my-4" />
       <Title>Blog.</Title>
       {children}
