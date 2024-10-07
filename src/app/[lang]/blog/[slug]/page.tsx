@@ -20,6 +20,7 @@ export default async function Page({ params }: Props) {
             'prose',
             'prose-blockquote:not-italic',
             'prose-blockquote:text-sm',
+            'prose-blockquote:leading-6',
             'before:prose-p:content-none',
             'after:prose-p:content-none'
           )}
