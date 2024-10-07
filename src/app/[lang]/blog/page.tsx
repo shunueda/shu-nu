@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import config from '~/config.json'
 import { Separator } from '#components/ui/separator'
+import { i18nConfig } from '#i18n-config'
 import { allBlogs } from '#lib/blogs'
 import { useI18nElement } from '#lib/i18n'
 import { formatDate } from '#lib/utils'
@@ -12,7 +12,7 @@ export default async function Page({ params }: Props) {
   return (
     <>
       <p className={classes.description}>
-        {useI18nElement(config.blog.description, lang)}
+        {useI18nElement(i18nConfig.blog.description, lang)}
       </p>
       <Separator className="my-4" />
       <div className={classes.list}>

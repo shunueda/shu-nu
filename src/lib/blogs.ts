@@ -3,8 +3,8 @@ import { readdir } from 'node:fs/promises'
 import { basename, join } from 'node:path'
 import matter from 'gray-matter'
 import { createElement } from 'react'
-import config from '~/config.json'
 import { Mdx } from '#components/mdx'
+import { i18nConfig } from '#i18n-config'
 import {
   type BlogPost,
   type RenderedBlogPost,
@@ -84,9 +84,9 @@ function createLangNotAvailableBlogPost(slug: string, lang: Lang) {
         lang,
         {
           slug,
-          source: useI18nElement(config.blog.langNotAvailable.source, lang),
+          source: useI18nElement(i18nConfig.blog.langNotAvailable.source, lang),
           frontMatter: {
-            title: useI18nElement(config.blog.langNotAvailable.title, lang),
+            title: useI18nElement(i18nConfig.blog.langNotAvailable.title, lang),
             date: new Date(),
             draft: true
           }

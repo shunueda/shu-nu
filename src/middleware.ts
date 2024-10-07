@@ -4,22 +4,23 @@ import {
   type NextRequest,
   NextResponse
 } from 'next/server'
-import { Cookie } from '#lib/cookie'
-import { Header } from '#lib/header'
 import { Lang, langs } from '#lib/i18n'
 
 AcceptLanguage.languages(langs as string[])
 
-export const config = {
+export const config: MiddlewareConfig = {
   matcher: ['/', '/blog/:path*']
-} satisfies MiddlewareConfig
+}
+
+const cookieLangKey = 'lang'
+const acceptLanguageHeader = 'accept-language'
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
   const pathnameLang = langs.find(lang => pathname.startsWith(`/${lang}`))
   if (pathnameLang) {
     const response = NextResponse.next()
-    response.cookies.set(Cookie.LANG, pathnameLang)
+    response.cookies.set(cookieLangKey, pathnameLang)
     return response
   }
   const lang = getUserLang(request)
@@ -29,8 +30,8 @@ export function middleware(request: NextRequest) {
 
 function getUserLang(request: NextRequest) {
   return (
-    request.cookies.get(Cookie.LANG)?.value ??
-    AcceptLanguage.get(request.headers.get(Header.ACCEPT_LANGUAGE)) ??
+    request.cookies.get(cookieLangKey)?.value ??
+    AcceptLanguage.get(request.headers.get(acceptLanguageHeader)) ??
     Lang.EN
   )
 }
