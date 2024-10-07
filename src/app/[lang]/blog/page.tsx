@@ -22,6 +22,7 @@ export default async function Page({ params }: Props) {
             (a, b) =>
               b.frontMatter.date.getTime() - a.frontMatter.date.getTime()
           )
+          .filter(({ frontMatter }) => !frontMatter.draft)
           .map(({ slug, frontMatter }) => (
             <Link
               key={slug}
