@@ -3,9 +3,9 @@ import { SpeedInsights } from '@vercel/speed-insights/react'
 import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
 import type { Metadata } from 'next'
-import pkg from '~/package.json'
 import { Footer } from '#components/footer'
 import { Nav } from '#components/nav'
+import { config } from '#config'
 import { i18nConfig } from '#config/i18n'
 import { type Lang, langs, useI18nElement } from '#lib/i18n'
 import { cn } from '#lib/utils'
@@ -25,7 +25,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props) {
   const { lang } = await params
   return {
-    title: pkg.name,
+    title: config.name,
     description: useI18nElement(i18nConfig.blog.description, lang)
   } satisfies Metadata
 }
