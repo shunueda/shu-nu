@@ -9,7 +9,7 @@ import {
   type RenderedBlogPost,
   frontMatter
 } from '#types/blog-post'
-import { type I18nElement, Lang } from './i18n'
+import { type I18nElement, type Lang, langs } from './i18n'
 import { stripExtension } from './utils'
 
 const postPath = join(process.cwd(), 'src', 'blog')
@@ -30,10 +30,9 @@ export const slugs = files.map(stripExtension)
 
 export const allBlogs: I18nElement<BlogPost>[] = await Promise.all(
   files.map(async file => {
-    return {
-      [Lang.EN]: readBlogPost(Lang.EN, file),
-      [Lang.JA]: readBlogPost(Lang.JA, file)
-    } satisfies I18nElement<BlogPost>
+    return Object.fromEntries(
+      langs.map(lang => [lang, readBlogPost(lang, file)])
+    ) as I18nElement<BlogPost>
   })
 )
 
