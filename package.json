@@ -14,7 +14,7 @@
     "format": "biome format --write",
     "lint": "biome lint --write",
     "lt": "lt --port 3000",
-    "prepare": "tsx scripts/prepare && lefthook install",
+    "prepare": "tsx scripts/prepare",
     "start": "next start",
     "type-check": "tsc"
   },
@@ -50,7 +50,8 @@
     "to-ico": "^1.1.5",
     "tsx": "^4.19.1",
     "use-async-effect": "^2.2.7",
-    "web-push": "^3.6.7"
+    "web-push": "^3.6.7",
+    "zx": "^8.1.9"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.3",

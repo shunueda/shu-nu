@@ -1,6 +1,9 @@
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { EOL } from 'node:os'
 import { parseEnv } from 'node:util'
+import { $ } from 'zx'
+
+await $`vercel env pull`
 
 const envFile = '.env.local'
 
@@ -26,3 +29,5 @@ export {}
 `
 
 writeFileSync('environment.d.ts', dts)
+
+await $`lefthook install`
