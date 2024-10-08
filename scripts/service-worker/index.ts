@@ -10,7 +10,7 @@ await mkdir(pub, {
 })
 
 const input = join('src', `${config.serviceWorker}.ts`)
-const output = join(pub, `${config.serviceWorker}.ts`)
+const output = join(pub, `${config.serviceWorker}.js`)
 
 const { code } = await transformFile(input, {
   jsc: {
