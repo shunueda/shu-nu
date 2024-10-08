@@ -1,0 +1,25 @@
+name: send-push
+
+on:
+  deployment_status:
+
+jobs:
+  main:
+    if: github.event_name == 'deployment_status' 
+      && github.event.deployment_status.state == 'success' 
+      && github.event.deployment.environment == 'production'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Kesin11/actions-timeline@v2
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: corepack enable
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - run: pnpm install
+      - run: pnpm tsx scripts/send-push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

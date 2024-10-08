@@ -14,7 +14,7 @@ export function LanguageSwitch({ lang }: Props) {
   const pathname = usePathname()
   return (
     <>
-      <Label>{Lang.EN}</Label>
+      <Label className='mb-2'>{Lang.EN}</Label>
       <Link
         href={
           pathname.replace(
@@ -25,7 +25,7 @@ export function LanguageSwitch({ lang }: Props) {
       >
         <Switch checked={lang === Lang.JA} />
       </Link>
-      <Label>{Lang.JA}</Label>
+      <Label className='mb-2'>{Lang.JA}</Label>
     </>
   )
 }

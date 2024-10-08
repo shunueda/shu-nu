@@ -1,4 +1,5 @@
 import { type I18nElement, Lang } from '#lib/i18n'
+import type { NegativeNotificationPermission } from '#types/notification'
 
 export const i18nConfig = {
   introduction: {
@@ -27,6 +28,50 @@ export const i18nConfig = {
         [Lang.EN]: 'Please select another language',
         [Lang.JA]: '右上のスイッチから他の言語を選択してください'
       } satisfies I18nElement<string>
-    }
+    },
+    notificationRequest: {
+      unsupported: {
+        title: {
+          [Lang.EN]: 'Notifications not supported',
+          [Lang.JA]: '通知がサポートされていません'
+        } satisfies I18nElement<string>,
+        description: {
+          [Lang.EN]:
+            'If you are using a mobild device, please open in your browser from the menu in the bottom right corner.',
+          [Lang.JA]:
+            'スマートフォンをお使いでしたら、右下のメニューからブラウザで開いてください。'
+        } satisfies I18nElement<string>
+      },
+      denied: {
+        title: {
+          [Lang.EN]: 'Notifications blocked',
+          [Lang.JA]: '通知はブロックされています'
+        } satisfies I18nElement<string>,
+        description: {
+          [Lang.EN]:
+            'To enable notifications again, please allow them from your browser settings.',
+          [Lang.JA]:
+            '再度有効にするには、ブラウザの設定から通知を許可してください。'
+        } satisfies I18nElement<string>
+      },
+      default: {
+        title: {
+          [Lang.EN]: 'Enable notifications',
+          [Lang.JA]: '通知を有効にする'
+        } satisfies I18nElement<string>,
+        description: {
+          [Lang.EN]:
+            'Click to enable notifications and receive updates about new articles.',
+          [Lang.JA]:
+            'ぜひ、クリックして有効にしてください。記事の投稿をお知らせします。'
+        } satisfies I18nElement<string>
+      }
+    } satisfies Record<
+      NegativeNotificationPermission,
+      {
+        title: I18nElement<string>
+        description: I18nElement<string>
+      }
+    >
   }
 } as const
