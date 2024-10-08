@@ -3,10 +3,16 @@ import { EOL } from 'node:os'
 import { parseEnv } from 'node:util'
 
 const envFile = '.env.local'
-if (existsSync(envFile)) {
-  const content = readFileSync(envFile).toString()
-  const env = parseEnv(content)
-  const dts = `declare global {
+
+if (!existsSync(envFile)) {
+  console.error(`No ${envFile} file found!`)
+  process.exit(1)
+}
+
+const content = readFileSync(envFile).toString()
+const env = parseEnv(content)
+const dts = `
+declare global {
   namespace NodeJS {
     interface ProcessEnv {
       ${Object.keys(env)
@@ -18,5 +24,5 @@ if (existsSync(envFile)) {
 
 export {}
 `
-  writeFileSync('environment.d.ts', dts)
-}
+
+writeFileSync('environment.d.ts', dts)
