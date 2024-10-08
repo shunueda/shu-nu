@@ -1,3 +1,7 @@
-export function isNotificationSupported() {
-  return window.Notification && navigator.serviceWorker && window.PushManager
+export function isPushNotificationSupported() {
+  try {
+    return Notification && navigator.serviceWorker && PushManager
+  } catch (_) {
+    return false
+  }
 }

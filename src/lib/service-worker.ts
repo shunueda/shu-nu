@@ -1,12 +1,18 @@
 import { config } from '#config'
 
 export async function isServiceWorkerActive() {
-  return (await navigator.serviceWorker.ready).active !== null
+  const registration = await navigator.serviceWorker.getRegistration()
+  return (
+    registration !== undefined &&
+    registration.installing === null &&
+    registration.waiting === null &&
+    registration.active !== null
+  )
 }
 
 export async function registerServiceWorker() {
   await navigator.serviceWorker.register(`/${config.serviceWorker}.js`, {
-    scope: './'
+    scope: '/'
   })
   return navigator.serviceWorker.ready
 }

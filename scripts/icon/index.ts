@@ -18,7 +18,7 @@ const pngs = await Promise.all(
 await writeFile(faviconPath, await toIco(pngs))
 
 // create sample files
-const out = 'out'
+const out = 'public'
 const size = 256
 
 const svg = await createIconSvg(size)

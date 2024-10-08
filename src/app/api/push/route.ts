@@ -12,7 +12,8 @@ export async function GET(_: NextRequest) {
   subscriptions.forEach(({ subscription }) => {
     const payload: NotificationPayload = {
       title: 'WebPush Notification!',
-      body: 'Hello World'
+      body: 'Hello World',
+      icon: '/icon.png'
     }
     sendNotification(subscription, JSON.stringify(payload), {
       vapidDetails: {

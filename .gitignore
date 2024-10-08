@@ -2,7 +2,7 @@
 
 # built at build-time
 src/app/favicon.ico
-public/service-worker.js
+public/*
 
 # dependencies
 /node_modules
