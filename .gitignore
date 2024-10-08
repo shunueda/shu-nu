@@ -4,6 +4,9 @@
 src/app/favicon.ico
 public/*
 
+# built at postinstall
+environment.d.ts
+
 # dependencies
 /node_modules
 /.pnp

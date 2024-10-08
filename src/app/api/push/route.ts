@@ -2,7 +2,7 @@ import { type NextRequest, NextResponse } from 'next/server'
 import { sendNotification } from 'web-push'
 import { config } from '#config'
 import { database } from '#database'
-import type { NotificationPayload } from '#types/notification-payload'
+import type { NotificationPayload } from '#types/notification'
 
 export async function GET(_: NextRequest) {
   const subscriptions = await database

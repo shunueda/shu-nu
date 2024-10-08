@@ -15,4 +15,4 @@ const { code } = await transformFile(input, {
   minify: true
 })
 
-await writeFile(output, code.replaceAll('export', ''))
+await writeFile(output, code)

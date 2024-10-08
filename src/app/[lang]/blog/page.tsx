@@ -14,7 +14,7 @@ export default async function Page({ params }: Props) {
       <p className={classes.description}>
         {useI18nElement(i18nConfig.blog.description, lang)}
       </p>
-      <Separator className="my-4" />
+      <Separator className='my-4' />
       <div className={classes.list}>
         {allBlogs
           .map(it => it[lang])
