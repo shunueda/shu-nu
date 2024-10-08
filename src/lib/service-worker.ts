@@ -1,6 +1,6 @@
 import { config } from '#config'
 
-export async function registerServiceWorker() {
+export async function registerOrGetServiceWorker() {
   const registrations = await navigator.serviceWorker.getRegistrations()
   if (registrations.length) {
     return registrations[0]

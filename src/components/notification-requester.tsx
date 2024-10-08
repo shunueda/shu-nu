@@ -7,7 +7,7 @@ import { Alert, AlertDescription, AlertTitle } from '#components/ui/alert'
 import { i18nConfig } from '#config/i18n'
 import { type Lang, createEmptyI18nElement, useI18nElement } from '#lib/i18n'
 import { isPushNotificationSupported } from '#lib/notification'
-import { registerServiceWorker } from '#lib/service-worker'
+import { registerOrGetServiceWorker } from '#lib/service-worker'
 import { cn } from '#lib/utils'
 import type { Color } from '#types'
 import type { NegativeNotificationPermission } from '#types/notification'
@@ -49,11 +49,11 @@ export function NotificationRequester({ lang, saveSubscriptionAction }: Props) {
   >('default')
 
   useEffect(() => {
-    if (!isPushNotificationSupported()) {
-      setPermission('unsupported')
+    if (isPushNotificationSupported()) {
+      setPermission(Notification.permission)
       return
     }
-    setPermission(Notification.permission)
+    setPermission('unsupported')
   }, [])
 
   useAsyncEffect(async () => {
@@ -64,8 +64,8 @@ export function NotificationRequester({ lang, saveSubscriptionAction }: Props) {
       return
     }
     setHidden(true)
-    const swRegistration = await registerServiceWorker()
-    const subscription = await swRegistration.pushManager.subscribe({
+    const { pushManager } = await registerOrGetServiceWorker()
+    const subscription = await pushManager.subscribe({
       applicationServerKey: process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY,
       userVisibleOnly: true
     })
@@ -79,7 +79,9 @@ export function NotificationRequester({ lang, saveSubscriptionAction }: Props) {
   const Icon = icons[permission]
   return (
     <Alert
-      className={cn('cursor-pointer', 'mb-6', { hidden })}
+      // TODO: Feature flag
+      // className={cn('cursor-pointer', 'mb-6', { hidden })}
+      className={cn('cursor-pointer', 'mb-6', { hidden: true })}
       onClickCapture={async () => {
         if (permission === 'unsupported') {
           return
