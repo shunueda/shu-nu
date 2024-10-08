@@ -27,6 +27,39 @@ export const i18nConfig = {
         [Lang.EN]: 'Please select another language',
         [Lang.JA]: '右上のスイッチから他の言語を選択してください'
       } satisfies I18nElement<string>
+    },
+    notificationRequest: {
+      unsupported: {
+        title: {
+          [Lang.EN]: 'Push notifications are not supported',
+          [Lang.JA]: 'プッシュ通知はサポートされていません'
+        } satisfies I18nElement<string>,
+        description: {
+          [Lang.EN]: 'Your browser does not support push notifications',
+          [Lang.JA]: 'お使いのブラウザはプッシュ通知をサポートしていません'
+        } satisfies I18nElement<string>
+      },
+      denied: {
+        title: {
+          [Lang.EN]: 'Push notifications are blocked',
+          [Lang.JA]: 'プッシュ通知がブロックされています'
+        } satisfies I18nElement<string>,
+        description: {
+          [Lang.EN]:
+            'Please enable push notifications in your browser settings',
+          [Lang.JA]: 'ブラウザの設定でプッシュ通知を有効にしてください'
+        } satisfies I18nElement<string>
+      },
+      default: {
+        title: {
+          [Lang.EN]: 'Enable push notifications',
+          [Lang.JA]: 'プッシュ通知を有効にする'
+        } satisfies I18nElement<string>,
+        description: {
+          [Lang.EN]: 'Click here to enable push notifications',
+          [Lang.JA]: 'こ��をクリックしてプッシュ通知を有効にする'
+        } satisfies I18nElement<string>
+      }
     }
   }
 } as const

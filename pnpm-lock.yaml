@@ -95,6 +95,9 @@ importers:
       tsx:
         specifier: ^4.19.1
         version: 4.19.1
+      use-async-effect:
+        specifier: ^2.2.7
+        version: 2.2.7(react@19.0.0-rc-5d19e1c8-20240923)
       web-push:
         specifier: ^3.6.7
         version: 3.6.7
@@ -3074,6 +3077,11 @@ packages:
   url-regex@3.2.0:
     resolution: {integrity: sha512-dQ9cJzMou5OKr6ZzfvwJkCq3rC72PNXhqz0v3EIhF4a3Np+ujr100AhUx2cKx5ei3iymoJpJrPB3sVSEMdqAeg==}
     engines: {node: '>=0.10.0'}
+
+  use-async-effect@2.2.7:
+    resolution: {integrity: sha512-Vq94tKPyo/9Nok4LOapV0GoGgZPhbeDW/bP6bulLPV4+lIoftaBRBBbGjTbM+j5W1Bm2EkUHJgapeu5YnQvKEA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
@@ -6206,6 +6214,10 @@ snapshots:
   url-regex@3.2.0:
     dependencies:
       ip-regex: 1.0.3
+
+  use-async-effect@2.2.7(react@19.0.0-rc-5d19e1c8-20240923):
+    dependencies:
+      react: 19.0.0-rc-5d19e1c8-20240923
 
   util-deprecate@1.0.2: {}
 

@@ -39,7 +39,6 @@ export default async function Layout({
             .execute()
         }}
       />
-      <div className="my-4" />
       <Title>Blog.</Title>
       {children}
     </section>

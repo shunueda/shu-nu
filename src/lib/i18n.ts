@@ -15,3 +15,10 @@ export function useI18nElement<T>(element: I18nElement<T>, lang: Lang): T {
 export type I18nElement<T> = {
   [key in Lang]: T
 }
+
+export function createEmptyI18nElement() {
+  return {
+    [Lang.EN]: '',
+    [Lang.JA]: ''
+  }
+}
