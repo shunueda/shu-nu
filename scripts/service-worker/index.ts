@@ -1,9 +1,16 @@
-import { writeFile } from 'node:fs/promises'
+import { mkdir, writeFile } from 'node:fs/promises'
+import { join } from 'node:path'
 import { transformFile } from '@swc/core'
 import { config } from '#config'
 
-const input = `src/${config.serviceWorker}.ts`
-const output = `public/${config.serviceWorker}.js`
+const pub = 'public'
+
+await mkdir(pub, {
+  recursive: true
+})
+
+const input = join('src', `${config.serviceWorker}.ts`)
+const output = join(pub, `${config.serviceWorker}.ts`)
 
 const { code } = await transformFile(input, {
   jsc: {
