@@ -1,7 +1,7 @@
 import { readdir, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { Octokit } from '@octokit/rest'
-import { loadAsync } from 'jszip'
+import jszip from 'jszip'
 
 const artifact = 'blog-entries.json'
 
@@ -41,7 +41,7 @@ const download = await octokit.actions.downloadArtifact({
   archive_format: 'zip'
 })
 
-const zip = await loadAsync(download.data as Buffer)
+const zip = await jszip.loadAsync(download.data as Buffer)
 const jsonFile = zip.file(artifact)
 
 const jsonContent = (await jsonFile?.async('string')) || ''
