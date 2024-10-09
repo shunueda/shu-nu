@@ -1,4 +1,4 @@
-name: send-push
+name: archive-entries
 
 on:
   deployment_status:
@@ -28,6 +28,5 @@ jobs:
           REF: ${{ github.event.deployment.ref }}
       - uses: actions/upload-artifact@v4
         with:
-          # .github/actions/send-push -> artifact
-          name: blog-entries.json
-          path: blog-entries.json
+          # .github/actions/archive-entries -> artifactPath
+          path: entry-archive.json
