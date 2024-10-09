@@ -13,12 +13,12 @@ import {
 import { type I18nElement, type Lang, langs, useI18nElement } from './i18n'
 import { stripExtension } from './utils'
 
-const postPath = join(process.cwd(), 'src', 'blog')
+const blogPath = join(process.cwd(), 'src', 'blog')
 
 const files = [
   ...new Set(
     (
-      await readdir(postPath, {
+      await readdir(blogPath, {
         recursive: true
       })
     )
@@ -64,7 +64,7 @@ export function getBlogFromSlug(targetSlug: string, lang: Lang) {
 }
 
 function readBlogPost(file: string, lang: Lang) {
-  const path = join(postPath, lang, file)
+  const path = join(blogPath, lang, file)
   const slug = stripExtension(file)
   if (!existsSync(path)) {
     return createLangNotAvailableBlogPost(slug, lang)
