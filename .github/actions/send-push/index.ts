@@ -3,13 +3,9 @@ import { join } from 'node:path'
 
 const artifact = 'blog-entries.json'
 
-const blogPath = join(process.cwd(), 'src', 'blog')
+const path = join(process.cwd(), 'src', 'blog')
 
-const files = (
-  await readdir(blogPath, {
-    recursive: true
-  })
-)
+const files = (await readdir(path, { recursive: true }))
   .filter(it => it.endsWith('.md'))
   .map(it => it.replace('.md', ''))
 

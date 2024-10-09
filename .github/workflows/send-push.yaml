@@ -24,6 +24,8 @@ jobs:
       - run: pnpm install
       - run: pnpm tsx .github/actions/send-push
       - uses: actions/upload-artifact@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           # .github/actions/send-push -> artifact
           name: blog-entries.json
