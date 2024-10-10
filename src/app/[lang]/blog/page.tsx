@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Separator } from '#components/ui/separator'
 import { i18n } from '#i18n'
-import { i18nBlogs } from '#lib/blogs'
+import { i18nBlogPosts } from '#lib/blogs'
 import { useI18n } from '#lib/i18n'
 import { formatDate } from '#lib/utils'
 import type { Props } from './layout'
@@ -16,7 +16,7 @@ export default async function Page({ params }: Props) {
       </p>
       <Separator className='my-4' />
       <div className={classes.list}>
-        {useI18n(i18nBlogs, lang)
+        {useI18n(i18nBlogPosts, lang)
           .entries()
           .filter(([_, { frontmatter }]) => !frontmatter.draft)
           .toArray()
