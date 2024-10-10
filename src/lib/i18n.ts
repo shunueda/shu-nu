@@ -6,19 +6,9 @@ export enum Lang {
 export const langs: readonly Lang[] = Object.values(Lang)
 
 export function useI18n<T>(element: I18nElement<T>, lang: Lang): T {
-  if (!lang) {
-    return element[Lang.EN]
-  }
-  return element[lang]
+  return element[lang] || element[Lang.EN]
 }
 
 export type I18nElement<T> = {
-  [key in Lang]: T
-}
-
-export function createEmptyI18nElement() {
-  return {
-    [Lang.EN]: '',
-    [Lang.JA]: ''
-  }
+  [_ in Lang]: T
 }

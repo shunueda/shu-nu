@@ -18,53 +18,53 @@ export const i18n = {
         'Faith within non-belief — seeking harmony between Religion and Ethics',
       [Lang.JA]:
         '無信仰の中にある信仰 — 宗教と倫理の調和を求めて。無神論者の視点から、共存を追究する。'
-    } satisfies I18nElement<string>,
+    },
     langNotAvailable: {
       title: {
         [Lang.EN]: 'Not available in this language',
         [Lang.JA]: 'この言語では利用できません'
-      } satisfies I18nElement<string>,
+      },
       source: {
         [Lang.EN]: 'Please select another language',
         [Lang.JA]: '右上のスイッチから他の言語を選択してください'
-      } satisfies I18nElement<string>
+      }
     },
     notificationRequest: {
       unsupported: {
         title: {
           [Lang.EN]: 'Notifications not supported',
           [Lang.JA]: '通知がサポートされていません'
-        } satisfies I18nElement<string>,
+        },
         description: {
           [Lang.EN]:
             'If you are using a mobild device, please open in your browser from the menu in the bottom right corner.',
           [Lang.JA]:
             'スマートフォンをお使いでしたら、右下のメニューからブラウザで開いてください。'
-        } satisfies I18nElement<string>
+        }
       },
       denied: {
         title: {
           [Lang.EN]: 'Notifications blocked',
           [Lang.JA]: '通知はブロックされています'
-        } satisfies I18nElement<string>,
+        },
         description: {
           [Lang.EN]:
             'To enable notifications again, please allow them from your browser settings.',
           [Lang.JA]:
             '再度有効にするには、ブラウザの設定から通知を許可してください。'
-        } satisfies I18nElement<string>
+        }
       },
       default: {
         title: {
           [Lang.EN]: 'Enable notifications',
           [Lang.JA]: '通知を有効にする'
-        } satisfies I18nElement<string>,
+        },
         description: {
           [Lang.EN]:
             'Click to enable notifications and receive updates about new articles.',
           [Lang.JA]:
             'ぜひ、クリックして有効にしてください。記事の投稿をお知らせします。'
-        } satisfies I18nElement<string>
+        }
       }
     } satisfies Record<
       NegativeNotificationPermission,
