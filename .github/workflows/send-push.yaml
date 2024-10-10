@@ -5,7 +5,8 @@ on:
 
 jobs:
   main:
-    if: github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'production'
+    #  && github.event.deployment.environment == 'production'
+    if: github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: Kesin11/actions-timeline@v2

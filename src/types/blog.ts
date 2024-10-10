@@ -8,7 +8,7 @@ import {
   string
 } from 'superstruct'
 
-export interface BlogPost {
+export interface Blog {
   frontmatter: Infer<typeof frontmatterStruct>
   content: string
 }
