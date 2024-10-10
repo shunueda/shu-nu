@@ -3,9 +3,9 @@ import type { PushSubscription } from 'web-push'
 import { NotificationRequester } from '#components/notification-requester'
 import { Title } from '#components/title'
 import { config } from '#config'
+import { i18nConfig } from '#config/i18n'
 import { database } from '#database'
-import { i18n } from '#i18n'
-import { type Lang, useI18n } from '#lib/i18n'
+import { type Lang, useI18nElement } from '#lib/i18n'
 import type { LayoutProps } from '#types/props'
 
 export interface Props {
@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props) {
   const { lang } = await params
   return {
     title: `${config.name} | Blog`,
-    description: useI18n(i18n.blog.description, lang)
+    description: useI18nElement(i18nConfig.blog.description, lang)
   } satisfies Metadata
 }
 

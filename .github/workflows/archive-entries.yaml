@@ -1,0 +1,31 @@
+name: archive-entries
+
+on:
+  deployment_status:
+
+jobs:
+  main:
+    if: github.event_name == 'deployment_status'
+      && github.event.deployment_status.state == 'success'
+    # temporary disable
+    # && github.event.deployment.environment == 'production'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Kesin11/actions-timeline@v2
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: true
+      - run: corepack enable
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: pnpm install
+      - run: pnpm tsx .github/actions/archive-entries
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REF: ${{ github.event.deployment.ref }}
+      - uses: actions/upload-artifact@v4
+        with:
+          # .github/actions/archive-entries -> artifactPath
+          path: entry-archive.json

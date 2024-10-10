@@ -20,7 +20,7 @@ const entries: Entry[] = [
     priority: 0.9,
     changeFrequency: 'weekly'
   },
-  ...[...slugs].map(
+  ...slugs.map(
     slug =>
       ({
         href: `/blog/${slug}`,

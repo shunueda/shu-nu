@@ -6,8 +6,8 @@ import type { Metadata } from 'next'
 import { Footer } from '#components/footer'
 import { Nav } from '#components/nav'
 import { config } from '#config'
-import { i18n } from '#i18n'
-import { type Lang, langs, useI18n } from '#lib/i18n'
+import { i18nConfig } from '#config/i18n'
+import { type Lang, langs, useI18nElement } from '#lib/i18n'
 import { cn } from '#lib/utils'
 import type { LayoutProps } from '#types/props'
 import classes from './layout.module.scss'
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props) {
   const { lang } = await params
   return {
     title: config.name,
-    description: useI18n(i18n.blog.description, lang)
+    description: useI18nElement(i18nConfig.blog.description, lang)
   } satisfies Metadata
 }
 

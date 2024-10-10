@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { i18nBlogPosts, slugs } from '#lib/blogs'
+import { getBlogFromSlug, slugs } from '#lib/blogs'
 import type { Lang } from '#lib/i18n'
 import type { LayoutProps } from '#types/props'
 
@@ -11,15 +11,15 @@ export interface Props {
 }
 
 export async function generateStaticParams() {
-  return [...slugs].map(slug => ({ slug }))
+  return slugs.map(slug => ({ slug }))
 }
 
 export async function generateMetadata({ params }: Props) {
   const { slug, lang } = await params
-  const blog = i18nBlogPosts[lang].get(slug)
+  const blog = getBlogFromSlug(slug, lang)
   return {
-    title: blog?.frontmatter?.title,
-    description: blog?.content
+    title: blog?.frontMatter?.title,
+    description: blog?.source
   } satisfies Metadata
 }
 

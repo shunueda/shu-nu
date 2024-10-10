@@ -1,71 +1,95 @@
-import { readFile, readdir } from 'node:fs/promises'
-import { join, parse, sep } from 'node:path'
+import { existsSync, readFileSync } from 'node:fs'
+import { readdir } from 'node:fs/promises'
+import { basename, join } from 'node:path'
 import matter from 'gray-matter'
-import { i18n } from '#i18n'
-import { type I18nElement, type Lang, langs, useI18n } from '#lib/i18n'
-import { type BlogPost, frontmatterStruct } from '#types/blog'
+import { createElement } from 'react'
+import { Mdx } from '#components/mdx'
+import { i18nConfig } from '#config/i18n'
+import {
+  type BlogPost,
+  type RenderedBlogPost,
+  frontMatter
+} from '#types/blog-post'
+import { type I18nElement, type Lang, langs, useI18nElement } from './i18n'
+import { stripExtension } from './utils'
 
-const BLOG_PATH = join(process.cwd(), 'src', 'blog')
-const mdext = '.md'
+const blogPath = join(process.cwd(), 'src', 'blog')
 
-export const blogFiles: readonly string[] = (
-  await readdir(BLOG_PATH, { recursive: true })
-)
-  .filter(file => file.endsWith(mdext))
-  .map(file => join(BLOG_PATH, file))
-
-export const slugs: ReadonlySet<string> = new Set(
-  blogFiles.map(file => parse(file).name)
-)
-
-export const i18nBlogPosts = Object.fromEntries(
-  await Promise.all(
-    Object.entries(
-      Object.groupBy(
-        blogFiles,
-        file => parse(file).dir.split(sep).at(-1) as Lang
-      )
-    ).map(async ([lang, langFiles]) => {
-      return [
-        lang,
-        new Map(await Promise.all(langFiles.map(parseBlogFile)))
-      ] as const
-    })
+const files = [
+  ...new Set(
+    (
+      await readdir(blogPath, {
+        recursive: true
+      })
+    )
+      .filter(it => it.endsWith('.md'))
+      .map(it => basename(it))
   )
-) as I18nElement<Map<string, BlogPost>>
+]
 
-export const notAvailableBlogPost = Object.fromEntries(
-  langs.map(lang => {
-    return [lang, createLangNotAvailableBlogPost(lang)]
+export const slugs = files.map(stripExtension)
+
+export const allBlogs: I18nElement<BlogPost>[] = await Promise.all(
+  files.map(async file => {
+    return Object.fromEntries(
+      langs.map(lang => [lang, readBlogPost(file, lang)])
+    ) as I18nElement<BlogPost>
   })
-) as I18nElement<BlogPost>
+)
 
-async function parseBlogFile(file: string) {
-  const { name } = parse(file)
-  const source = await readFile(file, 'utf-8')
-  const { content, data } = matter(source)
-  return [
-    name,
-    {
-      frontmatter: frontmatterStruct.create(data),
-      content
-    } as BlogPost
-  ] as const
+export function getRenderedBlogFromSlug(targetSlug: string, lang: Lang) {
+  const blogPost = getBlogFromSlug(targetSlug, lang)
+  if (!blogPost) {
+    return
+  }
+  const { slug, frontMatter, source } = blogPost
+  return {
+    slug,
+    frontMatter,
+    rendered: createElement(Mdx, { source, lang })
+  } satisfies RenderedBlogPost
 }
 
-export function createLangNotAvailableBlogPost(lang: Lang) {
-  const { title, content } = i18n.blog.langNotAvailable
-  return useI18n(
+export function getBlogFromSlug(targetSlug: string, lang: Lang) {
+  const blogPost = allBlogs.find(it => it[lang].slug === targetSlug)
+  if (!blogPost) {
+    return
+  }
+  const { slug, frontMatter, source } = blogPost[lang]
+  return {
+    slug,
+    frontMatter,
+    source
+  } satisfies BlogPost
+}
+
+function readBlogPost(file: string, lang: Lang) {
+  const path = join(blogPath, lang, file)
+  const slug = stripExtension(file)
+  if (!existsSync(path)) {
+    return createLangNotAvailableBlogPost(slug, lang)
+  }
+  const { content, data } = matter(readFileSync(path).toString())
+  return {
+    slug,
+    source: content,
+    frontMatter: frontMatter.create(data)
+  } satisfies BlogPost
+}
+
+function createLangNotAvailableBlogPost(slug: string, lang: Lang) {
+  return useI18nElement(
     Object.fromEntries(
       langs.map(lang => [
         lang,
         {
-          frontmatter: {
-            title: useI18n(title, lang),
+          slug,
+          source: useI18nElement(i18nConfig.blog.langNotAvailable.source, lang),
+          frontMatter: {
+            title: useI18nElement(i18nConfig.blog.langNotAvailable.title, lang),
             date: new Date(),
             draft: true
-          },
-          content: useI18n(content, lang)
+          }
         }
       ])
     ) as I18nElement<BlogPost>,

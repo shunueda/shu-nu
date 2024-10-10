@@ -1,7 +1,7 @@
 import { type I18nElement, Lang } from '#lib/i18n'
 import type { NegativeNotificationPermission } from '#types/notification'
 
-export const i18n = {
+export const i18nConfig = {
   introduction: {
     [Lang.EN]: [
       'Software engineer. Passionate about using technology to solve real-world problems.',
@@ -24,7 +24,7 @@ export const i18n = {
         [Lang.EN]: 'Not available in this language',
         [Lang.JA]: 'この言語では利用できません'
       } satisfies I18nElement<string>,
-      content: {
+      source: {
         [Lang.EN]: 'Please select another language',
         [Lang.JA]: '右上のスイッチから他の言語を選択してください'
       } satisfies I18nElement<string>

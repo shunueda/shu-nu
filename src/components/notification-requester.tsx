@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react'
 import { useAsyncEffect } from 'use-async-effect'
 import type { PushSubscription } from 'web-push'
 import { Alert, AlertDescription, AlertTitle } from '#components/ui/alert'
-import { i18n } from '#i18n'
-import { type I18nElement, type Lang, useI18n } from '#lib/i18n'
+import { i18nConfig } from '#config/i18n'
+import { type Lang, createEmptyI18nElement, useI18nElement } from '#lib/i18n'
 import { isPushNotificationSupported } from '#lib/notification'
 import { registerOrGetServiceWorker } from '#lib/service-worker'
 import { cn } from '#lib/utils'
@@ -40,10 +40,10 @@ const icons: Record<
 
 export function NotificationRequester({ lang, saveSubscriptionAction }: Props) {
   const [hidden, setHidden] = useState(true)
-  const [content, setContent] = useState<{
-    title: I18nElement<string>
-    description: I18nElement<string>
-  }>()
+  const [content, setContent] = useState({
+    title: createEmptyI18nElement(),
+    description: createEmptyI18nElement()
+  })
   const [permission, setPermission] = useState<
     NotificationPermission | 'unsupported'
   >('default')
@@ -59,7 +59,7 @@ export function NotificationRequester({ lang, saveSubscriptionAction }: Props) {
   useAsyncEffect(async () => {
     if (permission !== 'granted') {
       setHidden(false)
-      const config = i18n.blog.notificationRequest
+      const config = i18nConfig.blog.notificationRequest
       setContent(config[permission])
       return
     }
@@ -98,10 +98,10 @@ export function NotificationRequester({ lang, saveSubscriptionAction }: Props) {
         />
         <div className='ml-4'>
           <AlertTitle className='font-bold'>
-            {content?.title && useI18n(content.title, lang)}
+            {useI18nElement(content.title, lang)}
           </AlertTitle>
           <AlertDescription>
-            {content?.description && useI18n(content.description, lang)}
+            {useI18nElement(content.description, lang)}
           </AlertDescription>
         </div>
       </div>
