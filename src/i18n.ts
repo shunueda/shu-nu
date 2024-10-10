@@ -1,7 +1,7 @@
 import { type I18nElement, Lang } from '#lib/i18n'
 import type { NegativeNotificationPermission } from '#types/notification'
 
-export const i18nConfig = {
+export const i18n = {
   introduction: {
     [Lang.EN]: [
       'Software engineer. Passionate about using technology to solve real-world problems.',

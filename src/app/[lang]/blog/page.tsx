@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import { Separator } from '#components/ui/separator'
-import { i18nConfig } from '#config/i18n'
+import { i18n } from '#i18n'
 import { allBlogs } from '#lib/blogs'
-import { useI18nElement } from '#lib/i18n'
+import { useI18n } from '#lib/i18n'
 import { formatDate } from '#lib/utils'
 import type { Props } from './layout'
 import classes from './page.module.scss'
@@ -12,7 +12,7 @@ export default async function Page({ params }: Props) {
   return (
     <>
       <p className={classes.description}>
-        {useI18nElement(i18nConfig.blog.description, lang)}
+        {useI18n(i18n.blog.description, lang)}
       </p>
       <Separator className='my-4' />
       <div className={classes.list}>

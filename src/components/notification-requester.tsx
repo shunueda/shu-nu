@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react'
 import { useAsyncEffect } from 'use-async-effect'
 import type { PushSubscription } from 'web-push'
 import { Alert, AlertDescription, AlertTitle } from '#components/ui/alert'
-import { i18nConfig } from '#config/i18n'
-import { type Lang, createEmptyI18nElement, useI18nElement } from '#lib/i18n'
+import { i18n } from '#i18n'
+import { type Lang, createEmptyI18nElement, useI18n } from '#lib/i18n'
 import { isPushNotificationSupported } from '#lib/notification'
 import { registerOrGetServiceWorker } from '#lib/service-worker'
 import { cn } from '#lib/utils'
@@ -59,7 +59,7 @@ export function NotificationRequester({ lang, saveSubscriptionAction }: Props) {
   useAsyncEffect(async () => {
     if (permission !== 'granted') {
       setHidden(false)
-      const config = i18nConfig.blog.notificationRequest
+      const config = i18n.blog.notificationRequest
       setContent(config[permission])
       return
     }
@@ -98,10 +98,10 @@ export function NotificationRequester({ lang, saveSubscriptionAction }: Props) {
         />
         <div className='ml-4'>
           <AlertTitle className='font-bold'>
-            {useI18nElement(content.title, lang)}
+            {useI18n(content.title, lang)}
           </AlertTitle>
           <AlertDescription>
-            {useI18nElement(content.description, lang)}
+            {useI18n(content.description, lang)}
           </AlertDescription>
         </div>
       </div>

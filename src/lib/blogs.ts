@@ -4,13 +4,13 @@ import { basename, join } from 'node:path'
 import matter from 'gray-matter'
 import { createElement } from 'react'
 import { Mdx } from '#components/mdx'
-import { i18nConfig } from '#config/i18n'
+import { i18n } from '#i18n'
 import {
   type BlogPost,
   type RenderedBlogPost,
   frontMatter
 } from '#types/blog-post'
-import { type I18nElement, type Lang, langs, useI18nElement } from './i18n'
+import { type I18nElement, type Lang, langs, useI18n } from './i18n'
 import { stripExtension } from './utils'
 
 const blogPath = join(process.cwd(), 'src', 'blog')
@@ -78,15 +78,15 @@ function readBlogPost(file: string, lang: Lang) {
 }
 
 function createLangNotAvailableBlogPost(slug: string, lang: Lang) {
-  return useI18nElement(
+  return useI18n(
     Object.fromEntries(
       langs.map(lang => [
         lang,
         {
           slug,
-          source: useI18nElement(i18nConfig.blog.langNotAvailable.source, lang),
+          source: useI18n(i18n.blog.langNotAvailable.source, lang),
           frontMatter: {
-            title: useI18nElement(i18nConfig.blog.langNotAvailable.title, lang),
+            title: useI18n(i18n.blog.langNotAvailable.title, lang),
             date: new Date(),
             draft: true
           }
