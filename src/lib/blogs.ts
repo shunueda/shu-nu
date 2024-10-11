@@ -2,14 +2,8 @@ import { existsSync, readFileSync } from 'node:fs'
 import { readdir } from 'node:fs/promises'
 import { basename, join } from 'node:path'
 import matter from 'gray-matter'
-import { createElement } from 'react'
-import { Mdx } from '#components/mdx'
 import { i18n } from '#i18n'
-import {
-  type BlogPost,
-  type RenderedBlogPost,
-  frontMatter
-} from '#types/blog-post'
+import { type BlogPost, frontMatter } from '#types/blog-post'
 import { type I18nElement, type Lang, langs, useI18n } from './i18n'
 import { stripExtension } from './utils'
 
@@ -36,19 +30,6 @@ export const allBlogs: I18nElement<BlogPost>[] = await Promise.all(
     ) as I18nElement<BlogPost>
   })
 )
-
-export function getRenderedBlogFromSlug(targetSlug: string, lang: Lang) {
-  const blogPost = getBlogFromSlug(targetSlug, lang)
-  if (!blogPost) {
-    return
-  }
-  const { slug, frontMatter, source } = blogPost
-  return {
-    slug,
-    frontMatter,
-    rendered: createElement(Mdx, { source, lang })
-  } satisfies RenderedBlogPost
-}
 
 export function getBlogFromSlug(targetSlug: string, lang: Lang) {
   const blogPost = allBlogs.find(it => it[lang].slug === targetSlug)

@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import type { Lang } from '#lib/i18n'
 import { LanguageSwitch } from './language-switch'
-import classes from './nav.module.scss'
 
 interface NavItem {
   label: string
@@ -25,13 +24,17 @@ interface Props {
 
 export function Nav({ lang }: Props) {
   return (
-    <nav className={classes.nav}>
+    <nav className='pt-12 pb-12 flex gap-8'>
       {items.map(({ href, label }) => (
-        <Link className={classes.item} href={`/${lang}${href}`} key={href}>
+        <Link
+          className='hover:text-gray-500'
+          href={`/${lang}${href}`}
+          key={href}
+        >
           {label}
         </Link>
       ))}
-      <div className={classes.lang}>
+      <div className='ml-auto flex gap-2 items-center'>
         <LanguageSwitch lang={lang} />
       </div>
     </nav>

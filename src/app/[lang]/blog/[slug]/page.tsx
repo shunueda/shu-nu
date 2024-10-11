@@ -1,19 +1,31 @@
 import { redirect } from 'next/navigation'
-import { Title } from '#components/title'
-import { getRenderedBlogFromSlug } from '#lib/blogs'
+import { Mdx } from '#components/mdx'
+import { getBlogFromSlug } from '#lib/blogs'
+import { useI18n } from '#lib/i18n'
 import { cn, formatDate } from '#lib/utils'
 import type { Props } from './layout'
-import classes from './page.module.scss'
 
 export default async function Page({ params }: Props) {
   const { slug, lang } = await params
-  const { frontMatter, rendered } =
-    getRenderedBlogFromSlug(slug, lang) || redirect(`/${lang}/blog`)
+  const { frontMatter, source } =
+    getBlogFromSlug(slug, lang) || redirect(`/${lang}/blog`)
   return (
     <>
-      <Title level={2}>{frontMatter.title}</Title>
-      <Title level={3}>— {formatDate(frontMatter.date)}</Title>
-      <section className={classes.content}>
+      <p className='pb-4 text-sm font-semibold'>
+        <a href={`/${lang}/blog`} className='text-blue-600'>
+          ←{' '}
+          {useI18n(
+            {
+              en: 'Back to blog',
+              ja: '記事一覧に戻る'
+            },
+            lang
+          )}
+        </a>
+      </p>
+      <h2>{frontMatter.title}</h2>
+      <p>— {formatDate(frontMatter.date)}</p>
+      <section className='mt-5'>
         <article
           className={cn(
             'prose',
@@ -24,7 +36,7 @@ export default async function Page({ params }: Props) {
             'after:prose-p:content-none'
           )}
         >
-          {rendered}
+          <Mdx source={source} lang={lang} />
         </article>
       </section>
     </>

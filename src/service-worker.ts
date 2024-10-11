@@ -1,6 +1,6 @@
 import type { NotificationPayload } from '#types/notification'
 
-const scope = self as WorkerGlobalScope as ServiceWorkerGlobalScope
+const scope = window.self as WorkerGlobalScope as ServiceWorkerGlobalScope
 
 scope.addEventListener('push', async ({ data }: PushEvent) => {
   if (!data) {

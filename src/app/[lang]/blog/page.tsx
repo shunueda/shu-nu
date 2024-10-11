@@ -5,17 +5,14 @@ import { allBlogs } from '#lib/blogs'
 import { useI18n } from '#lib/i18n'
 import { formatDate } from '#lib/utils'
 import type { Props } from './layout'
-import classes from './page.module.scss'
 
 export default async function Page({ params }: Props) {
   const { lang } = await params
   return (
     <>
-      <p className={classes.description}>
-        {useI18n(i18n.blog.description, lang)}
-      </p>
+      <p>{useI18n(i18n.blog.description, lang)}</p>
       <Separator className='my-4' />
-      <div className={classes.list}>
+      <div className='flex flex-col gap-4'>
         {allBlogs
           .map(it => it[lang])
           .sort(
@@ -24,13 +21,13 @@ export default async function Page({ params }: Props) {
           )
           .filter(({ frontMatter }) => !frontMatter.draft)
           .map(({ slug, frontMatter }) => (
-            <Link
-              key={slug}
-              href={`/${lang}/blog/${slug}`}
-              className={classes.entry}
-            >
-              <p className={classes.date}>{formatDate(frontMatter.date)}</p>
-              <p className={classes.title}>・{frontMatter.title}</p>
+            <Link key={slug} href={`/${lang}/blog/${slug}`} className=''>
+              <p className='text-gray-500 text-xs font-semibold tracking-tight'>
+                {formatDate(frontMatter.date)}
+              </p>
+              <p className='font-semibold text-sm text-gray-800'>
+                ・{frontMatter.title}
+              </p>
             </Link>
           ))}
       </div>

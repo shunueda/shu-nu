@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import type { PushSubscription } from 'web-push'
 import { NotificationRequester } from '#components/notification-requester'
-import { Title } from '#components/title'
 import { config } from '#config'
 import { database } from '#database'
 import { i18n } from '#i18n'
@@ -39,8 +38,8 @@ export default async function Layout({
             .execute()
         }}
       />
-      <Title>Blog.</Title>
-      {children}
+      <h1>Blog.</h1>
+      <div className='mt-4'>{children}</div>
     </section>
   )
 }

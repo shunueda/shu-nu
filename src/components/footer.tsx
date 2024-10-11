@@ -1,9 +1,8 @@
 import { config } from '#config'
-import styles from './footer.module.scss'
 
 export async function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer className='my-12 text-xs text-gray-500'>
       © {new Date().getUTCFullYear()} {config.name}.
     </footer>
   )

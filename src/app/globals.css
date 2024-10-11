@@ -11,6 +11,14 @@
     @apply bg-background text-foreground;
   }
 
+  h1 {
+    @apply text-2xl font-semibold tracking-tighter;
+  }
+
+  h2 {
+    @apply text-xl font-semibold tracking-tighter;
+  }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;

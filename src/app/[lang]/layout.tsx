@@ -10,7 +10,6 @@ import { i18n } from '#i18n'
 import { type Lang, langs, useI18n } from '#lib/i18n'
 import { cn } from '#lib/utils'
 import type { LayoutProps } from '#types/props'
-import classes from './layout.module.scss'
 
 export interface Props {
   params: Promise<{
@@ -40,7 +39,7 @@ export default async function Layout({
       <body
         className={cn(GeistSans.variable, GeistMono.variable, 'antialiased')}
       >
-        <main className={classes.main}>
+        <main className='mt-8 mx-auto max-w-xl w-10/12'>
           <Nav lang={lang} />
           {children}
           <Footer />
