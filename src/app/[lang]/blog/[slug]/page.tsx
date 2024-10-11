@@ -24,7 +24,9 @@ export default async function Page({ params }: Props) {
         </a>
       </p>
       <h2>{frontMatter.title}</h2>
-      <p>— {formatDate(frontMatter.date)}</p>
+      <p className='text-xs font-semibold text-gray-500 tracking-tighter'>
+        — {formatDate(frontMatter.date)}
+      </p>
       <section className='mt-5'>
         <article
           className={cn(
