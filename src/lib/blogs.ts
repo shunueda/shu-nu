@@ -5,7 +5,6 @@ import matter from 'gray-matter'
 import { i18n } from '#i18n'
 import { type BlogPost, frontMatter } from '#types/blog-post'
 import { type I18nElement, type Lang, langs, useI18n } from './i18n'
-import { stripExtension } from './utils'
 
 const blogPath = join(process.cwd(), 'src', 'blog')
 
@@ -21,7 +20,7 @@ const files = [
   )
 ]
 
-export const slugs = files.map(stripExtension)
+export const slugs = files.map(it => basename(it))
 
 export const allBlogs: I18nElement<BlogPost>[] = await Promise.all(
   files.map(async file => {
@@ -46,7 +45,7 @@ export function getBlogFromSlug(targetSlug: string, lang: Lang) {
 
 function readBlogPost(file: string, lang: Lang) {
   const path = join(blogPath, lang, file)
-  const slug = stripExtension(file)
+  const slug = basename(file)
   if (!existsSync(path)) {
     return createLangNotAvailableBlogPost(slug, lang)
   }
