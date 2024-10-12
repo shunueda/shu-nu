@@ -12,3 +12,7 @@ export function formatDate(date: Date) {
     day: 'numeric'
   }).format(date)
 }
+
+export function notEmpty<T>(value: T | null | undefined): value is T {
+  return !(value === null || value === undefined)
+}

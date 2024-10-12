@@ -1,14 +1,13 @@
-import { redirect } from 'next/navigation'
 import { Mdx } from '#components/mdx'
-import { getBlogFromSlug } from '#lib/blogs'
+import { getBlogPostOrNotFound } from '#lib/blogs'
 import { useI18n } from '#lib/i18n'
 import { cn, formatDate } from '#lib/utils'
 import type { Props } from './layout'
 
 export default async function Page({ params }: Props) {
   const { slug, lang } = await params
-  const { frontMatter, source } =
-    getBlogFromSlug(slug, lang) || redirect(`/${lang}/blog`)
+  const blog = getBlogPostOrNotFound(slug, lang)
+  const { frontmatter, content } = blog
   return (
     <>
       <p className='pb-4 text-sm font-semibold'>
@@ -23,9 +22,9 @@ export default async function Page({ params }: Props) {
           )}
         </a>
       </p>
-      <h2>{frontMatter.title}</h2>
+      <h2>{frontmatter.title}</h2>
       <p className='text-xs font-semibold text-gray-500 tracking-tighter'>
-        — {formatDate(frontMatter.date)}
+        — {formatDate(frontmatter.date)}
       </p>
       <section className='mt-5'>
         <article
@@ -38,7 +37,12 @@ export default async function Page({ params }: Props) {
             'after:prose-p:content-none'
           )}
         >
-          <Mdx source={source} lang={lang} />
+          <Mdx
+            {...{
+              content,
+              lang
+            }}
+          />
         </article>
       </section>
     </>

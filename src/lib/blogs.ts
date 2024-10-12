@@ -1,78 +1,62 @@
-import { existsSync, readFileSync } from 'node:fs'
-import { readdir } from 'node:fs/promises'
-import { basename, join } from 'node:path'
+import { readFile, readdir } from 'node:fs/promises'
+import { format, join } from 'node:path'
 import matter from 'gray-matter'
 import { i18n } from '#i18n'
-import { type BlogPost, frontMatter } from '#types/blog-post'
-import { type I18nElement, type Lang, langs, useI18n } from './i18n'
+import {
+  type I18nElement,
+  type Lang,
+  generateI18nElement,
+  useI18n
+} from '#lib/i18n'
+import { type BlogPost, frontmatter } from '#types/blog-post'
 
-const blogPath = join(process.cwd(), 'src', 'blog')
+const path = join(process.cwd(), 'src', 'blog')
 
-const files = [
-  ...new Set(
-    (
-      await readdir(blogPath, {
-        recursive: true
-      })
-    )
-      .filter(it => it.endsWith('.md'))
-      .map(it => basename(it))
+export const slugs: readonly string[] = await readdir(path)
+
+export const blogs: ReadonlyMap<
+  string,
+  I18nElement<BlogPost | undefined>
+> = new Map(
+  await Promise.all(
+    slugs.map(async slug => {
+      return [
+        slug,
+        await generateI18nElement(lang => readBlogPost(slug, lang))
+      ] as const
+    })
   )
-]
-
-export const slugs = files.map(it => basename(it))
-
-export const allBlogs: I18nElement<BlogPost>[] = await Promise.all(
-  files.map(async file => {
-    return Object.fromEntries(
-      langs.map(lang => [lang, readBlogPost(file, lang)])
-    ) as I18nElement<BlogPost>
-  })
 )
 
-export function getBlogFromSlug(targetSlug: string, lang: Lang) {
-  const blogPost = allBlogs.find(it => it[lang].slug === targetSlug)
-  if (!blogPost) {
+async function readBlogPost(slug: string, lang: Lang) {
+  const filepath = format({
+    dir: join(path, slug),
+    name: lang,
+    ext: '.md'
+  })
+  try {
+    const buffer = await readFile(filepath)
+    const { content, data } = matter(buffer.toString())
+    return {
+      slug,
+      content,
+      frontmatter: frontmatter.create(data)
+    } satisfies BlogPost
+  } catch (_) {
     return
   }
-  const { slug, frontMatter, source } = blogPost[lang]
-  return {
-    slug,
-    frontMatter,
-    source
-  } satisfies BlogPost
 }
 
-function readBlogPost(file: string, lang: Lang) {
-  const path = join(blogPath, lang, file)
-  const slug = basename(file)
-  if (!existsSync(path)) {
-    return createLangNotAvailableBlogPost(slug, lang)
-  }
-  const { content, data } = matter(readFileSync(path).toString())
-  return {
-    slug,
-    source: content,
-    frontMatter: frontMatter.create(data)
-  } satisfies BlogPost
-}
-
-function createLangNotAvailableBlogPost(slug: string, lang: Lang) {
-  return useI18n(
-    Object.fromEntries(
-      langs.map(lang => [
-        lang,
-        {
-          slug,
-          source: useI18n(i18n.blog.langNotAvailable.source, lang),
-          frontMatter: {
-            title: useI18n(i18n.blog.langNotAvailable.title, lang),
-            date: new Date(),
-            draft: true
-          }
-        }
-      ])
-    ) as I18nElement<BlogPost>,
-    lang
+export function getBlogPostOrNotFound(slug: string, lang: Lang): BlogPost {
+  const { title, content } = i18n.blog.notFound
+  return (
+    blogs.get(slug)?.[lang] || {
+      slug,
+      content: useI18n(content, lang),
+      frontmatter: frontmatter.create({
+        title: useI18n(title, lang),
+        date: new Date()
+      })
+    }
   )
 }

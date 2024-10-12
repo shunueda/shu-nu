@@ -19,12 +19,12 @@ export const i18n = {
       [Lang.JA]:
         '無信仰の中にある信仰 — 宗教と倫理の調和を求めて。無神論者の視点から、共存を追究する。'
     },
-    langNotAvailable: {
+    notFound: {
       title: {
         [Lang.EN]: 'Not available in this language',
         [Lang.JA]: 'この言語では利用できません'
       },
-      source: {
+      content: {
         [Lang.EN]: 'Please select another language',
         [Lang.JA]: '右上のスイッチから他の言語を選択してください'
       }

@@ -11,17 +11,17 @@ import {
 
 export interface BlogPost {
   slug: string
-  frontMatter: Infer<typeof frontMatter>
-  source: string
+  frontmatter: Infer<typeof frontmatter>
+  content: string
 }
 
 export interface RenderedBlogPost {
   slug: string
-  frontMatter: Infer<typeof frontMatter>
+  frontMatter: Infer<typeof frontmatter>
   rendered: ReactNode
 }
 
-export const frontMatter = object({
+export const frontmatter = object({
   title: string(),
   date: coerce(date(), string(), it => new Date(it)),
   draft: defaulted(boolean(), false)

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import type { Lang } from '#lib/i18n'
 
 interface Props {
-  source: string
+  content: string
   lang: Lang
 }
 
@@ -11,10 +11,10 @@ function clean(source: string) {
   return source.replaceAll('「', ' 「').replaceAll('」', '」 ')
 }
 
-export async function Mdx({ source, lang }: Props) {
+export async function Mdx({ content, lang }: Props) {
   return (
     <MDXRemote
-      source={clean(source)}
+      source={clean(content)}
       components={{
         a: ({ href, children }) => (
           <Link href={`/${lang}${href}` || ''}>{children}</Link>
