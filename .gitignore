@@ -4,9 +4,6 @@
 src/app/favicon.ico
 public/*
 
-# submodules
-src/blog
-
 # dependencies
 /node_modules
 /.pnp
