@@ -13,12 +13,12 @@ export interface Props {
   }>
 }
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params
   return {
     title: `${config.name} | Blog`,
     description: useI18n(i18n.blog.description, lang)
-  } satisfies Metadata
+  }
 }
 
 export default async function Layout({

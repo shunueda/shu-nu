@@ -12,7 +12,7 @@ export default async function Page({ params }: Props) {
     <>
       <p>{useI18n(i18n.blog.description, lang)}</p>
       <Separator className='my-4' />
-      <div className='flex flex-col gap-4'>
+      <article className='flex flex-col gap-4'>
         {[...blog.values()]
           .map(it => useI18n(it, lang))
           .filter(notEmpty)
@@ -28,7 +28,7 @@ export default async function Page({ params }: Props) {
               </p>
             </Link>
           ))}
-      </div>
+      </article>
     </>
   )
 }

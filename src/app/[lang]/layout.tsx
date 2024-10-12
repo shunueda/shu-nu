@@ -9,7 +9,7 @@ import { config } from '#config'
 import { i18n } from '#i18n'
 import { type Lang, langs, useI18n } from '#lib/i18n'
 import { cn } from '#lib/utils'
-import type { LayoutProps } from '#types/props'
+import type { LayoutProps, StaticParams } from '#types/props'
 
 export interface Props {
   params: Promise<{
@@ -17,7 +17,7 @@ export interface Props {
   }>
 }
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): StaticParams<Props> {
   return langs.map(lang => ({ lang }))
 }
 

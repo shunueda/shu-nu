@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
+import { i18n } from '#i18n'
 import { getBlogPostOrNotFound, slugs } from '#lib/blog'
-import type { Lang } from '#lib/i18n'
-import type { LayoutProps } from '#types/props'
+import { type Lang, useI18n } from '#lib/i18n'
+import type { LayoutProps, StaticParams } from '#types/props'
 
 export interface Props {
   params: Promise<{
@@ -10,19 +11,32 @@ export interface Props {
   }>
 }
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): StaticParams<Props> {
   return slugs.map(slug => ({ slug }))
 }
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug, lang } = await params
   const blog = getBlogPostOrNotFound(slug, lang)
   return {
     title: blog?.frontmatter?.title,
     description: blog?.content
-  } satisfies Metadata
+  }
 }
 
-export default function Layout({ children }: LayoutProps & Props) {
-  return children
+export default async function Layout({
+  children,
+  params
+}: LayoutProps & Props) {
+  const { lang } = await params
+  return (
+    <>
+      <p className='pb-4 text-sm font-semibold'>
+        <a href={`/${lang}/blog`} className='text-blue-600'>
+          ← {useI18n(i18n.blog.back, lang)}
+        </a>
+      </p>
+      {children}
+    </>
+  )
 }
