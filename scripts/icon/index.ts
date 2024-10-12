@@ -4,7 +4,7 @@ import toIco from 'to-ico'
 import { createIconSvg } from '#lib/icon'
 
 // create favicon.ico
-const sizes = [16, 32, 48, 64]
+const sizes = [16, 24, 32, 48, 64, 128, 256]
 const faviconPath = 'src/app/favicon.ico'
 
 const pngs = await Promise.all(

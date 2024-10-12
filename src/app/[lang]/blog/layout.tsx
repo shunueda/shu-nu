@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import type { PushSubscription } from 'web-push'
-import { NotificationRequester } from '#components/notification-requester'
+import { NotificationRequest } from '#components/notification-request'
 import { config } from '#config'
 import { database } from '#database'
 import { i18n } from '#i18n'
@@ -28,7 +28,7 @@ export default async function Layout({
   const { lang } = await params
   return (
     <section>
-      <NotificationRequester
+      <NotificationRequest
         lang={lang}
         saveSubscriptionAction={async (subscription: PushSubscription) => {
           'use server'

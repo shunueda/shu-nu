@@ -4,6 +4,9 @@
 src/app/favicon.ico
 public/*
 
+# submodules
+src/blog
+
 # dependencies
 /node_modules
 /.pnp
@@ -123,3 +126,5 @@ fabric.properties
 .idea/caches/build_file_checksums.ser
 
 .env*.local
+
+certificates

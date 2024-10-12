@@ -38,7 +38,7 @@ const icons: Record<
   }
 }
 
-export function NotificationRequester({ lang, saveSubscriptionAction }: Props) {
+export function NotificationRequest({ lang, saveSubscriptionAction }: Props) {
   const [hidden, setHidden] = useState(true)
   const [content, setContent] = useState<{
     title: I18nElement<string>
@@ -79,9 +79,7 @@ export function NotificationRequester({ lang, saveSubscriptionAction }: Props) {
   const Icon = icons[permission]
   return (
     <Alert
-      // TODO: Feature flag
-      // className={cn('cursor-pointer', 'mb-6', { hidden })}
-      className={cn('cursor-pointer', 'mb-6', { hidden: true })}
+      className={cn('cursor-pointer', 'mb-6', { hidden })}
       onClickCapture={async () => {
         if (permission === 'unsupported') {
           return
