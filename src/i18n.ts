@@ -13,6 +13,10 @@ export const i18n = {
     ]
   } satisfies I18nElement<string[]>,
   blog: {
+    back: {
+      [Lang.EN]: 'Back to blog',
+      [Lang.JA]: '記事一覧に戻る'
+    },
     description: {
       [Lang.EN]:
         'Faith within non-belief — seeking harmony between Religion and Ethics',

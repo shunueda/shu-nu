@@ -1,4 +1,5 @@
 import { Mdx } from '#components/mdx'
+import { i18n } from '#i18n'
 import { getBlogPostOrNotFound } from '#lib/blogs'
 import { useI18n } from '#lib/i18n'
 import { cn, formatDate } from '#lib/utils'
@@ -6,20 +7,12 @@ import type { Props } from './layout'
 
 export default async function Page({ params }: Props) {
   const { slug, lang } = await params
-  const blog = getBlogPostOrNotFound(slug, lang)
-  const { frontmatter, content } = blog
+  const { frontmatter, content } = getBlogPostOrNotFound(slug, lang)
   return (
     <>
       <p className='pb-4 text-sm font-semibold'>
         <a href={`/${lang}/blog`} className='text-blue-600'>
-          ←{' '}
-          {useI18n(
-            {
-              en: 'Back to blog',
-              ja: '記事一覧に戻る'
-            },
-            lang
-          )}
+          ← {useI18n(i18n.blog.back, lang)}
         </a>
       </p>
       <h2>{frontmatter.title}</h2>

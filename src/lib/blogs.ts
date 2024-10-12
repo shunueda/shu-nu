@@ -14,6 +14,8 @@ const path = join(process.cwd(), 'src', 'blog')
 
 export const slugs: readonly string[] = await readdir(path)
 
+console.log(slugs)
+
 export const blogs: ReadonlyMap<
   string,
   I18nElement<BlogPost | undefined>
