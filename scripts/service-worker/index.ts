@@ -9,10 +9,10 @@ await mkdir(pub, {
   recursive: true
 })
 
-const input = join('src', `${config.serviceWorker}.ts`)
-const output = join(pub, `${config.serviceWorker}.js`)
+const src = join('src', `${config.serviceWorker}.ts`)
+const out = join(pub, `${config.serviceWorker}.js`)
 
-const { code } = await transformFile(input, {
+const { code } = await transformFile(src, {
   jsc: {
     target: 'es2018'
   },
@@ -22,4 +22,4 @@ const { code } = await transformFile(input, {
   minify: true
 })
 
-await writeFile(output, code)
+await writeFile(out, code)

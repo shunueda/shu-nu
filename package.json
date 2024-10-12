@@ -14,7 +14,6 @@
     "dev:https": "next dev --experimental-https",
     "format": "biome format --write",
     "lint": "biome lint --write",
-    "lt": "lt --port 3000",
     "prepare": "lefthook install",
     "start": "next start",
     "type-check": "tsc"
