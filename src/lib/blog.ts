@@ -14,9 +14,7 @@ const path = join(process.cwd(), 'src', 'blog')
 
 export const slugs: readonly string[] = await readdir(path)
 
-console.log(slugs)
-
-export const blogs: ReadonlyMap<
+export const blog: ReadonlyMap<
   string,
   I18nElement<BlogPost | undefined>
 > = new Map(
@@ -52,7 +50,7 @@ async function readBlogPost(slug: string, lang: Lang) {
 export function getBlogPostOrNotFound(slug: string, lang: Lang): BlogPost {
   const { title, content } = i18n.blog.notFound
   return (
-    blogs.get(slug)?.[lang] || {
+    blog.get(slug)?.[lang] || {
       slug,
       content: useI18n(content, lang),
       frontmatter: frontmatter.create({

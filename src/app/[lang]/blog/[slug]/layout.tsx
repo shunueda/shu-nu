@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { getBlogPostOrNotFound, slugs } from '#lib/blogs'
+import { getBlogPostOrNotFound, slugs } from '#lib/blog'
 import type { Lang } from '#lib/i18n'
 import type { LayoutProps } from '#types/props'
 

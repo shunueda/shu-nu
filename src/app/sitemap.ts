@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { config } from '#config'
-import { slugs } from '#lib/blogs'
+import { slugs } from '#lib/blog'
 import { Lang } from '#lib/i18n'
 
 interface Entry {

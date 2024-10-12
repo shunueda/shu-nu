@@ -1,6 +1,6 @@
 import { Mdx } from '#components/mdx'
 import { i18n } from '#i18n'
-import { getBlogPostOrNotFound } from '#lib/blogs'
+import { getBlogPostOrNotFound } from '#lib/blog'
 import { useI18n } from '#lib/i18n'
 import { cn, formatDate } from '#lib/utils'
 import type { Props } from './layout'

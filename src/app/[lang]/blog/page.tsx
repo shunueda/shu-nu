@@ -1,19 +1,20 @@
 import Link from 'next/link'
 import { Separator } from '#components/ui/separator'
 import { i18n } from '#i18n'
-import { blogs } from '#lib/blogs'
+import { blog } from '#lib/blog'
 import { useI18n } from '#lib/i18n'
 import { formatDate, notEmpty } from '#lib/utils'
 import type { Props } from './layout'
 
 export default async function Page({ params }: Props) {
   const { lang } = await params
+  console.log(blog)
   return (
     <>
       <p>{useI18n(i18n.blog.description, lang)}</p>
       <Separator className='my-4' />
       <div className='flex flex-col gap-4'>
-        {blogs
+        {blog
           .values()
           .map(it => it[lang])
           .filter(notEmpty)
