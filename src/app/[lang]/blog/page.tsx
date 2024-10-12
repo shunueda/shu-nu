@@ -8,18 +8,15 @@ import type { Props } from './layout'
 
 export default async function Page({ params }: Props) {
   const { lang } = await params
-  console.log(blog)
   return (
     <>
       <p>{useI18n(i18n.blog.description, lang)}</p>
       <Separator className='my-4' />
       <div className='flex flex-col gap-4'>
-        {blog
-          .values()
-          .map(it => it[lang])
+        {[...blog.values()]
+          .map(it => useI18n(it, lang))
           .filter(notEmpty)
           .filter(it => !it.frontmatter.draft)
-          .toArray()
           .sort((a, b) => +b.frontmatter.date - +a.frontmatter.date)
           .map(({ slug, frontmatter }) => (
             <Link key={slug} href={`/${lang}/blog/${slug}`} className=''>

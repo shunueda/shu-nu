@@ -24,5 +24,5 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default function Layout({ children }: LayoutProps & Props) {
-  return <>{children}</>
+  return children
 }
