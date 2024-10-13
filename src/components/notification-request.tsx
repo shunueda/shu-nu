@@ -59,8 +59,7 @@ export function NotificationRequest({ lang, saveSubscriptionAction }: Props) {
   useAsyncEffect(async () => {
     if (permission !== 'granted') {
       setHidden(false)
-      const config = i18n.blog.notificationRequest
-      setContent(config[permission])
+      setContent(i18n.blog.notificationRequest[permission])
       return
     }
     setHidden(true)
@@ -79,7 +78,7 @@ export function NotificationRequest({ lang, saveSubscriptionAction }: Props) {
   const Icon = icons[permission]
   return (
     <Alert
-      className={cn('cursor-pointer', 'mb-6', { hidden })}
+      className={cn('cursor-pointer', 'mb-6', { hidden: true })}
       onClickCapture={async () => {
         if (permission === 'unsupported') {
           return
