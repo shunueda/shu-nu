@@ -1,4 +1,5 @@
 import './globals.css'
+import 'core-js/actual'
 import { EOL } from 'node:os'
 import type { Metadata } from 'next'
 import { config } from '#config'

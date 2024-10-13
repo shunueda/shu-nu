@@ -14,9 +14,12 @@ export type I18nElement<T> = {
 }
 
 export async function generateI18nElement<T>(
-  generator: (lang: Lang) => Promise<T>
+  generator: (lang: Lang) => Promise<T> | T
 ): Promise<I18nElement<T>> {
-  return Object.fromEntries(
-    await Promise.all(langs.map(async lang => [lang, await generator(lang)]))
+  const entries = await Promise.all(
+    langs.map(async lang => {
+      return [lang, await generator(lang)]
+    })
   )
+  return Object.fromEntries(entries)
 }

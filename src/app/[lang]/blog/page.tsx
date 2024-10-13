@@ -13,10 +13,12 @@ export default async function Page({ params }: Props) {
       <p>{useI18n(i18n.blog.description, lang)}</p>
       <Separator className='my-4' />
       <article className='flex flex-col gap-4'>
-        {[...blog.values()]
+        {blog
+          .values()
           .map(it => useI18n(it, lang))
           .filter(notEmpty)
           .filter(it => !it.frontmatter.draft)
+          .toArray()
           .sort((a, b) => +b.frontmatter.date - +a.frontmatter.date)
           .map(({ slug, frontmatter }) => (
             <Link key={slug} href={`/${lang}/blog/${slug}`} className=''>
