@@ -5,7 +5,7 @@ import type { Props } from './layout'
 
 export default async function Page({ params }: Props) {
   const { slug, lang } = await params
-  const { frontmatter, content } = getBlogPostOrNotFound(slug, lang)
+  const { frontmatter, content, path } = getBlogPostOrNotFound(slug, lang)
   return (
     <>
       <h2>{frontmatter.title}</h2>
@@ -26,7 +26,8 @@ export default async function Page({ params }: Props) {
           <Mdx
             {...{
               content,
-              lang
+              lang,
+              path
             }}
           />
         </article>

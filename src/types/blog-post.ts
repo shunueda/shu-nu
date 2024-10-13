@@ -12,6 +12,7 @@ export interface BlogPost {
   slug: string
   frontmatter: Infer<typeof frontmatter>
   content: string
+  path: string
 }
 
 export const frontmatter = object({
