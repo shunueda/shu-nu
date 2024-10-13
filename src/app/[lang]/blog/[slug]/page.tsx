@@ -27,7 +27,7 @@ export default async function Page({ params }: Props) {
             {...{
               content,
               lang,
-              path
+              slug
             }}
           />
         </article>

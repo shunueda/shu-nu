@@ -1,31 +1,38 @@
-import { join, parse } from 'node:path'
+import { join } from 'node:path'
 import { MDXRemote } from 'next-mdx-remote/rsc'
+import Image from 'next/image'
 import Link from 'next/link'
 import type { Lang } from '#lib/i18n'
 
 interface Props {
   content: string
   lang: Lang
-  path: string
+  slug: string
 }
 
-function clean(source: string) {
-  return source.replaceAll('「', ' 「').replaceAll('」', '」 ')
-}
+const url =
+  'https://raw.githubusercontent.com/shunueda/shu-nu/refs/heads/main/src/blog/'
 
-export async function Mdx({ content, lang, path }: Props) {
+export async function Mdx({ content, lang, slug }: Props) {
   return (
     <MDXRemote
-      source={clean(content)}
+      source={content.replaceAll('「', ' 「').replaceAll('」', '」 ')}
       components={{
-        img: ({ src, alt }) => {
-          const { dir } = parse(path)
+        img: props => {
+          const { src, alt, title } = props
           return (
-            <img
-              src={join(dir, src || '')}
-              alt={alt}
-              className='w-full h-auto'
-            />
+            <>
+              <Image
+                src={join(url, slug, src || '')}
+                alt={alt || ''}
+                className='md:w-3/4 h-auto mx-auto'
+                width={500}
+                height={500}
+              />
+              {title && (
+                <span className='block text-center text-sm -mt-6'>{title}</span>
+              )}
+            </>
           )
         },
         a: ({ href, children }) => (
