@@ -1,4 +1,3 @@
-import { join } from 'node:path'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -10,33 +9,36 @@ interface Props {
   slug: string
 }
 
-const url =
-  'https://raw.githubusercontent.com/shunueda/shu-nu/refs/heads/main/src/blog/'
-
 export async function Mdx({ content, lang, slug }: Props) {
   return (
     <MDXRemote
       source={content.replaceAll('「', ' 「').replaceAll('」', '」 ')}
       components={{
-        img: props => {
-          const { src, alt, title } = props
+        img: ({ src, alt, title }) => {
           return (
-            <>
+            <span className='md:w-3/4 block mx-auto'>
               <Image
-                src={join(url, slug, src || '')}
+                className='my-4'
+                src={`/${slug}/${src}`}
                 alt={alt || ''}
-                className='md:w-3/4 h-auto mx-auto'
-                width={500}
-                height={500}
+                width={1000}
+                height={1000}
               />
-              {title && (
-                <span className='block text-center text-sm -mt-6'>{title}</span>
-              )}
-            </>
+              <span className='w-10/12 block mx-auto'>
+                {alt && (
+                  <span className='block text-center text-sm'>{alt}</span>
+                )}
+                {title && (
+                  <span className='block text-center text-xs mt-1 italic text-gray-400'>
+                    {title}
+                  </span>
+                )}
+              </span>
+            </span>
           )
         },
         a: ({ href, children }) => (
-          <Link href={`/${lang}${href}` || ''}>{children}</Link>
+          <Link href={`/${lang}${href}`}>{children}</Link>
         )
       }}
     />

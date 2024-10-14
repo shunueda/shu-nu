@@ -5,4 +5,4 @@ date: 2024-10-11
 
 > ベスレヘム — キリスト生誕地として有名なこの名前を持つ街が、実はアメリカ・ペンシルベニアにもある。歴史ある大学街としての顔も持つこのベスレヘム、今回はその街の一面を紹介する。
 
-![alt text](img/BETHSTEEL.jpg "BETHSTEEL")
+![最終投下。](img/BETHSTEEL.jpg "Tom Volk, The Morning Call, via Associated Press, November 18, 1995.")

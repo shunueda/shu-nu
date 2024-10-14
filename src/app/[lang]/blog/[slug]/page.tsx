@@ -5,7 +5,7 @@ import type { Props } from './layout'
 
 export default async function Page({ params }: Props) {
   const { slug, lang } = await params
-  const { frontmatter, content, path } = getBlogPostOrNotFound(slug, lang)
+  const { frontmatter, content } = getBlogPostOrNotFound(slug, lang)
   return (
     <>
       <h2>{frontmatter.title}</h2>
@@ -23,13 +23,7 @@ export default async function Page({ params }: Props) {
             'after:prose-p:content-none'
           )}
         >
-          <Mdx
-            {...{
-              content,
-              lang,
-              slug
-            }}
-          />
+          <Mdx content={content} slug={slug} lang={lang} />
         </article>
       </section>
     </>
