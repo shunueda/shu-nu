@@ -18,10 +18,10 @@ export async function generateStaticParams(): StaticParams<Props> {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug, lang } = await params
-  const blog = getBlogPostOrNotFound(slug, lang)
+  const { content, frontmatter } = getBlogPostOrNotFound(slug, lang)
   return {
-    title: blog?.frontmatter?.title,
-    description: blog?.content
+    title: frontmatter.title,
+    description: content
   }
 }
 
