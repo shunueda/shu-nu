@@ -40,8 +40,7 @@ async function readBlogPost(slug: string, lang: Lang) {
     return {
       slug,
       content: content.replaceAll('「', ' 「').replaceAll('」', '」 '),
-      frontmatter: frontmatter.create(data),
-      path: filepath
+      frontmatter: frontmatter.create(data)
     } satisfies BlogPost
   } catch (_) {
     return
@@ -57,8 +56,7 @@ export function getBlogPostOrNotFound(slug: string, lang: Lang): BlogPost {
       frontmatter: frontmatter.create({
         title: useI18n(title, lang),
         date: new Date()
-      }),
-      path: ''
+      })
     }
   )
 }

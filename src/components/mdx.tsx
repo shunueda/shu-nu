@@ -12,31 +12,27 @@ interface Props {
 export async function Mdx({ content, lang, slug }: Props) {
   return (
     <MDXRemote
-      source={content.replaceAll('「', ' 「').replaceAll('」', '」 ')}
+      source={content}
       components={{
-        img: ({ src, alt, title }) => {
-          return (
-            <span className='md:w-3/4 block mx-auto'>
-              <Image
-                className='my-4'
-                src={`/${slug}/${src}`}
-                alt={alt || ''}
-                width={1000}
-                height={1000}
-              />
-              <span className='w-10/12 block mx-auto'>
-                {alt && (
-                  <span className='block text-center text-sm'>{alt}</span>
-                )}
-                {title && (
-                  <span className='block text-center text-xs mt-1 italic text-gray-400'>
-                    {title}
-                  </span>
-                )}
+        img: ({ src, alt, title }) => (
+          <span className='md:w-3/4 block mx-auto'>
+            <Image
+              className='my-0'
+              src={`/${slug}/${src}`}
+              alt={alt || ''}
+              width={1000}
+              height={1000}
+            />
+            <span className='block mx-auto mt-0.5'>
+              <span className='block text-right text-xs italic text-gray-400'>
+                {title}
+              </span>
+              <span className='w-10/12 block text-center text-sm mt-2'>
+                {alt}
               </span>
             </span>
-          )
-        },
+          </span>
+        ),
         a: ({ href, children }) => (
           <Link href={`/${lang}${href}`}>{children}</Link>
         )
