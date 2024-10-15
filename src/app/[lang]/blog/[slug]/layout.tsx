@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { i18n } from '#i18n'
 import { getBlogPostOrNotFound, slugs } from '#lib/blog'
 import { type Lang, useI18n } from '#lib/i18n'
@@ -32,9 +33,9 @@ export default async function Layout({
   return (
     <>
       <p className='pb-4 text-sm font-semibold'>
-        <a href={`/${lang}/blog`} className='text-blue-600'>
+        <Link href={`/${lang}/blog`} className='text-blue-600'>
           ← {useI18n(i18n.blog.back, lang)}
-        </a>
+        </Link>
       </p>
       {children}
     </>
