@@ -5,7 +5,7 @@ import satori from 'satori'
 import { Icon } from '#components/icon'
 
 const path = 'node_modules/geist/dist/fonts/geist-sans/Geist-Bold.ttf'
-const { buffer } = await readFile(path)
+const buffer = await readFile(path)
 
 export async function createIconSvg(size: number) {
   return satori(
