@@ -3,6 +3,22 @@
   <component name="JsonSchemaMappingsProjectConfiguration">
     <state>
       <map>
+        <entry key=".postcssrc">
+          <value>
+            <SchemaInfo>
+              <option name="name" value=".postcssrc" />
+              <option name="relativePathToSchema" value="https://json.schemastore.org/postcssrc.json" />
+              <option name="applicationDefined" value="true" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value=".postcssrc.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
         <entry key="GitHub Workflow">
           <value>
             <SchemaInfo>
