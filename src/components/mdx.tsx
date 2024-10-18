@@ -17,7 +17,7 @@ export async function Mdx({ content, lang, slug }: Props) {
         img: ({ src, alt, title }) => (
           <span className='md:w-3/4 block mx-auto'>
             <Image
-              className='my-0'
+              className='my-0 block mx-auto'
               src={`/${slug}/${src}`}
               alt={alt || ''}
               width={1000}
@@ -27,7 +27,7 @@ export async function Mdx({ content, lang, slug }: Props) {
               <span className='block text-right text-xs italic text-gray-400'>
                 {title}
               </span>
-              <span className='w-10/12 block text-center text-sm mt-2'>
+              <span className='w-10/12 block text-center text-sm mt-2 mx-auto'>
                 {alt}
               </span>
             </span>
