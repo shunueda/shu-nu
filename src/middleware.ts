@@ -13,7 +13,10 @@ export function middleware(request: NextRequest) {
     return response
   }
   const lang = getLang(request)
-  const url = new URL(`/${lang}${pathname}`, request.url)
+  const url = new URL(
+    `/${lang}${pathname.endsWith('/') ? pathname.slice(0, -1) : pathname}`,
+    request.url
+  )
   return NextResponse.redirect(url)
 }
 
