@@ -2,13 +2,13 @@ import './globals.css'
 import 'core-js/actual'
 import { EOL } from 'node:os'
 import type { Metadata } from 'next'
-import { config } from '#config'
+import pkg from '~package.json'
 import { i18n } from '#i18n'
 import { langs } from '#lib/i18n'
 import type { LayoutProps } from '#types/props'
 
 export const metadata: Metadata = {
-  title: config.name,
+  title: pkg.author.name,
   description: Object.values(i18n.introduction)
     .map(it => it.join(' '))
     .join(EOL),

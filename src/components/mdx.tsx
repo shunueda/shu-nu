@@ -1,6 +1,7 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import Image from 'next/image'
 import Link from 'next/link'
+import type { ReactPortal } from 'react'
 import type { Lang } from '#lib/i18n'
 
 interface Props {
@@ -34,7 +35,7 @@ export async function Mdx({ content, lang, slug }: Props) {
           </span>
         ),
         a: ({ href, children }) => (
-          <Link href={`/${lang}${href}`}>{children}</Link>
+          <Link href={`/${lang}${href}`}>{children as ReactPortal}</Link>
         )
       }}
     />

@@ -1,7 +1,7 @@
 import { equal, ok } from 'node:assert'
 import { describe, test } from 'node:test'
 import { NextRequest } from 'next/server'
-import { config } from '#config'
+import pkg from '~package.json'
 import { Cookie } from '#lib/cookie'
 import { Header } from '#lib/header'
 import { Lang, langs } from '#lib/i18n'
@@ -100,14 +100,14 @@ describe(import.meta.filename, () => {
     )
   ].forEach(({ name, path, destination, status, headers, cookies }) => {
     test(`${name}: ${path} -> ${destination}`, async () => {
-      const request = new NextRequest(config.url + path, { headers })
+      const request = new NextRequest(pkg.homepage + path, { headers })
       Object.entries(cookies).forEach(args => {
         request.cookies.set(...args)
       })
       const response = middleware(request)
       equal(response.status, status)
       if (status === Status.REDIRECT) {
-        equal(response.headers.get(Header.LOCATION), config.url + destination)
+        equal(response.headers.get(Header.LOCATION), pkg.homepage + destination)
       }
       if (status === Status.OK) {
         ok(
