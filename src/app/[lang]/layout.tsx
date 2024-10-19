@@ -24,7 +24,10 @@ export async function generateStaticParams(): StaticParams<Props> {
 export async function generateMetadata({ params }: Props) {
   const { lang } = await params
   return {
-    title: pkg.author.name,
+    title: {
+      template: `${pkg.author.name} - %s`,
+      default: pkg.author.name
+    },
     description: useI18n(i18n.blog.description, lang)
   } satisfies Metadata
 }

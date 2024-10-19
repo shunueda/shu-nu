@@ -99,20 +99,31 @@ describe(import.meta.filename, () => {
       ].flat()
     )
   ].forEach(({ name, path, destination, status, headers, cookies }) => {
-    test(`${name}: ${path} -> ${destination}`, async () => {
+    test(`${name}: ${path} --[ ${Status[status]} ]--> ${destination}`, async () => {
       const request = new NextRequest(pkg.homepage + path, { headers })
       Object.entries(cookies).forEach(args => {
         request.cookies.set(...args)
       })
+
       const response = middleware(request)
+
       equal(response.status, status)
-      if (status === Status.REDIRECT) {
-        equal(response.headers.get(Header.LOCATION), pkg.homepage + destination)
-      }
-      if (status === Status.OK) {
-        ok(
-          destination.startsWith(`/${response.cookies.get(Cookie.LANG)?.value}`)
-        )
+      switch (status) {
+        case Status.REDIRECT: {
+          equal(
+            response.headers.get(Header.LOCATION),
+            pkg.homepage + destination
+          )
+          break
+        }
+        case Status.OK: {
+          ok(
+            destination.startsWith(
+              `/${response.cookies.get(Cookie.LANG)?.value}`
+            )
+          )
+          break
+        }
       }
     })
   })

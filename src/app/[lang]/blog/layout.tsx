@@ -16,7 +16,10 @@ export interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params
   return {
-    title: `${pkg.author.name} | Blog`,
+    title: {
+      template: `${pkg.author.name} - %s`,
+      default: 'Blog'
+    },
     description: useI18n(i18n.blog.description, lang)
   }
 }
