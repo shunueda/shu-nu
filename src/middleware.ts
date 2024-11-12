@@ -6,6 +6,10 @@ import { Lang, langs } from '#lib/i18n'
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
+  // disable blog
+  if (pathname.includes('blog')) {
+    return NextResponse.redirect('/')
+  }
   // skip static files
   if (pathname.includes('.')) {
     return NextResponse.next()
@@ -29,6 +33,7 @@ export function middleware(request: NextRequest) {
 
 /**
  * Get the language from the request
+ *
  * Precendence:
  * 1. {@link Cookie.LANG} cookie
  * 2. {@link Header.ACCEPT_LANGUAGE} header

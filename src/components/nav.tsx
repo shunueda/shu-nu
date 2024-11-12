@@ -28,7 +28,7 @@ export function Nav({ lang }: Props) {
   return (
     <nav className='pt-12 pb-12 flex gap-6'>
       <div className='relative w-5 h-5 my-auto'>
-        <Image src={icon} alt={icon.name} fill />
+        <Image src={icon} alt='' fill />
       </div>
       {items.map(({ href, label }) => (
         <Link

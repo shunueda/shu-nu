@@ -8,6 +8,7 @@ import {
   generateI18nElement,
   useI18n
 } from '#lib/i18n'
+import { fixSpacing } from '#lib/utils'
 import { type BlogPost, frontmatter } from '#types/blog-post'
 
 const path = join(process.cwd(), 'src', 'blog')
@@ -36,10 +37,10 @@ async function readBlogPost(slug: string, lang: Lang) {
   })
   try {
     const buffer = await readFile(filepath)
-    const { content, data } = matter(buffer.toString())
+    const { content, data } = matter(fixSpacing(buffer.toString()))
     return {
       slug,
-      content: content.replaceAll('「', ' 「').replaceAll('」', '」 '),
+      content,
       frontmatter: frontmatter.create(data)
     } satisfies BlogPost
   } catch (_) {

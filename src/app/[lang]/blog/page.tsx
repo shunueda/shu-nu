@@ -3,7 +3,7 @@ import { Separator } from '#components/ui/separator'
 import { i18n } from '#i18n'
 import { blog } from '#lib/blog'
 import { useI18n } from '#lib/i18n'
-import { formatDate, notEmpty } from '#lib/utils'
+import { format, notEmpty } from '#lib/utils'
 import type { Props } from './layout'
 
 export default async function Page({ params }: Props) {
@@ -23,7 +23,7 @@ export default async function Page({ params }: Props) {
           .map(({ slug, frontmatter }) => (
             <Link key={slug} href={`/${lang}/blog/${slug}`} className=''>
               <p className='text-gray-500 text-xs font-semibold tracking-tight'>
-                {formatDate(frontmatter.date)}
+                {format(frontmatter.date)}
               </p>
               <p className='font-semibold text-sm text-gray-800'>
                 ・{frontmatter.title}
