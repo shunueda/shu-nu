@@ -8,7 +8,7 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
   // disable blog
   if (pathname.includes('blog')) {
-    return NextResponse.redirect('/')
+    return NextResponse.redirect('https://shu.nu')
   }
   // skip static files
   if (pathname.includes('.')) {
