@@ -3,6 +3,7 @@
 # built at build-time
 src/app/favicon.ico
 public/*
+!public/Shun_Ueda_Resume.pdf
 
 # dependencies
 /node_modules
