@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "homepage": "https://shu.nu",
   "author": {
     "name": "Shun Ueda",
     "email": "me@shu.nu",
