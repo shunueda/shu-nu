@@ -1,6 +1,6 @@
 $schema: https://json.schemastore.org/lefthook.json
 pre-commit:
-  steps:
+  commands:
     type-check:
       run: pnpm type-check
     check:
