@@ -6,8 +6,7 @@ import type { Metadata } from 'next'
 import pkg from '~package.json'
 import { Footer } from '#components/footer'
 import { Nav } from '#components/nav'
-import { i18n } from '#i18n'
-import { type Lang, langs, useI18n } from '#lib/i18n'
+import { type Lang, langs } from '#lib/i18n'
 import { cn } from '#lib/utils'
 import type { LayoutProps, StaticParams } from '#types/props'
 
@@ -22,13 +21,11 @@ export async function generateStaticParams(): StaticParams<Props> {
 }
 
 export async function generateMetadata({ params }: Props) {
-  const { lang } = await params
   return {
     title: {
       template: `${pkg.author.name} - %s`,
       default: pkg.author.name
-    },
-    description: useI18n(i18n.blog.description, lang)
+    }
   } satisfies Metadata
 }
 

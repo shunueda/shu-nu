@@ -1,6 +1,5 @@
 import type { MetadataRoute } from 'next'
 import pkg from '~package.json'
-import { slugs } from '#lib/blog'
 import { Lang } from '#lib/i18n'
 
 interface Entry {
@@ -12,22 +11,14 @@ interface Entry {
 const entries: Entry[] = [
   {
     href: '',
-    priority: 1,
+    priority: 0.8,
     changeFrequency: 'monthly'
   },
   {
-    href: '/blog',
-    priority: 0.9,
-    changeFrequency: 'weekly'
-  },
-  ...slugs.map(
-    slug =>
-      ({
-        href: `/blog/${slug}`,
-        priority: 0.8,
-        changeFrequency: 'monthly'
-      }) satisfies Entry
-  )
+    href: '/resume',
+    priority: 1,
+    changeFrequency: 'monthly'
+  }
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
