@@ -1,0 +1,135 @@
+{
+  "name": "Shun Ueda",
+  "phone": "(203) 979-5285",
+  "email": "me@shu.nu",
+  "linkedin": "https://linkedin.com/in/shunueda",
+  "github": "https://github.com/shunueda",
+  "education": [
+    {
+      "institution": "Lehigh University",
+      "location": "Bethlehem, PA",
+      "duration": "August 2021 – Dec 2024",
+      "degree": "B.S. in Computer Science & Engineering"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Apple",
+      "role": "Software Engineering Intern",
+      "location": "Seattle, WA",
+      "duration": "May 2024 – August 2024",
+      "descriptions": [
+        "Spearheaded the design and implementation of a comprehensive visual dashboard for monitoring and managing CI/CD pipelines, enhancing real-time system insights and operational efficiency."
+      ]
+    },
+    {
+      "company": "Apple",
+      "role": "Software Engineering Intern",
+      "location": "Seattle, WA",
+      "duration": "May 2023 – August 2023",
+      "descriptions": [
+        "Designed and implemented CI pipelines to elevate code quality, incorporating tools for static analysis, unit testing, and code coverage.",
+        "Developed and integrated multiple features into the pipeline, increasing robustness and improving user experience."
+      ]
+    },
+    {
+      "company": "Oncospace",
+      "role": "Software Engineering Intern",
+      "location": "Baltimore, MD",
+      "duration": "June 2022 – August 2022",
+      "descriptions": [
+        "Developed a cloud-based, AI-driven platform for oncologists’ treatment planning at Oncospace Inc., a Johns Hopkins Technology Ventures start-up.",
+        "Engineered a DICOM data processor for medical image visualization using cornerstone.js.",
+        "Created a Microsoft PowerApps component with a React.js frontend and C# backend.",
+        "Implemented a CI/CD pipeline using Azure DevOps to streamline development and deployment."
+      ]
+    },
+    {
+      "company": "Tech For Good Inc.",
+      "role": "Software Engineering Intern",
+      "location": "Sharon, MA",
+      "duration": "June 2021 – August 2021",
+      "descriptions": [
+        "Managed project Mission Uplink, leading a team of 8 developers to provide internet access to schools in underdeveloped areas of Nigeria and surrounding regions.",
+        "Developed a cache-based internet access solution using Squid-cache, improving internet speed by 600%.",
+        "Deployed the solution on Raspberry Pi devices, utilizing AWS CodePipeline and AWS CodeDeploy to automate and streamline the deployment process.",
+        "Built a frontend application using React, TypeScript, and Node.js for deployment mapping and monitoring.",
+        "Successfully deployed 5 instances across multiple schools, significantly enhancing educational opportunities."
+      ]
+    }
+  ],
+  "skills": {
+    "programming_languages": [
+      "Java",
+      "Kotlin",
+      "Scala",
+      "Python",
+      "C",
+      "C++",
+      "C#",
+      "SQL",
+      "JavaScript",
+      "TypeScript",
+      "HTML & CSS",
+      "Bash & Shell"
+    ],
+    "frameworks_libraries": [
+      "Spring Framework (Spring Boot, Spring Data, etc.)",
+      "Express.js",
+      "Node.js",
+      "React.js",
+      "React Native",
+      "Redux",
+      "Next.js",
+      "Jest",
+      "JUnit",
+      "Mockito",
+      "Mocha"
+    ],
+    "devops_infrastructure": [
+      "GitHub Actions",
+      "Azure DevOps",
+      "Jenkins",
+      "Travis CI",
+      "Kubernetes",
+      "Docker",
+      "Temporal"
+    ],
+    "databases": [
+      "PostgreSQL",
+      "MySQL",
+      "SQLite",
+      "RDBMS",
+      "MongoDB",
+      "DynamoDB",
+      "Redis",
+      "CockroachDB"
+    ],
+    "cloud_big_data": [
+      "AWS (Lambda, EC2, DynamoDB, Cassandra, Kafka, etc.)",
+      "Hadoop"
+    ],
+    "tools": [
+      "Gradle",
+      "Maven",
+      "npm (yarn & pnpm)",
+      "Conan",
+      "CMake",
+      "Babel",
+      "Webpack",
+      "Git"
+    ],
+    "software_engineering": [
+      "Agile",
+      "Software Development Life Cycle (SDLC)",
+      "Object-Oriented Programming (OOP)",
+      "System Design",
+      "Load Balancing",
+      "Distributed Systems",
+      "REST",
+      "GraphQL",
+      "OAuth"
+    ],
+    "operating_systems": ["Linux"]
+  }
+}

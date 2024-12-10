@@ -13,11 +13,11 @@ const items: NavItem[] = [
   {
     label: 'home',
     href: '/'
+  },
+  {
+    label: 'resume',
+    href: '/resume'
   }
-  // {
-  //   label: 'blog',
-  //   href: '/blog'
-  // }
 ]
 
 interface Props {

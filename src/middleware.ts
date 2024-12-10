@@ -6,10 +6,6 @@ import { Lang, langs } from '#lib/i18n'
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
-  // disable blog
-  if (pathname.includes('blog')) {
-    return NextResponse.redirect('https://shu.nu')
-  }
   // skip static files
   if (pathname.includes('.')) {
     return NextResponse.next()
