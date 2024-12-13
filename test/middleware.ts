@@ -1,7 +1,7 @@
 import { equal, ok } from 'node:assert'
 import { describe, test } from 'node:test'
 import { NextRequest } from 'next/server'
-import pkg from '~package.json'
+import pkg from '~/package.json'
 import { Cookie } from '#lib/cookie'
 import { Header } from '#lib/header'
 import { Lang, langs } from '#lib/i18n'

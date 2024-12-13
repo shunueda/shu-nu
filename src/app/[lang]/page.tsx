@@ -1,4 +1,4 @@
-import pkg from '~package.json'
+import pkg from '~/package.json'
 import { i18n } from '#i18n'
 import { useI18n } from '#lib/i18n'
 import type { Props } from './layout'

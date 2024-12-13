@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import pkg from '~package.json'
+import pkg from '~/package.json'
 
 export default function robots(): MetadataRoute.Robots {
   return {
