@@ -16,7 +16,11 @@ export default function Page() {
       </Link>
       <div className='text-center mt-2'>
         <h1>{resume.name}</h1>
-        {[resume.email, resume.linkedin, resume.github].map((it, i) => (
+        {[
+          resume.contact.email,
+          resume.contact.linkedin,
+          resume.contact.github
+        ].map((it, i) => (
           <>
             {i > 0 && (
               <span key={Math.random()} className='mx-2'>

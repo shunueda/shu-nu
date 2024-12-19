@@ -1,14 +1,16 @@
 {
   "name": "Shun Ueda",
-  "phone": "(203) 979-5285",
-  "email": "me@shu.nu",
-  "linkedin": "https://linkedin.com/in/shunueda",
-  "github": "https://github.com/shunueda",
+  "contact": {
+    "phone": "(203) 979-5285",
+    "email": "me@shu.nu",
+    "linkedin": "https://linkedin.com/in/shunueda",
+    "github": "https://github.com/shunueda"
+  },
   "education": [
     {
       "institution": "Lehigh University",
       "location": "Bethlehem, PA",
-      "duration": "August 2021 – December 2024",
+      "duration": "August 2021 – January 2025",
       "degree": "B.S. in Computer Science & Engineering"
     }
   ],
@@ -19,9 +21,9 @@
       "location": "Seattle, WA",
       "duration": "May 2024 – August 2024",
       "descriptions": [
-        "Developed core logic for pipeline configuration query processing, enabling efficient and scalable configuration retrieval.",
+        "Developed the core logic for pipeline configuration query processing, enabling efficient and scalable configuration retrieval.",
         "Implemented multiple RESTful API endpoints for system monitoring and management, improving system reliability and reducing latency.",
-        "Designed and implemented a real-time visual dashboard for CI/CD pipeline monitoring, increasing operational visibility and reducing debugging time."
+        "Created a real-time visual dashboard for pipeline monitoring, enhancing team visibility and productivity."
       ]
     },
     {
@@ -30,8 +32,8 @@
       "location": "Seattle, WA",
       "duration": "May 2023 – August 2023",
       "descriptions": [
-        "Designed and deployed CI pipelines integrating static analysis, unit testing, and code coverage tools, enhancing code quality for more than 200 teams.",
-        "Enhanced pipeline resilience by adding automated failure recovery mechanisms and comprehensive logging features."
+        "Designed and implemented CI pipelines integrating static analysis, unit testing, and code coverage tools, improving code quality for more than 200 teams.",
+        "Enhanced pipeline resilience by adding automated failure recovery mechanisms and automated report generation with analyzed log data."
       ]
     },
     {
@@ -40,9 +42,7 @@
       "location": "Baltimore, MD",
       "duration": "June 2022 – August 2022",
       "descriptions": [
-        "Developed a cloud-based, AI-driven treatment planning platform for oncologists, streamlining data analysis and decision-making.",
-        "Engineered a DICOM data processor for medical image visualization using cornerstone.js, enabling real-time image processing.",
-        "Built a Microsoft PowerApps component integrating a React.js frontend with a C# backend, improving user interaction capabilities.",
+        "Developed a DICOM data processor using cornerstone.js, enabling real-time medical image visualization for oncologists.",
         "Streamlined deployment processes by implementing a CI/CD pipeline using Azure DevOps."
       ]
     },
@@ -52,27 +52,26 @@
       "location": "Sharon, MA",
       "duration": "June 2021 – August 2021",
       "descriptions": [
-        "Developed a cache-based internet access solution using Squid-cache, achieving a 600% increase in access speed.",
-        "Automated deployment on Raspberry Pi devices using AWS CodePipeline and AWS CodeDeploy.",
-        "Created a web-based dashboard for monitoring and managing the cache system, enhancing ease of use."
+        "Developed a cache-based internet access solution using Squid, achieving a 600% increase in access speed.",
+        "Automated deployment on Raspberry Pi devices using AWS CodePipeline & CodeDeploy."
       ]
     }
   ],
   "skills": {
     "programming_languages": [
+      "JavaScript/TypeScript",
       "Java",
+      "Python",
       "Kotlin",
       "Scala",
-      "Python",
       "C/C++",
-      "SQL",
-      "JavaScript",
-      "TypeScript",
-      "Bash & Shell"
+      "C#",
+      "SQL"
     ],
     "frameworks_&_libraries": [
       "Spring Framework",
       "Express.js",
+      "gRPC",
       "Node.js",
       "React.js",
       "Next.js",
@@ -83,17 +82,19 @@
     ],
     "devops_&_infrastructures": [
       "AWS (EC2, Lambda)",
+      "Azure DevOps",
+      "Apache Kafka",
       "GitHub Actions",
       "Jenkins",
-      "Kubernetes",
       "Docker",
-      "Temporal"
+      "Kubernetes",
+      "Temporal",
+      "Graphana"
     ],
     "databases": [
       "PostgreSQL",
       "MySQL",
       "SQLite",
-      "RDBMS",
       "MongoDB",
       "DynamoDB",
       "Redis"
@@ -113,9 +114,7 @@
       "Software Development Life Cycle (SDLC)",
       "Object-Oriented Programming (OOP)",
       "System Design",
-      "Distributed Systems",
-      "REST",
-      "GraphQL"
+      "Distributed Systems"
     ],
     "operating_systems": ["Linux"]
   }

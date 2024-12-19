@@ -7,11 +7,15 @@ import { generate } from './generate'
 const outfile = 'Shun_Ueda_Resume'
 const outdir = 'public'
 
-const templateFile = format({
-  dir: 'src/assets',
-  name: 'template.tex'
-})
-const template = await readFile(templateFile, 'utf-8')
+const template = await readFile(
+  format({
+    dir: 'src/assets',
+    name: 'template.tex'
+  }),
+  'utf-8'
+)
+
+const latex = await generate(resume, template)
 
 const texfile = format({
   dir: outdir,
@@ -19,7 +23,7 @@ const texfile = format({
   ext: 'tex'
 })
 
-await writeFile(texfile, await generate(resume, template))
+await writeFile(texfile, latex)
 
 execSync(`pdflatex ${texfile}`)
 
@@ -30,4 +34,6 @@ const pdffile = format({
 
 await rename(pdffile, join(outdir, pdffile))
 
-execSync(`latexmk -c -f ${texfile}`)
+execSync(`latexmk -c ${texfile}`, {
+  stdio: 'ignore'
+})
