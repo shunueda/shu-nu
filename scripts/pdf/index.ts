@@ -1,14 +1,37 @@
 import { execSync } from 'node:child_process'
-import { readFileSync } from 'node:fs'
-import { writeFile } from 'node:fs/promises'
-import { join } from 'node:path'
+import { readFile, rename, writeFile } from 'node:fs/promises'
+import { format, join } from 'node:path'
 import resume from '#assets/resume.json'
 import { generate } from './generate'
 
-const template = readFileSync('src/assets/template.tex').toString()
+try {
+  const outfile = 'Shun_Ueda_Resume'
+  const outdir = 'public'
 
-const texfile = join(process.cwd(), 'public/resume.tex')
+  const templateFile = format({
+    dir: 'src/assets',
+    name: 'template.tex'
+  })
+  const template = await readFile(templateFile, 'utf-8')
 
-await writeFile(texfile, await generate(resume, template))
+  const texfile = format({
+    dir: outdir,
+    name: outfile,
+    ext: 'tex'
+  })
 
-execSync(`pdftex ${texfile} -output-directory=public`)
+  await writeFile(texfile, await generate(resume, template))
+
+  execSync(`pdflatex ${texfile}`)
+
+  const pdffile = format({
+    name: outfile,
+    ext: 'pdf'
+  })
+
+  await rename(pdffile, join(outdir, pdffile))
+
+  execSync(`latexmk -c -f ${texfile}`)
+} catch (_: unknown) {
+  console.log('Failed to generate resume - you must be Vercel.')
+}

@@ -28,9 +28,9 @@ export async function generate(input: object, template: string) {
     """
     
     Important:
-    - Do not output any instructions or notes; only output the LaTeX code.
-    - Ensure the final output is a clean, formatted LaTeX document.
-    - Make sure to escape special characters properly.
+     - Do not output any instructions or notes; only output the LaTeX code.
+     - Ensure the final output is a clean, formatted LaTeX document.
+     - Make sure to escape special characters properly.
     
     Please begin the conversion now.
   `
