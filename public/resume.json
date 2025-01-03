@@ -1,0 +1,101 @@
+{
+  "name": "Shun Ueda",
+  "contact": {
+    "phone": "(203) 979-5285",
+    "email": "me@shu.nu",
+    "linkedin": "linkedin.com/in/shunueda",
+    "github": "github.com/shunueda"
+  },
+  "education": [
+    {
+      "institution": "Lehigh University",
+      "location": "Bethlehem, PA",
+      "duration": "January 2025",
+      "degree": "B.S. in Computer Science & Engineering"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Apple",
+      "role": "Software Engineering Intern",
+      "location": "Seattle, WA",
+      "duration": "May 2024 – August 2024",
+      "descriptions": [
+        "Part of a team that owns internal CI/CD services for ML models. Developed the core logic for pipeline configuration queries, improving the retrieval efficiency by 80%.",
+        "Built a real-time system monitoring dashboard, enhancing reliability and usability for 250+ engineers.",
+        "Selected as one of the few interns to present the work to the Senior Director."
+      ]
+    },
+    {
+      "company": "Apple",
+      "role": "Software Engineering Intern",
+      "location": "Seattle, WA",
+      "duration": "May 2023 – August 2023",
+      "descriptions": [
+        "Designed and implemented a CI/CD pipeline service with static analysis and testing tools, streamlining development workflows for 200+ organizational projects.",
+        "Increased pipeline resilience by automating failure recovery, cutting manual intervention by 90%."
+      ]
+    },
+    {
+      "company": "Oncospace",
+      "role": "Software Engineering Intern",
+      "location": "Baltimore, MD",
+      "duration": "June 2022 – August 2022",
+      "descriptions": [
+        "Developed a DICOM data processor for real-time medical image visualization, enhancing oncologists' clinical efficiency.",
+        "Streamlined deployment workflows using Azure DevOps, reducing deployment time by 70%."
+      ]
+    },
+    {
+      "company": "Tech For Good Inc.",
+      "role": "Software Engineering Intern",
+      "location": "Sharon, MA",
+      "duration": "June 2021 – August 2021",
+      "descriptions": [
+        "Developed a Squid-based internet caching solution, increasing access speed by 600%, enhancing rural connectivity.",
+        "Automated deployment of Raspberry Pi devices via AWS CodePipeline & CodeDeploy, simplifying system scaling."
+      ]
+    }
+  ],
+  "skills": {
+    "programming_languages": [
+      "C/C++",
+      "Java",
+      "Python",
+      "Kotlin",
+      "Scala",
+      "JavaScript/TypeScript"
+    ],
+    "frameworks_&_libraries": [
+      "Spring Framework",
+      "Node.js",
+      "Mockito",
+      "React"
+    ],
+    "devops_&_infrastructures": [
+      "AWS",
+      "Docker",
+      "Kubernetes",
+      "GitHub Actions",
+      "Jenkins",
+      "Terraform"
+    ],
+    "databases": [
+      "SQL/NoSQL",
+      "PostgreSQL",
+      "SQLite",
+      "MongoDB",
+      "DynamoDB",
+      "Redis"
+    ],
+    "tools": ["Gradle", "Maven", "CMake", "Git"],
+    "software_engineering": [
+      "Agile",
+      "Software Development Life Cycle (SDLC)",
+      "Object-Oriented Programming (OOP)",
+      "DevOps (CI/CD)",
+      "Distributed Systems"
+    ],
+    "operating_systems": ["Linux", "Unix"]
+  }
+}

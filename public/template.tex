@@ -11,20 +11,8 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
-\input{glyphtounicode}
-
-
-%----------FONT OPTIONS----------
-% sans-serif
-% \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
-
-% serif
 \usepackage{CormorantGaramond}
-% \usepackage{charter}
-
+\input{glyphtounicode}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -47,7 +35,7 @@
 
 % Sections formatting
 \titleformat{\section}{
-    \vspace{-4pt}\scshape\raggedright\large
+  \vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
@@ -56,31 +44,31 @@
 %-------------------------
 % Custom commands
 \newcommand{\resumeItem}[1]{
-    \item\normalsize{
-            {#1 \vspace{-2pt}}
-    }
+  \item\normalsize{
+      {#1 \vspace{-2pt}}
+  }
 }
 
 \newcommand{\resumeSubheading}[4]{
-    \vspace{-1pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-    \textbf{#1} & \footnotesize #2 \\
-    \textit{\normalsize #3} & \textit{\footnotesize #4} \\
-    \end{tabular*}\vspace{-7pt}
+  \vspace{-1pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+  \textbf{#1} & \footnotesize #2 \\
+  \textit{\normalsize #3} & \textit{\footnotesize #4} \\
+  \end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-    \textit{\normalsize #1} & \textit{\normalsize #2} \\
-    \end{tabular*}\vspace{-7pt}
+  \item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+  \textit{\normalsize #1} & \textit{\normalsize #2} \\
+  \end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-    \textbf{#1} & \normalsize #2 \\
-    \end{tabular*}\vspace{-7pt}
+  \item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{#1} & \normalsize #2 \\
+  \end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
@@ -107,7 +95,6 @@
 \href{https://github.com/...}{\underline{github.com/jake}}
 \end{center}
 
-
 %-----------EDUCATION-----------
 \section{Education}
 \resumeSubHeadingListStart
@@ -127,7 +114,6 @@
 \resumeItemListEnd
 \resumeSubHeadingListEnd
 
-
 %-----------PROJECTS-----------
 \section{Projects}
 \resumeSubHeadingListStart
@@ -137,8 +123,6 @@
 \resumeItem{Developed a full-stack web application using with Flask serving a REST API with React as the frontend}
 \resumeItemListEnd
 \resumeSubHeadingListEnd
-
-
 
 %-----------TECHNICAL SKILLS-----------
 \section{Technical Skills}

@@ -1,40 +1,43 @@
-import { google } from '@ai-sdk/google'
-import { generateText } from 'ai'
+import { readFile } from 'node:fs/promises'
+import { type LanguageModel, generateText } from 'ai'
+import dedent from 'dedent'
 
-export async function generate(input: object, template: string) {
-  const prompt = `
-    Your task is to convert a resume from json format into a LaTeX document using a provided LaTeX template.
-    
-    Follow these steps:
-    Step 1: Read the resume information provided in json format.
-    Step 2: Read the provided LaTeX template.
-    Step 3: Convert the json resume into a LaTeX document using the template.
-    
+interface Args<T> {
+  resume: T
+  template: string
+  model: LanguageModel
+  keywords: string[]
+}
+
+export async function generate<T>({
+  resume,
+  template,
+  model,
+  keywords
+}: Args<T>) {
+  const prompt = dedent`
+    Convert the provided resume information into a LaTeX document.
+
+    Steps:
+     1: Parse the provided resume JSON and the LaTeX template.
+     2: Populate the LaTeX template with the resume information, integrating the keywords dynamically.
+
     Important:
-     - DO NOT output any instructions or notes; only output the LaTeX code.
-     - DO NOT include codeblock or any other markdown syntax in the LaTeX output.
-     - You MUST ensure to escape special characters (e.g. #, %, etc.) properly.
-     - Use the resume information accurately.
-     - You may remove the comments from the LaTeX template.
-     - For technical skills section, use the provided LaTeX template, marked with "TECHNICAL SKILLS".
-    
-    The json resume and LaTeX template are provided below, surrounded by triple quotes.
-    
-    Resume in json:
-    """
-    ${JSON.stringify(input).replaceAll('https://', '')}
-    """
-    
-    LaTeX template:
-    """
-    ${template}
-    """
-    
-    Please begin the conversion now.
+     - Only output the LaTeX code. No Markdown syntax is required.
+     - Escape special characters properly (e.g., #, %, &, etc.).
+     - Use the resume information and keywords accurately.
+     - Remove all comments from the LaTeX template.
+     - Ensure the keywords are integrated naturally into the skills section.
+
+    Resume:
+    ${JSON.stringify(resume, null, 2)}
+
+    Keywords:
+    [${keywords.join(', ')}]
+
+    Template:
+    ${await readFile(template, 'utf-8')}
   `
-  const { text } = await generateText({
-    model: google('gemini-1.5-flash'),
-    prompt
-  })
+  const { text } = await generateText({ model, prompt })
   return text
 }

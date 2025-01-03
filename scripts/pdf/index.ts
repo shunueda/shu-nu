@@ -1,39 +1,21 @@
-import { execSync } from 'node:child_process'
-import { readFile, rename, writeFile } from 'node:fs/promises'
-import { format, join } from 'node:path'
-import resume from '#assets/resume.json'
+import { writeFile } from 'node:fs/promises'
+import { join } from 'node:path'
+import { google } from '@ai-sdk/google'
+import { $ } from 'zx'
+import resume from '~/public/resume.json'
 import { generate } from './generate'
 
-const outfile = 'Shun_Ueda_Resume'
-const outdir = 'public'
+const dir = 'public'
+const tex = 'Shun_Ueda_Resume.tex'
+const template = 'template.tex'
 
-const template = await readFile(
-  format({
-    dir: 'src/assets',
-    name: 'template.tex'
-  }),
-  'utf-8'
-)
-
-const latex = await generate(resume, template)
-
-const texfile = format({
-  dir: outdir,
-  name: outfile,
-  ext: 'tex'
+const generated = await generate({
+  resume,
+  template: join(dir, template),
+  model: google('gemini-1.5-flash'),
+  keywords: process.argv.slice(2)
 })
 
-await writeFile(texfile, latex)
+await writeFile(join(dir, tex), generated)
 
-execSync(`pdflatex ${texfile}`)
-
-const pdffile = format({
-  name: outfile,
-  ext: 'pdf'
-})
-
-await rename(pdffile, join(outdir, pdffile))
-
-execSync(`latexmk -c ${texfile}`, {
-  stdio: 'ignore'
-})
+await $({ cwd: dir })`pdflatex ${tex} && latexmk -c -quiet`

@@ -19,22 +19,6 @@
             </SchemaInfo>
           </value>
         </entry>
-        <entry key="GitHub Workflow">
-          <value>
-            <SchemaInfo>
-              <option name="name" value="GitHub Workflow" />
-              <option name="relativePathToSchema" value="https://json.schemastore.org/github-workflow.json" />
-              <option name="applicationDefined" value="true" />
-              <option name="patterns">
-                <list>
-                  <Item>
-                    <option name="path" value=".github/workflows/send-push-notifications.yaml" />
-                  </Item>
-                </list>
-              </option>
-            </SchemaInfo>
-          </value>
-        </entry>
         <entry key="No JSON schema">
           <value>
             <SchemaInfo>
@@ -45,7 +29,7 @@
               <option name="patterns">
                 <list>
                   <Item>
-                    <option name="path" value="file://$PROJECT_DIR$/src/assets/blog/info.json" />
+                    <option name="path" value="file://$PROJECT_DIR$/src/assets/resume.json" />
                   </Item>
                 </list>
               </option>
