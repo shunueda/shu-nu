@@ -10,7 +10,7 @@
   },
   "type": "module",
   "scripts": {
-    "prebuild": "run-p build:*",
+    "prebuild": "pnpm build:icon",
     "build": "next build",
     "build:pdf": "tsx --env-file=.env.local scripts/pdf",
     "build:icon": "tsx scripts/icon",
@@ -20,7 +20,7 @@
     "dev": "next dev",
     "format": "biome format --write",
     "lint": "biome lint --write",
-    "prepare": "lefthook install && vercel env pull",
+    "prepare": "lefthook install",
     "start": "next start",
     "test": "tsx --test",
     "type-check": "tsc"
