@@ -1,4 +1,6 @@
+import typography from '@tailwindcss/typography'
 import type { Config } from 'tailwindcss'
+import animate from 'tailwindcss-animate'
 
 export default {
   content: ['src/**/*.tsx'],
@@ -60,5 +62,5 @@ export default {
       }
     }
   },
-  plugins: ['tailwindcss-animate', '@tailwindcss/typography'].map(require)
+  plugins: [animate, typography]
 } satisfies Config
