@@ -70,7 +70,8 @@
       "Spring Framework",
       "Node.js",
       "Mockito",
-      "React"
+      "React",
+      "gRPC"
     ],
     "devops_&_infrastructures": [
       "AWS",
