@@ -7,7 +7,7 @@ import { Button } from '#components/ui/button'
 export default function Page() {
   return (
     <section>
-      <h1>Resume</h1>
+      <h1>Resume.</h1>
       <Link href='/Shun_Ueda_Resume.pdf' target='_blank'>
         <Button className='mt-4'>
           <FileTextIcon />
@@ -21,12 +21,8 @@ export default function Page() {
           resume.contact.linkedin,
           resume.contact.github
         ].map((it, i) => (
-          <>
-            {i > 0 && (
-              <span key={Math.random()} className='mx-2'>
-                |
-              </span>
-            )}
+          <div key={Math.random()} className='inline'>
+            {i > 0 && <span className='mx-2'>|</span>}
             <a
               key={it}
               href={it.includes('@') ? `mailto:${it}` : it}
@@ -36,7 +32,7 @@ export default function Page() {
             >
               {it.replace('https://', '')}
             </a>
-          </>
+          </div>
         ))}
       </div>
       <div className='mt-4'>
