@@ -2,12 +2,12 @@ import { openAsBlob } from 'node:fs'
 import { EOL } from 'node:os'
 import { setTimeout } from 'node:timers/promises'
 import { experiences } from '~/assets/resume.json' with { type: 'json' }
-import { filename } from '~/scripts/pdf'
+import { File } from '#lib/file'
 import { Header } from '#lib/header'
 import { readCredentials } from './credential/cookie'
 import { Endpoint } from './endpoint'
 
-const pdf = `${filename}.pdf`
+const pdf = `${File.RESUME}.pdf`
 
 const { authorization, csrf } = readCredentials()
 const headers = {

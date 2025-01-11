@@ -3,12 +3,13 @@ import { FileTextIcon } from 'lucide-react'
 import Link from 'next/link'
 import resume from '~/assets/resume.json' with { type: 'json' }
 import { Button } from '#components/ui/button'
+import { File } from '#lib/file'
 
 export default function Page() {
   return (
     <section>
       <h1>Resume.</h1>
-      <Link href={'/Shun_Ueda_Resume.pdf'} target='_blank'>
+      <Link href={`/${File.RESUME}`} target='_blank'>
         <Button className='mt-4'>
           <FileTextIcon />
           View in PDF

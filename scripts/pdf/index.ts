@@ -3,11 +3,10 @@ import { basename, dirname } from 'node:path'
 import { google } from '@ai-sdk/google'
 import { $ } from 'zx'
 import resume from '~/assets/resume.json' with { type: 'json' }
+import { File } from '#lib/file'
 import { generate } from './generate'
 
-export const filename = 'Shun_Ueda_Resume'
-
-const out = `public/${filename}.tex`
+const out = `public/${File.RESUME}.tex`
 
 const generated = await generate({
   resume,
