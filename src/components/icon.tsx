@@ -1,12 +1,10 @@
-// biome-ignore lint/correctness/noUnusedImports: required for script
+// biome-ignore lint/correctness/noUnusedImports: required for icon generation
 import React from 'react'
-
-const src = 'https://avatars.githubusercontent.com/u/62182668'
 
 export function Icon() {
   return (
     <img
-      src={src}
+      src='https://avatars.githubusercontent.com/u/62182668'
       style={{
         borderRadius: '20%'
       }}
