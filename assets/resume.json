@@ -14,8 +14,9 @@
       "degree": "B.S. in Computer Science & Engineering"
     }
   ],
-  "experience": [
+  "experiences": [
     {
+      "simplify_id": "7984186d-05a9-41da-8e12-104af01263c2",
       "company": "Apple",
       "role": "Software Engineering Intern",
       "location": "Seattle, WA",
@@ -27,6 +28,7 @@
       ]
     },
     {
+      "simplify_id": "0042801b-aadc-44e6-abe4-64fadc50b4b7",
       "company": "Apple",
       "role": "Software Engineering Intern",
       "location": "Seattle, WA",
@@ -37,37 +39,41 @@
       ]
     },
     {
+      "simplify_id": "e2624021-2414-423d-93e5-9213709650ab",
       "company": "Oncospace",
       "role": "Software Engineering Intern",
       "location": "Baltimore, MD",
       "duration": "June 2022 – August 2022",
       "descriptions": [
-        "Developed a DICOM data processor for real-time medical image visualization, enhancing oncologists' clinical efficiency.",
+        "Developed a high-performance DICOM data processor for real-time medical image visualization, enhancing oncologists' clinical efficiency.",
         "Streamlined deployment workflows using Azure DevOps, reducing deployment time by 70%."
       ]
     },
     {
+      "simplify_id": "93046ac5-3c68-4914-8065-da9a13a96c2a",
       "company": "Tech For Good Inc.",
       "role": "Software Engineering Intern",
       "location": "Sharon, MA",
       "duration": "June 2021 – August 2021",
       "descriptions": [
-        "Developed a Squid-based internet caching solution, increasing access speed by 600%, enhancing rural connectivity.",
-        "Automated deployment of Raspberry Pi devices via AWS CodePipeline & CodeDeploy, simplifying system scaling."
+        "Designed a custom ARM64-based device for internet caching, boosting access speeds by 600% and improving rural connectivity.",
+        "Integrated device telemetry using AWS IoT Core and MQTT, enabling efficient data integration."
       ]
     }
   ],
   "skills": {
     "programming_languages": [
-      "C/C++",
+      "C",
+      "C++",
       "Java",
       "Python",
       "Kotlin",
       "Scala",
-      "JavaScript/TypeScript"
+      "JavaScript",
+      "TypeScript"
     ],
     "frameworks_&_libraries": [
-      "Spring Framework",
+      "Spring Framework (Spring Boot)",
       "Node.js",
       "Mockito",
       "React",
@@ -77,6 +83,7 @@
       "AWS",
       "Docker",
       "Kubernetes",
+      "Kafka",
       "GitHub Actions",
       "Jenkins",
       "Terraform"
@@ -95,6 +102,8 @@
       "Software Development Life Cycle (SDLC)",
       "Object-Oriented Programming (OOP)",
       "DevOps (CI/CD)",
+      "Operating Systems",
+      "Embedded Systems",
       "Distributed Systems"
     ],
     "operating_systems": ["Linux", "Unix"]

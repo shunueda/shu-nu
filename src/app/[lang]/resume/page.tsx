@@ -52,7 +52,7 @@ export default function Page() {
       </div>
       <div className='mt-4'>
         <h2>Experience</h2>
-        {resume.experience.map(it => (
+        {resume.experiences.map(it => (
           <section key={it.duration} className='mt-2 text-sm'>
             <div className='flex justify-between'>
               <div className='font-bold'>{it.company}</div>

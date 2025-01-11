@@ -6,15 +6,9 @@ interface Args<T> {
   resume: T
   template: string
   model: LanguageModel
-  keywords: string[]
 }
 
-export async function generate<T>({
-  resume,
-  template,
-  model,
-  keywords
-}: Args<T>) {
+export async function generate<T>({ resume, template, model }: Args<T>) {
   const prompt = dedent`
     Convert the provided resume information into a LaTeX document.
 
@@ -25,15 +19,11 @@ export async function generate<T>({
     Important:
      - Only output the LaTeX code. No Markdown syntax is required.
      - Escape special characters properly (e.g., #, %, &, etc.).
-     - Use the resume information and keywords accurately.
+     - Use the resume information accurately.
      - Remove all comments from the LaTeX template.
-     - Ensure the keywords are integrated naturally into the skills section.
 
     Resume:
-    ${JSON.stringify(resume, null, 2)}
-
-    Keywords:
-    [${keywords.join(', ')}]
+    ${JSON.stringify(resume)}
 
     Template:
     ${await readFile(template, 'utf-8')}

@@ -10,8 +10,7 @@ const out = 'public/Shun_Ueda_Resume.tex'
 const generated = await generate({
   resume,
   template: 'assets/template.tex',
-  model: google('gemini-1.5-flash'),
-  keywords: process.argv.slice(2)
+  model: google('gemini-1.5-flash')
 })
 
 await writeFile(out, generated)
