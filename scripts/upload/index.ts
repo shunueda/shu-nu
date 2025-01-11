@@ -1,13 +1,13 @@
 import { openAsBlob } from 'node:fs'
 import { EOL } from 'node:os'
 import { setTimeout } from 'node:timers/promises'
-import { experiences } from '~/assets/resume.json'
-import { readCredential } from './credential/cookie'
+import { experiences } from '~/assets/resume.json' with { type: 'json' }
+import { readCredentials } from './credential/cookie'
 import { Endpoint } from './endpoint'
 
 const filename = 'Shun_Ueda_Resume.pdf'
 
-const { authorization, csrf } = readCredential()
+const { authorization, csrf } = readCredentials()
 const headers = {
   Cookie: `authorization=${authorization}`,
   'X-CSRF-TOKEN': csrf

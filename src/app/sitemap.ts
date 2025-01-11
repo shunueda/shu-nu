@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import pkg from '~/package.json'
+import pkg from '~/package.json' with { type: 'json' }
 import { Lang } from '#lib/i18n'
 
 interface Entry {

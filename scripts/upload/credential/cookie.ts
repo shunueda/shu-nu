@@ -19,7 +19,7 @@ const query = new DatabaseSync(path).prepare(`
       AND name = ?
 `)
 
-export function readCredential(): Credential {
+export function readCredentials(): Credential {
   const { encrypted_value: authorization } = query.get('authorization') as Row
   const { encrypted_value: csrf } = query.get('csrf') as Row
   return {

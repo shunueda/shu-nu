@@ -24,7 +24,7 @@
       "descriptions": [
         "Part of a team that owns internal CI/CD services for ML models. Developed the core logic for pipeline configuration queries, improving the retrieval efficiency by 80%.",
         "Built a real-time system monitoring dashboard, enhancing reliability and usability for 250+ engineers.",
-        "Selected as one of the few interns to present the work to the Senior Director."
+        "Selected as one of the select interns recognized for outstanding contributions."
       ]
     },
     {
@@ -34,7 +34,7 @@
       "location": "Seattle, WA",
       "duration": "May 2023 – August 2023",
       "descriptions": [
-        "Designed and implemented a CI/CD pipeline service with static analysis and testing tools, streamlining development workflows for 200+ organizational projects.",
+        "Designed and implemented a CI/CD pipeline service, streamlining development workflows for 200+ organizational projects.",
         "Increased pipeline resilience by automating failure recovery, cutting manual intervention by 90%."
       ]
     },

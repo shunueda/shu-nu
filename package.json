@@ -5,8 +5,7 @@
   "homepage": "https://shu.nu",
   "author": {
     "name": "Shun Ueda",
-    "email": "me@shu.nu",
-    "url": "https://shu.nu"
+    "email": "me@shu.nu"
   },
   "type": "module",
   "scripts": {
@@ -17,10 +16,7 @@
     "check": "biome check --write && sort-package-json",
     "precommit": "pnpm type-check & pnpm check & pnpm test",
     "commit": "git add --all && cz",
-    "predev": "pnpm prebuild",
     "dev": "next dev",
-    "format": "biome format --write",
-    "lint": "biome lint --write",
     "start": "next start",
     "test": "tsx --test",
     "type-check": "tsc",

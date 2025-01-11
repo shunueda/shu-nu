@@ -24,7 +24,8 @@ const key = pbkdf2Sync(keychain, salt, iterations, keylen, digest)
 
 export function decrypt(cookie: string): string {
   const decipher = createDecipheriv(algorithm, key, iv)
-  const data = Buffer.from(cookie.slice(prefix.length), 'base64')
+  const encrypted = cookie.slice(prefix.length)
+  const data = Buffer.from(encrypted, 'base64')
   return (
     decipher.update(data, undefined, 'utf-8') + decipher.final('utf-8')
   ).slice(padding)
