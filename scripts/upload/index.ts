@@ -2,23 +2,25 @@ import { openAsBlob } from 'node:fs'
 import { EOL } from 'node:os'
 import { setTimeout } from 'node:timers/promises'
 import { experiences } from '~/assets/resume.json' with { type: 'json' }
+import { filename } from '~/scripts/pdf'
+import { Header } from '#lib/header'
 import { readCredentials } from './credential/cookie'
 import { Endpoint } from './endpoint'
 
-const filename = 'Shun_Ueda_Resume.pdf'
+const pdf = `${filename}.pdf`
 
 const { authorization, csrf } = readCredentials()
 const headers = {
-  Cookie: `authorization=${authorization}`,
-  'X-CSRF-TOKEN': csrf
+  [Header.COOKIE]: `authorization=${authorization}`,
+  [Header.X_CSRF_TOKEN]: csrf
 } as const
 
-const blob = await openAsBlob(`public/${filename}`, {
+const blob = await openAsBlob(`public/${pdf}`, {
   type: 'application/pdf'
 })
 
 const formdata = new FormData()
-formdata.append('name', filename)
+formdata.append('name', pdf)
 formdata.append('file', blob)
 
 await fetch(Endpoint.RESUME, {

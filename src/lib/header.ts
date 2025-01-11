@@ -1,4 +1,6 @@
 export enum Header {
   ACCEPT_LANGUAGE = 'accept-language',
-  LOCATION = 'Location'
+  LOCATION = 'Location',
+  COOKIE = 'Cookie',
+  X_CSRF_TOKEN = 'X-CSRF-TOKEN'
 }

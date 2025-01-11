@@ -1,3 +1,5 @@
 export enum Cookie {
-  LANG = 'lang'
+  LANG = 'lang',
+  AUTHORIZATION = 'authorization',
+  CSRF = 'csrf'
 }

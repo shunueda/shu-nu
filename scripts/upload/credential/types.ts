@@ -3,7 +3,7 @@ export interface Credential {
   csrf: string
 }
 
-export interface Row {
+export interface CookieRow {
   name: string
   encrypted_value: string
 }

@@ -1,8 +1,9 @@
 import { homedir } from 'node:os'
 import { join } from 'node:path'
 import { DatabaseSync } from 'node:sqlite'
-import type { Credential, Row } from '../types'
+import { Cookie } from '#lib/cookie'
 import { decrypt } from './decrypt'
+import type { CookieRow, Credential } from './types'
 
 const host = '.simplify.jobs'
 
@@ -20,10 +21,10 @@ const query = new DatabaseSync(path).prepare(`
 `)
 
 export function readCredentials(): Credential {
-  const { encrypted_value: authorization } = query.get('authorization') as Row
-  const { encrypted_value: csrf } = query.get('csrf') as Row
   return {
-    authorization: decrypt(authorization),
-    csrf: decrypt(csrf)
+    authorization: decrypt(
+      (query.get(Cookie.AUTHORIZATION) as CookieRow).encrypted_value
+    ),
+    csrf: decrypt((query.get(Cookie.CSRF) as CookieRow).encrypted_value)
   } as const
 }

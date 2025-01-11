@@ -5,7 +5,9 @@ import { $ } from 'zx'
 import resume from '~/assets/resume.json' with { type: 'json' }
 import { generate } from './generate'
 
-const out = 'public/Shun_Ueda_Resume.tex'
+export const filename = 'Shun_Ueda_Resume'
+
+const out = `public/${filename}.tex`
 
 const generated = await generate({
   resume,
