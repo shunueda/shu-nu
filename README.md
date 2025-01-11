@@ -6,6 +6,6 @@
 </p>
 
 <p align="center">
-  My website :)
+  Everything about me.
 </p>
 
