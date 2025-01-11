@@ -2,14 +2,13 @@ import { capitalCase } from 'change-case'
 import { FileTextIcon } from 'lucide-react'
 import Link from 'next/link'
 import resume from '~/assets/resume.json' with { type: 'json' }
-import { filename } from '~/scripts/pdf'
 import { Button } from '#components/ui/button'
 
 export default function Page() {
   return (
     <section>
       <h1>Resume.</h1>
-      <Link href={`/${filename}.pdf`} target='_blank'>
+      <Link href={'/Shun_Ueda_Resume.pdf'} target='_blank'>
         <Button className='mt-4'>
           <FileTextIcon />
           View in PDF
