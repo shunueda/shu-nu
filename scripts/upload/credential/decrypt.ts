@@ -1,10 +1,16 @@
+/**
+ * Chrome Cookie Decryption
+ * {@see https://gist.github.com/creachadair/937179894a24571ce9860e2475a2d2ec}
+ */
 import { createDecipheriv, pbkdf2Sync } from 'node:crypto'
 import { getPassword } from 'keytar'
 
+// keychain
 const service = 'Chrome Safe Storage'
 const account = 'Chrome'
 const safestorepass = (await getPassword(service, account)) as string
 
+// decryption parameters
 const algorithm = 'aes-128-cbc'
 const padding = 32
 const keylen = 16

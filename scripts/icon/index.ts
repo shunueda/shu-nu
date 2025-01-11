@@ -1,7 +1,7 @@
 import { mkdir, writeFile } from 'node:fs/promises'
 import sharp from 'sharp'
 import toIco from 'to-ico'
-import { createIconSvg } from '#lib/icon'
+import { generate } from './generate'
 
 // create favicon.ico
 const sizes = [16, 24, 32, 48, 64, 128, 256]
@@ -9,7 +9,7 @@ const faviconPath = 'src/app/favicon.ico'
 
 const pngs = await Promise.all(
   sizes.map(async size => {
-    const svg = await createIconSvg(size)
+    const svg = await generate(size)
     const buffer = Buffer.from(svg)
     return sharp(buffer).png().toBuffer()
   })
@@ -21,7 +21,7 @@ await writeFile(faviconPath, await toIco(pngs))
 const out = 'public'
 const size = 256
 
-const svg = await createIconSvg(size)
+const svg = await generate(size)
 const buffer = Buffer.from(svg)
 await mkdir(out, {
   recursive: true
