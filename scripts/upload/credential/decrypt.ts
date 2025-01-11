@@ -22,7 +22,7 @@ const salt = 'saltysalt'
 const key = pbkdf2Sync(keychain, salt, iterations, keylen, digest)
 
 export function decrypt(cookie: string): string {
-  const iv = Buffer.alloc(16)
+  const iv = Buffer.alloc(ivlen)
   const decipher = createDecipheriv(algorithm, key, iv)
   const encrypted = cookie.slice(prefix.length)
   const data = Buffer.from(encrypted, 'base64')
