@@ -8,7 +8,7 @@ import { getPassword } from 'keytar'
 // keychain
 const service = 'Chrome Safe Storage'
 const account = 'Chrome'
-const keychain = (await getPassword(service, account)) || 'peanuts'
+const keychain = await getPassword(service, account)
 
 // decryption parameters
 const algorithm = 'aes-128-cbc'
@@ -19,7 +19,9 @@ const keylen = 16
 const padding = 32
 const prefix = 'v10'
 const salt = 'saltysalt'
-const key = pbkdf2Sync(keychain, salt, iterations, keylen, digest)
+
+// biome-ignore lint/style/noNonNullAssertion: Keychain exists
+const key = pbkdf2Sync(keychain!, salt, iterations, keylen, digest)
 
 export function decrypt(cookie: string): string {
   const iv = Buffer.alloc(ivlen)

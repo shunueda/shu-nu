@@ -2,7 +2,7 @@ import { rm, writeFile } from 'node:fs/promises'
 import { basename, dirname } from 'node:path'
 import { google } from '@ai-sdk/google'
 import { $ } from 'zx'
-import resume from '~/assets/resume.json' with { type: 'json' }
+import resume from '~/assets/resume/base.json' with { type: 'json' }
 import { File } from '#lib/file'
 import { generate } from './generate'
 
@@ -10,7 +10,7 @@ const out = `public/${File.RESUME}.tex`
 
 const generated = await generate({
   resume,
-  template: 'assets/template.tex',
+  template: 'assets/resume/template.tex',
   model: google('gemini-1.5-flash')
 })
 

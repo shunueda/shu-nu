@@ -11,7 +11,7 @@
       "institution": "Lehigh University",
       "location": "Bethlehem, PA",
       "duration": "January 2025",
-      "degree": "B.S. in Computer Science & Engineering"
+      "degree": "B.S., Computer Science & Engineering"
     }
   ],
   "experiences": [
@@ -22,7 +22,7 @@
       "location": "Seattle, WA",
       "duration": "May 2024 – August 2024",
       "descriptions": [
-        "Part of a team that owns internal CI/CD services for ML models. Developed the core logic for pipeline configuration queries, improving the retrieval efficiency by 80%.",
+        "Part of a team that owns internal CI/CD pipeline services for ML models. Developed the core logic for pipeline configuration queries, improving the retrieval efficiency by 80%.",
         "Built a real-time system monitoring dashboard, enhancing reliability and usability for 250+ engineers.",
         "Selected as one of the select interns recognized for outstanding contributions."
       ]
@@ -45,7 +45,7 @@
       "location": "Baltimore, MD",
       "duration": "June 2022 – August 2022",
       "descriptions": [
-        "Developed a high-performance DICOM data processor for real-time medical image visualization, enhancing oncologists' clinical efficiency.",
+        "Developed a high-performance DICOM data processor for real-time medical image visualization.",
         "Streamlined deployment workflows using Azure DevOps, reducing deployment time by 70%."
       ]
     },
@@ -76,7 +76,7 @@
       "Spring Framework (Spring Boot)",
       "Node.js",
       "Mockito",
-      "React",
+      "TensorFlow",
       "gRPC"
     ],
     "devops_&_infrastructures": [

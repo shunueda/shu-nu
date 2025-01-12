@@ -1,10 +1,10 @@
 import { openAsBlob } from 'node:fs'
 import { EOL } from 'node:os'
 import { setTimeout } from 'node:timers/promises'
-import { experiences } from '~/assets/resume.json' with { type: 'json' }
+import { experiences } from '~/assets/resume/base.json' with { type: 'json' }
 import { File } from '#lib/file'
 import { Header } from '#lib/header'
-import { readCredentials } from './credential/cookie'
+import { readCredentials } from './auth/cookie'
 import { Endpoint } from './endpoint'
 
 const pdf = `${File.RESUME}.pdf`
