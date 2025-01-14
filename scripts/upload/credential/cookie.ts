@@ -12,8 +12,7 @@ const path = join(
 )
 
 const query = new DatabaseSync(path).prepare(`
-    SELECT name,
-           CAST(encrypted_value AS BLOB) AS encrypted_value
+    SELECT CAST(encrypted_value AS BLOB) AS encrypted_value
     FROM cookies
     WHERE host_key = '${host}'
       AND name = ?
