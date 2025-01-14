@@ -1,7 +1,7 @@
 import { capitalCase } from 'change-case'
 import { FileTextIcon } from 'lucide-react'
 import Link from 'next/link'
-import resume from '~/assets/resume/base.json' with { type: 'json' }
+import resume from '~/assets/resume.json' with { type: 'json' }
 import { Button } from '#components/ui/button'
 import { File } from '#lib/file'
 
