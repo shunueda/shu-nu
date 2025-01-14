@@ -23,12 +23,9 @@ const salt = 'saltysalt'
 // biome-ignore lint/style/noNonNullAssertion: Keychain exists
 const key = pbkdf2Sync(keychain!, salt, iterations, keylen, digest)
 
-export function decrypt(cookie: string): string {
+export function decrypt(cookie: Uint8Array): string {
   const iv = Buffer.alloc(ivlen)
   const decipher = createDecipheriv(algorithm, key, iv)
   const encrypted = cookie.slice(prefix.length)
-  const data = Buffer.from(encrypted, 'base64')
-  return (
-    decipher.update(data, undefined, 'utf-8') + decipher.final('utf-8')
-  ).slice(padding)
+  return (decipher.update(encrypted) + decipher.final('utf-8')).slice(padding)
 }

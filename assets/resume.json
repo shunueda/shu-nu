@@ -95,7 +95,9 @@
       "SQLite",
       "MongoDB",
       "DynamoDB",
-      "Redis"
+      "Redis",
+      "Cassandra",
+      "Elasticsearch"
     ],
     "tools": ["Gradle", "Maven", "CMake", "Git"],
     "software_engineering": [
