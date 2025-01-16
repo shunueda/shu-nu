@@ -12,7 +12,7 @@
     "prebuild": "run-p build:*",
     "build": "next build",
     "build:icon": "tsx scripts/icon",
-    "build:pdf": "tsx --env-file=.env.local scripts/pdf",
+    "build:pdf": "tsx --env-file-if-exists=.env.local scripts/pdf",
     "check": "biome check --write && sort-package-json",
     "precommit": "pnpm type-check & pnpm check & pnpm test",
     "commit": "git add --all && cz",
