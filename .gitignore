@@ -2,10 +2,7 @@
 
 # built at build-time
 src/app/favicon.ico
-public/icon.*
-
-# resume-related
-public/Shun_Ueda_Resume.tex
+public
 
 # dependencies
 /node_modules
