@@ -1,7 +1,6 @@
 import { homedir } from 'node:os'
 import { join } from 'node:path'
 import { DatabaseSync } from 'node:sqlite'
-import { Cookie } from '#lib/cookie'
 import { decrypt } from './decrypt'
 
 const host = '.simplify.jobs'
@@ -30,7 +29,7 @@ function readEncryptedValue(name: string) {
 
 export function readCookie() {
   return {
-    authorization: readEncryptedValue(Cookie.AUTHORIZATION),
-    csrf: readEncryptedValue(Cookie.CSRF)
+    authorization: readEncryptedValue('authorization'),
+    csrf: readEncryptedValue('csrf')
   } as const
 }

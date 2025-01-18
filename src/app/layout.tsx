@@ -1,6 +1,38 @@
 import './globals.css'
-import type { LayoutProps } from '#types/props'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
+import { GeistSans } from 'geist/font/sans'
+import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
+import pkg from '~/package.json' with { type: 'json' }
+import { Footer } from '#components/footer'
+import { Nav } from '#components/nav'
 
-export default function Layout({ children }: LayoutProps) {
-  return children
+export async function generateMetadata() {
+  return {
+    title: {
+      template: `${pkg.author.name} - %s`,
+      default: pkg.author.name
+    }
+  } satisfies Metadata
+}
+
+export interface Props {
+  children: ReactNode
+}
+
+export default async function Layout({ children }: Props) {
+  return (
+    <html lang='en' className={GeistSans.className}>
+      <body>
+        <main className='mt-8 mx-auto max-w-xl w-10/12'>
+          <Nav />
+          {children}
+          <Footer />
+        </main>
+        <SpeedInsights />
+        <Analytics />
+      </body>
+    </html>
+  )
 }

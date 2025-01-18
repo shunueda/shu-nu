@@ -1,7 +1,7 @@
 {
   "name": "Shun Ueda",
   "contact": {
-    "phone": "(203) 979-5285",
+    "phone": "+1 (203) 979-5285",
     "email": "me@shu.nu",
     "linkedin": "linkedin.com/in/shunueda",
     "github": "github.com/shunueda"
@@ -24,7 +24,7 @@
       "descriptions": [
         "Part of a team that owns internal CI/CD services for ML models. Developed the core logic for pipeline configuration queries, improving the retrieval efficiency by 80%.",
         "Built a real-time system monitoring dashboard, enhancing reliability and usability for 250+ engineers.",
-        "Selected as one of the select interns recognized for outstanding contributions."
+        "Selected as one of the few interns to present the work to the Senior Director for exceptional contributions."
       ]
     },
     {
@@ -61,52 +61,73 @@
       ]
     }
   ],
-  "skills": {
-    "programming_languages": [
-      "C",
-      "C++",
-      "Java",
-      "Python",
-      "Kotlin",
-      "Scala",
-      "JavaScript",
-      "TypeScript"
-    ],
-    "frameworks_&_libraries": [
-      "Spring Framework (Spring Boot)",
-      "Node.js",
-      "Mockito",
-      "React",
-      "gRPC"
-    ],
-    "devops_&_infrastructures": [
-      "AWS",
-      "Docker",
-      "Kubernetes",
-      "Kafka",
-      "GitHub Actions",
-      "Jenkins",
-      "Terraform"
-    ],
-    "databases": [
-      "SQL/NoSQL",
-      "MySQL",
-      "PostgreSQL",
-      "SQLite",
-      "MongoDB",
-      "DynamoDB",
-      "Redis"
-    ],
-    "tools": ["Gradle", "Maven", "CMake", "Git"],
-    "software_engineering": [
-      "Agile",
-      "Software Development Life Cycle (SDLC)",
-      "Object-Oriented Programming (OOP)",
-      "DevOps (CI/CD)",
-      "Operating Systems",
-      "Embedded Systems",
-      "Distributed Systems"
-    ],
-    "operating_systems": ["Linux", "Unix"]
-  }
+  "skills": [
+    {
+      "category": "programming_languages",
+      "items": [
+        "C",
+        "C++",
+        "Java",
+        "Python",
+        "Kotlin",
+        "Scala",
+        "JavaScript",
+        "TypeScript"
+      ]
+    },
+    {
+      "category": "frameworks_&_libraries",
+      "items": [
+        "Spring Framework (Spring Boot)",
+        "Node.js",
+        "Mockito",
+        "React",
+        "gRPC"
+      ]
+    },
+    {
+      "category": "devops_&_infrastructures",
+      "items": [
+        "AWS",
+        "Docker",
+        "Kubernetes",
+        "Kafka",
+        "GitHub Actions",
+        "Jenkins",
+        "Terraform"
+      ]
+    },
+    {
+      "category": "databases",
+      "items": [
+        "SQL/NoSQL",
+        "MySQL",
+        "PostgreSQL",
+        "SQLite",
+        "MongoDB",
+        "DynamoDB",
+        "Redis"
+      ]
+    },
+    {
+      "category": "tools",
+      "items": ["Gradle", "Maven", "CMake", "Git"]
+    },
+    {
+      "category": "software_engineering",
+      "items": [
+        "Agile",
+        "Software Development Life Cycle (SDLC)",
+        "Object-Oriented Programming (OOP)",
+        "DevOps (CI/CD)",
+        "Operating Systems",
+        "Embedded Systems",
+        "Distributed Systems"
+      ]
+    },
+    {
+      "category": "operating_systems",
+      "items": ["Linux", "Unix"]
+    }
+  ]
 }

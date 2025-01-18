@@ -5,7 +5,8 @@
   "homepage": "https://shu.nu",
   "author": {
     "name": "Shun Ueda",
-    "email": "me@shu.nu"
+    "email": "me@shu.nu",
+    "username": "shunueda"
   },
   "type": "module",
   "scripts": {
@@ -22,52 +23,40 @@
     "type-check": "tsc",
     "upload": "tsx --no-warnings scripts/upload"
   },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "dependencies": {
-    "@radix-ui/react-icons": "^1.3.2",
-    "@radix-ui/react-label": "^2.1.1",
-    "@radix-ui/react-separator": "^1.1.1",
-    "@radix-ui/react-slot": "^1.1.1",
-    "@radix-ui/react-switch": "^1.1.2",
     "@vercel/analytics": "^1.4.1",
     "@vercel/speed-insights": "^1.1.0",
-    "accept-language-parser": "^1.5.0",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "effect": "^3.12.4",
     "geist": "^1.3.1",
-    "lucide-react": "^0.471.1",
-    "next": "15.1.4",
+    "next": "15.1.5",
     "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "tailwind-merge": "^2.6.0",
-    "tailwindcss-animate": "^1.0.7"
+    "react-dom": "19.0.0"
   },
   "devDependencies": {
-    "@ai-sdk/google": "^1.0.16",
+    "@ai-sdk/google": "^1.1.0",
     "@biomejs/biome": "^1.9.4",
-    "@tailwindcss/typography": "^0.5.16",
-    "@types/accept-language-parser": "^1.5.6",
-    "@types/node": "^22.10.6",
-    "@types/react": "19.0.6",
+    "@types/node": "^22.10.7",
+    "@types/react": "19.0.7",
     "@types/react-dom": "19.0.3",
     "@types/to-ico": "^1.1.3",
-    "ai": "^4.0.34",
-    "change-case": "^5.4.4",
+    "ai": "^4.1.0",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
     "dedent": "^1.5.3",
     "keytar": "^7.9.0",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.5.0",
+    "postcss": "^8.5.1",
     "satori": "^0.12.1",
     "sharp": "^0.33.5",
-    "sort-package-json": "^2.13.0",
+    "sort-package-json": "^2.14.0",
     "tailwindcss": "^3.4.17",
     "to-ico": "^1.1.5",
     "tsx": "^4.19.2",
-    "typescript": "^5.7.3",
-    "vercel": "^39.3.0",
-    "zx": "^8.3.0"
+    "typescript": "^5.7.3"
   },
   "packageManager": "pnpm@9.15.4"
 }

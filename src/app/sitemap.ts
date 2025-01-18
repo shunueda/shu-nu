@@ -1,6 +1,5 @@
 import type { MetadataRoute } from 'next'
 import pkg from '~/package.json' with { type: 'json' }
-import { Lang } from '#lib/i18n'
 
 interface Entry {
   href: string
@@ -11,29 +10,15 @@ interface Entry {
 const entries: Entry[] = [
   {
     href: '',
-    priority: 0.8,
-    changeFrequency: 'monthly'
-  },
-  {
-    href: '/resume',
     priority: 1,
     changeFrequency: 'monthly'
   }
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return entries.map(({ href, priority, changeFrequency }) => ({
+  return entries.map(({ href, ...it }) => ({
+    ...it,
     url: new URL(href, pkg.homepage).href,
-    lastModified: new Date(),
-    alternates: {
-      languages: Object.fromEntries(
-        Object.values(Lang).map(lang => [
-          lang,
-          new URL(`${lang}${href}`, pkg.homepage).href
-        ])
-      )
-    },
-    priority,
-    changeFrequency
+    lastModified: new Date()
   }))
 }
