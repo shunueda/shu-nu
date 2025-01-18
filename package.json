@@ -23,11 +23,6 @@
     "type-check": "tsc",
     "upload": "tsx --no-warnings scripts/upload"
   },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  },
   "dependencies": {
     "@vercel/analytics": "^1.4.1",
     "@vercel/speed-insights": "^1.1.0",
