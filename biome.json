@@ -13,11 +13,11 @@
     "enabled": true,
     "rules": {
       "recommended": true,
-      "correctness": {
-        "noUnusedImports": "error"
+      "nursery": {
+        "useExplicitType": "warn"
       },
-      "complexity": {
-        "noForEach": "off"
+      "correctness": {
+        "noUnusedImports": "warn"
       }
     }
   },

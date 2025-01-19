@@ -1,14 +1,15 @@
 import './globals.css'
+
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
 import { GeistSans } from 'geist/font/sans'
 import type { Metadata } from 'next'
-import type { ReactNode } from 'react'
+import type { ReactElement, ReactNode } from 'react'
 import pkg from '~/package.json' with { type: 'json' }
 import { Footer } from '#components/footer'
 import { Nav } from '#components/nav'
 
-export async function generateMetadata() {
+export async function generateMetadata(): Promise<Metadata> {
   return {
     title: {
       template: `${pkg.author.name} - %s`,
@@ -21,7 +22,9 @@ export interface Props {
   children: ReactNode
 }
 
-export default async function Layout({ children }: Props) {
+export default async function Layout({
+  children
+}: Props): Promise<ReactElement> {
   return (
     <html lang='en' className={GeistSans.className}>
       <body>

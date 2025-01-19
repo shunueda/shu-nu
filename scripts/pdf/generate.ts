@@ -8,7 +8,11 @@ interface Args<T> {
   model: LanguageModel
 }
 
-export async function generate<T>({ resume, template, model }: Args<T>) {
+export async function generate<T>({
+  resume,
+  template,
+  model
+}: Args<T>): Promise<string> {
   const prompt = dedent`
     Convert the provided resume information into a LaTeX document.
 

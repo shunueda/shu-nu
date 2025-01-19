@@ -1,16 +1,17 @@
 import type { Route } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import type { ReactElement } from 'react'
 import icon from '/public/icon.svg'
 import { File } from '#lib/file'
 
-interface NavItem {
+interface Item {
   label: string
   href: Route
-  newTab?: boolean
+  target?: string
 }
 
-const items: NavItem[] = [
+const items: Item[] = [
   {
     label: 'home',
     href: '/'
@@ -18,26 +19,18 @@ const items: NavItem[] = [
   {
     label: 'resume',
     href: `/${File.RESUME}` as Route,
-    newTab: true
+    target: '_blank'
   }
 ]
 
-export function Nav() {
+export function Nav(): ReactElement {
   return (
     <nav className='pt-12 pb-12 flex gap-6'>
       <div className='relative w-5 h-5 my-auto'>
-        <Image src={icon} alt='icon' fill />
+        <Image src={icon} alt={icon} fill />
       </div>
-      {items.map(({ href, label, newTab }) => (
-        <Link
-          className='text-gray-700 '
-          href={href}
-          key={href}
-          {...(newTab && {
-            target: '_blank',
-            rel: 'noopener noreferrer'
-          })}
-        >
+      {items.map(({ href, label, target }) => (
+        <Link className='text-gray-700 ' href={href} key={href} target={target}>
           {label}
         </Link>
       ))}

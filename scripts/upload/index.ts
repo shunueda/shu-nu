@@ -4,14 +4,14 @@ import { join } from 'node:path'
 import { setTimeout } from 'node:timers/promises'
 import { experiences } from '~/assets/resume.json' with { type: 'json' }
 import { File } from '#lib/file'
-import { readCookie } from './credential/cookie'
+import { readChromeCookie } from './cookie'
 import { Endpoint } from './endpoint'
 
-const { authorization, csrf } = readCookie()
+const host = '.simplify.jobs'
 
 const headers = {
-  Cookie: `authorization=${authorization}`,
-  'X-CSRF-TOKEN': csrf
+  Cookie: `authorization=${readChromeCookie(host, 'authorization')}`,
+  'X-CSRF-TOKEN': readChromeCookie(host, 'csrf')
 } as const
 
 const blob = await openAsBlob(join('public', File.RESUME), {
@@ -29,7 +29,7 @@ await fetch(Endpoint.RESUME, {
 })
 
 for (const experience of experiences) {
-  await setTimeout(1000)
+  await setTimeout(500)
   await fetch(`${Endpoint.EXPERIENCE}/${experience.simplify_id}`, {
     method: 'PUT',
     headers: {

@@ -1,6 +1,7 @@
+import type { ReactElement } from 'react'
 import pkg from '~/package.json' with { type: 'json' }
 
-export default async function Page() {
+export default async function Page(): Promise<ReactElement> {
   return (
     <section>
       <h1 className='text-2xl font-medium tracking-tighter'>

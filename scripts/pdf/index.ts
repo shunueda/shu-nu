@@ -8,11 +8,11 @@ import { generate } from './generate'
 
 const out = join('public', File.RESUME)
 
-const generated = await generate({
+generate({
   resume,
   template: 'assets/template.tex',
   model: google('gemini-1.5-flash')
 })
-const compiled = await compile(generated)
-const buffer = Buffer.from(compiled)
-await writeFile(out, buffer)
+  .then(compile)
+  .then(Buffer.from)
+  .then(it => writeFile(out, it))
