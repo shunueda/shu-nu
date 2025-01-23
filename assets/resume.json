@@ -63,7 +63,7 @@
   ],
   "skills": [
     {
-      "category": "programming_languages",
+      "category": "Programming Languages",
       "items": [
         "C",
         "C++",
@@ -76,7 +76,7 @@
       ]
     },
     {
-      "category": "frameworks_&_libraries",
+      "category": "Frameworks & Libraries",
       "items": [
         "Spring Framework (Spring Boot)",
         "Node.js",
@@ -86,7 +86,7 @@
       ]
     },
     {
-      "category": "devops_&_infrastructures",
+      "category": "DevOps & Infrastructures",
       "items": [
         "AWS",
         "Docker",
@@ -98,9 +98,10 @@
       ]
     },
     {
-      "category": "databases",
+      "category": "Databases",
       "items": [
-        "SQL/NoSQL",
+        "SQL",
+        "NoSQL",
         "MySQL",
         "PostgreSQL",
         "SQLite",
@@ -110,23 +111,23 @@
       ]
     },
     {
-      "category": "tools",
+      "category": "Tools",
       "items": ["Gradle", "Maven", "CMake", "Git"]
     },
     {
-      "category": "software_engineering",
+      "category": "Software Engineering",
       "items": [
         "Agile",
         "Software Development Life Cycle (SDLC)",
         "Object-Oriented Programming (OOP)",
         "DevOps (CI/CD)",
+        "Microservices",
         "Operating Systems",
-        "Embedded Systems",
         "Distributed Systems"
       ]
     },
     {
-      "category": "operating_systems",
+      "category": "Operating Systems",
       "items": ["Linux", "Unix"]
     }
   ]
