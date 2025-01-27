@@ -1,18 +1,18 @@
-import type { MetadataRoute } from 'next'
-import pkg from '~/package.json' with { type: 'json' }
+import type { MetadataRoute, Route } from 'next'
+import { absolute } from '#lib/utils'
 
 const entries: MetadataRoute.Sitemap[number][] = [
   {
-    url: '',
+    url: '/',
     priority: 1,
-    changeFrequency: 'monthly'
+    changeFrequency: 'weekly'
   }
 ]
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return entries.map(it => ({
     ...it,
-    url: new URL(it.url, pkg.homepage).href,
+    url: absolute(it.url as Route),
     lastModified: new Date()
   }))
 }

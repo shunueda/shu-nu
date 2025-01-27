@@ -1,5 +1,5 @@
-import type { MetadataRoute } from 'next'
-import pkg from '~/package.json' with { type: 'json' }
+import type { MetadataRoute, Route } from 'next'
+import { absolute } from '#lib/utils'
 
 export default async function robots(): Promise<MetadataRoute.Robots> {
   return {
@@ -7,6 +7,6 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
       userAgent: '*',
       allow: '/'
     },
-    sitemap: new URL('sitemap.xml', pkg.homepage).href
+    sitemap: absolute('sitemap.xml' as Route)
   }
 }

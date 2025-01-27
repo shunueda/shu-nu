@@ -11,10 +11,7 @@ import { Nav } from '#components/nav'
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: {
-      template: `${pkg.author.name} - %s`,
-      default: pkg.author.name
-    }
+    title: pkg.author.name
   } satisfies Metadata
 }
 

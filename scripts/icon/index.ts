@@ -11,7 +11,7 @@ globalThis.React = React
 const sizes = [16, 24, 32, 48, 64, 128, 256] as const
 const favicon = 'src/app/favicon.ico'
 
-const pngs = await Promise.all(
+Promise.all(
   sizes.map(async size => {
     const svg = await satori(createElement(Icon), {
       width: size,
@@ -28,5 +28,5 @@ const pngs = await Promise.all(
     return png
   })
 )
-
-await toIco(pngs).then(icon => writeFile(favicon, icon))
+  .then(toIco)
+  .then(buffer => writeFile(favicon, buffer))
