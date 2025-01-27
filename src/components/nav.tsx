@@ -23,7 +23,7 @@ const items: Item[] = [
   }
 ]
 
-export function Nav(): ReactElement {
+export async function Nav(): Promise<ReactElement> {
   return (
     <nav className='pt-12 pb-12 flex gap-6'>
       <div className='relative w-5 h-5 my-auto'>
