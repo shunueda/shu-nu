@@ -45,7 +45,7 @@
       "location": "Baltimore, MD",
       "duration": "June 2022 – August 2022",
       "descriptions": [
-        "Developed a high-performance DICOM data processor for real-time medical image visualization.",
+        "Developed a low-latency DICOM data processor for real-time medical image visualization.",
         "Streamlined deployment workflows using Azure DevOps, reducing deployment time by 70%."
       ]
     },
@@ -65,12 +65,12 @@
     {
       "category": "Programming Languages",
       "items": [
-        "C",
-        "C++",
         "Java",
-        "Python",
         "Kotlin",
         "Scala",
+        "C",
+        "C++",
+        "Python",
         "JavaScript",
         "TypeScript"
       ]
@@ -107,6 +107,7 @@
         "SQLite",
         "MongoDB",
         "DynamoDB",
+        "Cassandra",
         "Redis"
       ]
     },

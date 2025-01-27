@@ -9,10 +9,9 @@ import { generate } from './generate'
 const out = join('public', File.RESUME)
 
 generate({
-  resume,
+  data: resume,
   template: 'assets/template.tex',
   model: google('gemini-1.5-flash')
 })
   .then(compile)
-  .then(Buffer.from)
   .then(it => writeFile(out, it))

@@ -3,13 +3,13 @@ import { type LanguageModel, generateText } from 'ai'
 import dedent from 'dedent'
 
 interface Args<T> {
-  resume: T
+  data: T
   template: string
   model: LanguageModel
 }
 
 export async function generate<T>({
-  resume,
+  data,
   template,
   model
 }: Args<T>): Promise<string> {
@@ -27,7 +27,7 @@ export async function generate<T>({
      - Remove all comments from the LaTeX template.
 
     Resume:
-    ${JSON.stringify(resume)}
+    ${JSON.stringify(data)}
 
     Template:
     ${await readFile(template, 'utf-8')}

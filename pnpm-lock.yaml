@@ -28,8 +28,8 @@ importers:
         version: 19.0.0(react@19.0.0)
     devDependencies:
       '@ai-sdk/google':
-        specifier: ^1.1.1
-        version: 1.1.1(zod@3.23.8)
+        specifier: ^1.1.4
+        version: 1.1.4(zod@3.23.8)
       '@biomejs/biome':
         specifier: ^1.9.4
         version: 1.9.4
@@ -37,26 +37,26 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0
       '@types/node':
-        specifier: ^22.10.7
-        version: 22.10.7
+        specifier: ^22.10.10
+        version: 22.10.10
       '@types/react':
-        specifier: 19.0.7
-        version: 19.0.7
+        specifier: 19.0.8
+        version: 19.0.8
       '@types/react-dom':
         specifier: 19.0.3
-        version: 19.0.3(@types/react@19.0.7)
+        version: 19.0.3(@types/react@19.0.8)
       '@types/to-ico':
         specifier: ^1.1.3
         version: 1.1.3
       ai:
-        specifier: ^4.1.1
-        version: 4.1.1(react@19.0.0)(zod@3.23.8)
+        specifier: ^4.1.7
+        version: 4.1.7(react@19.0.0)(zod@3.23.8)
       commitizen:
         specifier: ^4.3.1
-        version: 4.3.1(@types/node@22.10.7)(typescript@5.7.3)
+        version: 4.3.1(@types/node@22.10.10)(typescript@5.7.3)
       cz-conventional-changelog:
         specifier: ^3.3.0
-        version: 3.3.0(@types/node@22.10.7)(typescript@5.7.3)
+        version: 3.3.0(@types/node@22.10.10)(typescript@5.7.3)
       dedent:
         specifier: ^1.5.3
         version: 1.5.3
@@ -96,14 +96,14 @@ importers:
 
 packages:
 
-  '@ai-sdk/google@1.1.1':
-    resolution: {integrity: sha512-DTO7XAcR+H4gJddVynITPEhDrka/lz7LfnSQK3k09zw8XDR45Up93jJbgntKXj0i774JsjZbx1++UJAb2gAzNA==}
+  '@ai-sdk/google@1.1.4':
+    resolution: {integrity: sha512-vit3iooqMkeVRWd2SbZfHxmMA9/KZYZLv2e+QO5d6a/KItHsK+wuzoCtDjodhiHWr85kfc3HH5STU1d6Q/4ncA==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.0.0
 
-  '@ai-sdk/provider-utils@2.1.1':
-    resolution: {integrity: sha512-+FRXSAdzPJFJN6TpyvyGWLo7WJuoBKI1g66UL+sli1HrxlldXSwxRPeb8tMMmNcyi3VKQogg2VsoJjlt4ort5w==}
+  '@ai-sdk/provider-utils@2.1.4':
+    resolution: {integrity: sha512-KrGr76ebmN3onrb+bQihgXZyYgYu/kClB+YjFmR1uXQpJG067rCBDWuTHvpI7vwPdQQDvIIgZ+0U5G4V+dN74w==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.0.0
@@ -111,12 +111,12 @@ packages:
       zod:
         optional: true
 
-  '@ai-sdk/provider@1.0.5':
-    resolution: {integrity: sha512-KATFp9CNXtMEzs8KBwLYK2+rGkkeED6p1+4koQveszyscIavObXIRW7vjr0MoZ9HFIHOUlrcak+3s/Xt3UXmAg==}
+  '@ai-sdk/provider@1.0.6':
+    resolution: {integrity: sha512-hwj/gFNxpDgEfTaYzCYoslmw01IY9kWLKl/wf8xuPvHtQIzlfXWmmUwc8PnCwxyt8cKzIuV0dfUghCf68HQ0SA==}
     engines: {node: '>=18'}
 
-  '@ai-sdk/react@1.1.1':
-    resolution: {integrity: sha512-7LX/YF8sis8UM7p8ftUcu0xySG86/TBddcB42w/+mWOXL6hjYzcuGD8G121TobHsnxVxbsBlF/ykps/GYVvLNg==}
+  '@ai-sdk/react@1.1.5':
+    resolution: {integrity: sha512-VTsX7BG3ntUbQtjHU4kqYt1uXQnQDx9/QAgp0/hu4Z2SpVFvf2QNsSCAUExDBvV6PupfITfzPyZmfiZworRZYg==}
     engines: {node: '>=18'}
     peerDependencies:
       react: ^18 || ^19 || ^19.0.0-rc
@@ -127,8 +127,8 @@ packages:
       zod:
         optional: true
 
-  '@ai-sdk/ui-utils@1.1.1':
-    resolution: {integrity: sha512-lkTxGoebnEgs8HtKeWut0AglXN7zpWQwYmun4yuhpiup7DxPWTmt3vGiYvqQTBOFAmyoea3uzIKjHwRHuayr2w==}
+  '@ai-sdk/ui-utils@1.1.5':
+    resolution: {integrity: sha512-N4/YyDxJ7STcUeE6qv48Rgihly33yMIBeXtADuPEtuObofUcVAEjHSeWWSNuY780m2nocrjOV34XELwMDmZ73w==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.0.0
@@ -519,8 +519,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
 
-  '@mapbox/node-pre-gyp@2.0.0-rc.0':
-    resolution: {integrity: sha512-nhSMNprz3WmeRvd8iUs5JqkKr0Ncx46JtPxM3AhXes84XpSJfmIwKeWXRpsr53S7kqPkQfPhzrMFUxSNb23qSA==}
+  '@mapbox/node-pre-gyp@2.0.0':
+    resolution: {integrity: sha512-llMXd39jtP0HpQLVI37Bf1m2ADlEb35GYSh1SDSLsBhR+5iCxiNGlT31yqbNtVHygHAtMy6dWFERpU2JgufhPg==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -800,16 +800,16 @@ packages:
   '@types/node@16.18.11':
     resolution: {integrity: sha512-3oJbGBUWuS6ahSnEq1eN2XrCyf4YsWI8OyCvo7c64zQJNplk3mO84t53o8lfTk+2ji59g5ycfc6qQ3fdHliHuA==}
 
-  '@types/node@22.10.7':
-    resolution: {integrity: sha512-V09KvXxFiutGp6B7XkpaDXlNadZxrzajcY50EuoLIpQ6WWYCSvf19lVIazzfIzQvhUN2HjX12spLojTnhuKlGg==}
+  '@types/node@22.10.10':
+    resolution: {integrity: sha512-X47y/mPNzxviAGY5TcYPtYL8JsY3kAq2n8fMmKoRCxq/c4v4pyGNCzM2R6+M5/umG4ZfHuT+sgqDYqWc9rJ6ww==}
 
   '@types/react-dom@19.0.3':
     resolution: {integrity: sha512-0Knk+HJiMP/qOZgMyNFamlIjw9OFCsyC2ZbigmEEyXXixgre6IQpm/4V+r3qH4GC1JPvRJKInw+on2rV6YZLeA==}
     peerDependencies:
       '@types/react': ^19.0.0
 
-  '@types/react@19.0.7':
-    resolution: {integrity: sha512-MoFsEJKkAtZCrC1r6CM8U22GzhG7u2Wir8ons/aCKH6MBdD1ibV24zOSSkdZVUKqN5i396zG5VKLYZ3yaUZdLA==}
+  '@types/react@19.0.8':
+    resolution: {integrity: sha512-9P/o1IGdfmQxrujGbIMDyYaaCykhLKc0NGCtYcECNUr9UAaDe4gwvV9bR6tvd5Br1SG0j+PBpbKr2UYY8CwqSw==}
 
   '@types/to-ico@1.1.3':
     resolution: {integrity: sha512-3Ew8Hsz/qiDGzwvz75pjRU+6Ocfvrit6hHfirauEdJXxdro73MTe5XdcANh4GZ2wdJqWw9BIuHwWgKAfjUXoGw==}
@@ -939,8 +939,8 @@ packages:
     resolution: {integrity: sha512-jRR5wdylq8CkOe6hei19GGZnxM6rBGwFl3Bg0YItGDimvjGtAvdZk4Pu6Cl4u4Igsws4a1fd1Vq3ezrhn4KmFw==}
     engines: {node: '>= 14'}
 
-  ai@4.1.1:
-    resolution: {integrity: sha512-oZTzQfrvrXuXnAJhoCsGcLUxSMWWYKkqrk2LfCzcukvB8us7ZUnFBgs9drhXuFP3JkWVbeIZHXjDexZIZcbi8g==}
+  ai@4.1.7:
+    resolution: {integrity: sha512-UonRhARlF5/IMUxawJp3KAB2d6uWVajR2EtmE4UjcnZmbk4rbS97zH4Xo0bcuqUTg/rODygRk8Iyky5pxUXPUQ==}
     engines: {node: '>=18'}
     peerDependencies:
       react: ^18 || ^19 || ^19.0.0-rc
@@ -1014,6 +1014,10 @@ packages:
   assert-plus@1.0.0:
     resolution: {integrity: sha512-NfJ4UzBCcQGLDlQq7nHxH+tv3kyZ0hHQqF5BO6J7tNJeP5do1llPr8dZ8zHonfhAu0PHAdMkSo+8o0wxg9lZWw==}
     engines: {node: '>=0.8'}
+
+  async-function@1.0.0:
+    resolution: {integrity: sha512-hsU18Ae8CDTR6Kgu9DYf0EbCr/a5iGL0rytQDobUcdpYOKokk8LEjVphnXkDkgpi0wYVsqrXuP0bZxJaTqdgoA==}
+    engines: {node: '>= 0.4'}
 
   async-listen@1.2.0:
     resolution: {integrity: sha512-CcEtRh/oc9Jc4uWeUwdpG/+Mb2YUHKmdaTf0gUr7Wa+bfp4xx70HOb3RuSTJMvqKNB1TkdTfjLdrcz2X4rkkZA==}
@@ -1719,8 +1723,9 @@ packages:
       debug:
         optional: true
 
-  for-each@0.3.3:
-    resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
+  for-each@0.3.4:
+    resolution: {integrity: sha512-kKaIINnFpzW6ffJNDjjyjrk21BkDx38c0xa/klsT8VzLCaMEefv4ZTacrcVR4DmgTeBra++jMDAfS/tS799YDw==}
+    engines: {node: '>= 0.4'}
 
   foreground-child@3.3.0:
     resolution: {integrity: sha512-Ld2g8rrAyMYFXBhEqMz8ZAHBi4J4uS1i/CxGMDnjyFWddMXLVcDp051DZfu+t7+ab7Wv6SMqpWmyFIj5UbfFvg==}
@@ -1981,8 +1986,8 @@ packages:
   is-arrayish@0.3.2:
     resolution: {integrity: sha512-eVRqCvVlZbuw3GrM63ovNSNAeA1K16kaR/LRY/92w0zxQ5/1YzwblUX652i4Xs9RwAGjW9d9y6X88t8OaAJfWQ==}
 
-  is-async-function@2.1.0:
-    resolution: {integrity: sha512-GExz9MtyhlZyXYLxzlJRj5WUCE661zhDa1Yna52CN57AJsymh+DvXXjyveSioqSRdxvUrdKdvqB1b5cVKsNpWQ==}
+  is-async-function@2.1.1:
+    resolution: {integrity: sha512-9dgM/cZBnNvjzaMYHVoxxfPj2QXt22Ev7SuuPrs+xav0ukGB0S6d4ydZdEiM48kLx5kDV+QBPrpVnFyefL8kkQ==}
     engines: {node: '>= 0.4'}
 
   is-bigint@1.1.0:
@@ -3411,39 +3416,39 @@ packages:
 
 snapshots:
 
-  '@ai-sdk/google@1.1.1(zod@3.23.8)':
+  '@ai-sdk/google@1.1.4(zod@3.23.8)':
     dependencies:
-      '@ai-sdk/provider': 1.0.5
-      '@ai-sdk/provider-utils': 2.1.1(zod@3.23.8)
+      '@ai-sdk/provider': 1.0.6
+      '@ai-sdk/provider-utils': 2.1.4(zod@3.23.8)
       zod: 3.23.8
 
-  '@ai-sdk/provider-utils@2.1.1(zod@3.23.8)':
+  '@ai-sdk/provider-utils@2.1.4(zod@3.23.8)':
     dependencies:
-      '@ai-sdk/provider': 1.0.5
+      '@ai-sdk/provider': 1.0.6
       eventsource-parser: 3.0.0
       nanoid: 3.3.8
       secure-json-parse: 2.7.0
     optionalDependencies:
       zod: 3.23.8
 
-  '@ai-sdk/provider@1.0.5':
+  '@ai-sdk/provider@1.0.6':
     dependencies:
       json-schema: 0.4.0
 
-  '@ai-sdk/react@1.1.1(react@19.0.0)(zod@3.23.8)':
+  '@ai-sdk/react@1.1.5(react@19.0.0)(zod@3.23.8)':
     dependencies:
-      '@ai-sdk/provider-utils': 2.1.1(zod@3.23.8)
-      '@ai-sdk/ui-utils': 1.1.1(zod@3.23.8)
+      '@ai-sdk/provider-utils': 2.1.4(zod@3.23.8)
+      '@ai-sdk/ui-utils': 1.1.5(zod@3.23.8)
       swr: 2.3.0(react@19.0.0)
       throttleit: 2.1.0
     optionalDependencies:
       react: 19.0.0
       zod: 3.23.8
 
-  '@ai-sdk/ui-utils@1.1.1(zod@3.23.8)':
+  '@ai-sdk/ui-utils@1.1.5(zod@3.23.8)':
     dependencies:
-      '@ai-sdk/provider': 1.0.5
-      '@ai-sdk/provider-utils': 2.1.1(zod@3.23.8)
+      '@ai-sdk/provider': 1.0.6
+      '@ai-sdk/provider-utils': 2.1.4(zod@3.23.8)
       zod-to-json-schema: 3.24.1(zod@3.23.8)
     optionalDependencies:
       zod: 3.23.8
@@ -3504,7 +3509,7 @@ snapshots:
   '@commitlint/execute-rule@19.5.0':
     optional: true
 
-  '@commitlint/load@19.6.1(@types/node@22.10.7)(typescript@5.7.3)':
+  '@commitlint/load@19.6.1(@types/node@22.10.10)(typescript@5.7.3)':
     dependencies:
       '@commitlint/config-validator': 19.5.0
       '@commitlint/execute-rule': 19.5.0
@@ -3512,7 +3517,7 @@ snapshots:
       '@commitlint/types': 19.5.0
       chalk: 5.4.1
       cosmiconfig: 9.0.0(typescript@5.7.3)
-      cosmiconfig-typescript-loader: 6.1.0(@types/node@22.10.7)(cosmiconfig@9.0.0(typescript@5.7.3))(typescript@5.7.3)
+      cosmiconfig-typescript-loader: 6.1.0(@types/node@22.10.10)(cosmiconfig@9.0.0(typescript@5.7.3))(typescript@5.7.3)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -3729,7 +3734,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@mapbox/node-pre-gyp@2.0.0-rc.0':
+  '@mapbox/node-pre-gyp@2.0.0':
     dependencies:
       consola: 3.4.0
       detect-libc: 2.0.3
@@ -3938,7 +3943,7 @@ snapshots:
 
   '@types/conventional-commits-parser@5.0.1':
     dependencies:
-      '@types/node': 22.10.7
+      '@types/node': 22.10.10
     optional: true
 
   '@types/diff-match-patch@1.0.36': {}
@@ -3949,21 +3954,21 @@ snapshots:
 
   '@types/node@16.18.11': {}
 
-  '@types/node@22.10.7':
+  '@types/node@22.10.10':
     dependencies:
       undici-types: 6.20.0
 
-  '@types/react-dom@19.0.3(@types/react@19.0.7)':
+  '@types/react-dom@19.0.3(@types/react@19.0.8)':
     dependencies:
-      '@types/react': 19.0.7
+      '@types/react': 19.0.8
 
-  '@types/react@19.0.7':
+  '@types/react@19.0.8':
     dependencies:
       csstype: 3.1.3
 
   '@types/to-ico@1.1.3':
     dependencies:
-      '@types/node': 22.10.7
+      '@types/node': 22.10.10
 
   '@vercel/analytics@1.4.1(next@15.1.6(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)':
     optionalDependencies:
@@ -4030,7 +4035,7 @@ snapshots:
 
   '@vercel/nft@0.27.10':
     dependencies:
-      '@mapbox/node-pre-gyp': 2.0.0-rc.0
+      '@mapbox/node-pre-gyp': 2.0.0
       '@rollup/pluginutils': 5.1.4
       acorn: 8.14.0
       acorn-import-attributes: 1.9.5(acorn@8.14.0)
@@ -4141,12 +4146,12 @@ snapshots:
 
   agent-base@7.1.3: {}
 
-  ai@4.1.1(react@19.0.0)(zod@3.23.8):
+  ai@4.1.7(react@19.0.0)(zod@3.23.8):
     dependencies:
-      '@ai-sdk/provider': 1.0.5
-      '@ai-sdk/provider-utils': 2.1.1(zod@3.23.8)
-      '@ai-sdk/react': 1.1.1(react@19.0.0)(zod@3.23.8)
-      '@ai-sdk/ui-utils': 1.1.1(zod@3.23.8)
+      '@ai-sdk/provider': 1.0.6
+      '@ai-sdk/provider-utils': 2.1.4(zod@3.23.8)
+      '@ai-sdk/react': 1.1.5(react@19.0.0)(zod@3.23.8)
+      '@ai-sdk/ui-utils': 1.1.5(zod@3.23.8)
       '@opentelemetry/api': 1.9.0
       jsondiffpatch: 0.6.0
     optionalDependencies:
@@ -4224,6 +4229,8 @@ snapshots:
       safer-buffer: 2.1.2
 
   assert-plus@1.0.0: {}
+
+  async-function@1.0.0: {}
 
   async-listen@1.2.0: {}
 
@@ -4407,10 +4414,10 @@ snapshots:
     dependencies:
       delayed-stream: 1.0.0
 
-  commitizen@4.3.1(@types/node@22.10.7)(typescript@5.7.3):
+  commitizen@4.3.1(@types/node@22.10.10)(typescript@5.7.3):
     dependencies:
       cachedir: 2.3.0
-      cz-conventional-changelog: 3.3.0(@types/node@22.10.7)(typescript@5.7.3)
+      cz-conventional-changelog: 3.3.0(@types/node@22.10.10)(typescript@5.7.3)
       dedent: 0.7.0
       detect-indent: 6.1.0
       find-node-modules: 2.1.3
@@ -4439,9 +4446,9 @@ snapshots:
 
   core-util-is@1.0.2: {}
 
-  cosmiconfig-typescript-loader@6.1.0(@types/node@22.10.7)(cosmiconfig@9.0.0(typescript@5.7.3))(typescript@5.7.3):
+  cosmiconfig-typescript-loader@6.1.0(@types/node@22.10.10)(cosmiconfig@9.0.0(typescript@5.7.3))(typescript@5.7.3):
     dependencies:
-      '@types/node': 22.10.7
+      '@types/node': 22.10.10
       cosmiconfig: 9.0.0(typescript@5.7.3)
       jiti: 2.4.2
       typescript: 5.7.3
@@ -4489,16 +4496,16 @@ snapshots:
 
   csstype@3.1.3: {}
 
-  cz-conventional-changelog@3.3.0(@types/node@22.10.7)(typescript@5.7.3):
+  cz-conventional-changelog@3.3.0(@types/node@22.10.10)(typescript@5.7.3):
     dependencies:
       chalk: 2.4.2
-      commitizen: 4.3.1(@types/node@22.10.7)(typescript@5.7.3)
+      commitizen: 4.3.1(@types/node@22.10.10)(typescript@5.7.3)
       conventional-commit-types: 3.0.0
       lodash.map: 4.6.0
       longest: 2.0.1
       word-wrap: 1.2.5
     optionalDependencies:
-      '@commitlint/load': 19.6.1(@types/node@22.10.7)(typescript@5.7.3)
+      '@commitlint/load': 19.6.1(@types/node@22.10.10)(typescript@5.7.3)
     transitivePeerDependencies:
       - '@types/node'
       - typescript
@@ -4923,7 +4930,7 @@ snapshots:
 
   follow-redirects@1.15.9: {}
 
-  for-each@0.3.3:
+  for-each@0.3.4:
     dependencies:
       is-callable: 1.2.7
 
@@ -5225,8 +5232,9 @@ snapshots:
 
   is-arrayish@0.3.2: {}
 
-  is-async-function@2.1.0:
+  is-async-function@2.1.1:
     dependencies:
+      async-function: 1.0.0
       call-bound: 1.0.3
       get-proto: 1.0.1
       has-tostringtag: 1.0.2
@@ -6513,7 +6521,7 @@ snapshots:
   typed-array-byte-length@1.0.3:
     dependencies:
       call-bind: 1.0.8
-      for-each: 0.3.3
+      for-each: 0.3.4
       gopd: 1.2.0
       has-proto: 1.2.0
       is-typed-array: 1.1.15
@@ -6522,7 +6530,7 @@ snapshots:
     dependencies:
       available-typed-arrays: 1.0.7
       call-bind: 1.0.8
-      for-each: 0.3.3
+      for-each: 0.3.4
       gopd: 1.2.0
       has-proto: 1.2.0
       is-typed-array: 1.1.15
@@ -6531,7 +6539,7 @@ snapshots:
   typed-array-length@1.0.7:
     dependencies:
       call-bind: 1.0.8
-      for-each: 0.3.3
+      for-each: 0.3.4
       gopd: 1.2.0
       is-typed-array: 1.1.15
       possible-typed-array-names: 1.0.0
@@ -6645,7 +6653,7 @@ snapshots:
       call-bound: 1.0.3
       function.prototype.name: 1.1.8
       has-tostringtag: 1.0.2
-      is-async-function: 2.1.0
+      is-async-function: 2.1.1
       is-date-object: 1.1.0
       is-finalizationregistry: 1.1.1
       is-generator-function: 1.1.0
@@ -6668,7 +6676,7 @@ snapshots:
       available-typed-arrays: 1.0.7
       call-bind: 1.0.8
       call-bound: 1.0.3
-      for-each: 0.3.3
+      for-each: 0.3.4
       gopd: 1.2.0
       has-tostringtag: 1.0.2
 

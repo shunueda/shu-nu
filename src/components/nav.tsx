@@ -1,14 +1,14 @@
 import type { Route } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import type { ReactElement } from 'react'
+import type { HTMLAttributeAnchorTarget, ReactElement } from 'react'
 import icon from '/public/icon.svg'
 import { File } from '#lib/file'
 
 interface Item {
   label: string
   href: Route
-  target?: string
+  target?: HTMLAttributeAnchorTarget
 }
 
 const items: Item[] = [
@@ -30,7 +30,7 @@ export function Nav(): ReactElement {
         <Image src={icon} alt={icon} fill />
       </div>
       {items.map(({ href, label, target }) => (
-        <Link className='text-gray-700 ' href={href} key={href} target={target}>
+        <Link className='text-gray-700' href={href} target={target} key={label}>
           {label}
         </Link>
       ))}

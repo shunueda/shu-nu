@@ -29,5 +29,4 @@ const pngs = await Promise.all(
   })
 )
 
-const icon = await toIco(pngs)
-await writeFile(favicon, icon)
+await toIco(pngs).then(icon => writeFile(favicon, icon))
