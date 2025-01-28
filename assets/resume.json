@@ -22,8 +22,8 @@
       "location": "Seattle, WA",
       "duration": "May 2024 – August 2024",
       "descriptions": [
-        "Owned the internal CI/CD services for ML models as part of a core engineering team. Developed the core logic for pipeline configuration queries, improving the retrieval efficiency by 80%.",
-        "Built a real-time system monitoring dashboard, enhancing reliability and usability for 250+ engineers.",
+        "Owned CI/CD services for ML models as part of an engineering team. Developed core logic for pipeline configuration queries, improving developer efficiency by 60%.",
+        "Built a real-time system monitoring dashboard, enhancing reliability and usability.",
         "Selected as one of the few interns to present the work to the Senior Director for exceptional contributions."
       ]
     },
@@ -61,6 +61,16 @@
       ]
     }
   ],
+  "research": {
+    "title": "Lehigh University, HCI Lab",
+    "location": "Bethlehem, PA",
+    "role": "Undergraduate Researcher",
+    "duration": "January 2023 – May 2023",
+    "descriptions": [
+      "Contributed to a $1.2M NSF-funded research project on computational framing analysis, leveraging hierarchical topic modeling techniques.",
+      "Developed a large-scale data pipeline to collect, clean, and process social media data, enabling scalable distributed training."
+    ]
+  },
   "skills": [
     {
       "category": "Programming Languages",
@@ -77,13 +87,7 @@
     },
     {
       "category": "Frameworks & Libraries",
-      "items": [
-        "Spring Framework (Spring Boot)",
-        "Node.js",
-        "Mockito",
-        "React",
-        "gRPC"
-      ]
+      "items": ["Spring Framework (Spring Boot)", "Node.js", "React", "gRPC"]
     },
     {
       "category": "DevOps & Infrastructures",
@@ -112,17 +116,13 @@
       ]
     },
     {
-      "category": "Tools",
-      "items": ["Gradle", "Maven", "CMake", "Git"]
-    },
-    {
       "category": "Software Engineering",
       "items": [
+        "Git",
         "Agile",
         "Software Development Life Cycle (SDLC)",
         "Object-Oriented Programming (OOP)",
         "DevOps (CI/CD)",
-        "Microservices",
         "Operating Systems",
         "Distributed Systems"
       ]
