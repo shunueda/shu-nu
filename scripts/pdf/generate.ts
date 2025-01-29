@@ -1,10 +1,11 @@
+import type { PathLike } from 'node:fs'
 import { readFile } from 'node:fs/promises'
 import { type LanguageModel, generateText } from 'ai'
 import dedent from 'dedent'
 
 interface Args<T> {
   data: T
-  template: string
+  template: PathLike
   model: LanguageModel
 }
 
