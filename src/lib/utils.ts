@@ -1,6 +1,6 @@
 import type { Route } from 'next'
-import pkg from '~/package.json' with { type: 'json' }
+import { Endpoint } from '#lib/endpoint'
 
 export function absolute(route: Route): string {
-  return new URL(route, pkg.homepage).href
+  return new URL(route, Endpoint.ROOT).href
 }

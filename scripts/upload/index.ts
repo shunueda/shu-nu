@@ -1,11 +1,11 @@
 import { openAsBlob } from 'node:fs'
 import { EOL } from 'node:os'
-import { join } from 'node:path'
+import { basename } from 'node:path'
 import { setTimeout } from 'node:timers/promises'
 import { experiences } from '~/assets/resume.json' with { type: 'json' }
+import { Endpoint } from '#lib/endpoint'
 import { File } from '#lib/file'
 import { readChromeCookie } from './cookie'
-import { Endpoint } from './endpoint'
 
 const host = '.simplify.jobs'
 
@@ -14,15 +14,15 @@ const headers = {
   'X-CSRF-TOKEN': readChromeCookie(host, 'csrf')
 } as const
 
-const blob = await openAsBlob(join('public', File.RESUME), {
+const blob = await openAsBlob(File.RESUME, {
   type: 'application/pdf'
 })
 
 const body = new FormData()
-body.append('name', File.RESUME)
+body.append('name', basename(File.RESUME))
 body.append('file', blob)
 
-await fetch(Endpoint.RESUME, {
+await fetch(Endpoint.SIMPLIFY_RESUME, {
   method: 'POST',
   headers,
   body
@@ -30,7 +30,7 @@ await fetch(Endpoint.RESUME, {
 
 for (const experience of experiences) {
   await setTimeout(500)
-  await fetch(`${Endpoint.EXPERIENCE}/${experience.simplify_id}`, {
+  await fetch(`${Endpoint.SIMPLIFY_EXPERIENCE}/${experience.simplify_id}`, {
     method: 'PUT',
     headers: {
       ...headers,

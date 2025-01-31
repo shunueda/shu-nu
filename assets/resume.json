@@ -61,16 +61,18 @@
       ]
     }
   ],
-  "research_experience": {
-    "title": "Lehigh University, HCI Lab",
-    "location": "Bethlehem, PA",
-    "role": "Undergraduate Researcher",
-    "duration": "January 2023 – May 2023",
-    "descriptions": [
-      "Contributed to a $1.2M NSF-funded research project on computational framing analysis, leveraging hierarchical topic modeling techniques.",
-      "Developed a large-scale data pipeline to collect, clean, and process social media data, enabling scalable distributed training."
-    ]
-  },
+  "research_experiences": [
+    {
+      "title": "Lehigh University, HCI Lab",
+      "location": "Bethlehem, PA",
+      "role": "Undergraduate Researcher",
+      "duration": "January 2023 – May 2023",
+      "descriptions": [
+        "Contributed to a $1.2M NSF-funded research project on computational framing analysis, leveraging hierarchical topic modeling techniques.",
+        "Developed a large-scale data pipeline to collect, clean, and process social media data, enabling scalable distributed training."
+      ]
+    }
+  ],
   "skills": [
     {
       "category": "Programming Languages",
@@ -87,7 +89,13 @@
     },
     {
       "category": "Frameworks & Libraries",
-      "items": ["Spring Framework (Spring Boot)", "Node.js", "React", "gRPC"]
+      "items": [
+        "Spring Framework (Spring Boot)",
+        "Node.js",
+        "React",
+        "gRPC",
+        "GraphQL"
+      ]
     },
     {
       "category": "DevOps & Infrastructure",

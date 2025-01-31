@@ -1,3 +1,4 @@
+import { basename } from 'node:path'
 import type { Route } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -18,7 +19,7 @@ const items: Item[] = [
   },
   {
     label: 'resume',
-    href: `/${File.RESUME}` as Route,
+    href: `/${basename(File.RESUME)}` as Route,
     target: '_blank'
   }
 ]

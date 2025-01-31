@@ -1,10 +1,9 @@
 import type { ReactElement } from 'react'
-import pkg from '~/package.json' with { type: 'json' }
 
 export function Icon(): ReactElement {
   return (
     <img
-      src={`https://avatars.githubusercontent.com/${pkg.author.username}`}
+      src='https://avatars.githubusercontent.com/shunueda'
       style={{
         borderRadius: '15%'
       }}
