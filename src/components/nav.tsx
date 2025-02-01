@@ -1,10 +1,10 @@
-import { basename } from 'node:path'
 import type { Route } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import type { HTMLAttributeAnchorTarget, ReactElement } from 'react'
 import icon from '/public/icon.svg'
 import { File } from '#lib/file'
+import { publicFile } from '#lib/utils'
 
 interface Item {
   label: string
@@ -19,7 +19,7 @@ const items: Item[] = [
   },
   {
     label: 'resume',
-    href: `/${basename(File.RESUME)}` as Route,
+    href: publicFile(File.RESUME),
     target: '_blank'
   }
 ]

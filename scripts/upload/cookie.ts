@@ -11,13 +11,13 @@ const path = join(
 const db = new DatabaseSync(path)
 
 const query = db.prepare(`
-    SELECT CAST(encrypted_value AS BLOB) AS encrypted_value
+    SELECT encrypted_value
     FROM cookies
     WHERE host_key = ?
       AND name = ?
 `)
 
-export function readChromeCookie(host: string, name: string): string {
+export function getChromeCookie(host: string, name: string): string {
   const { encrypted_value } = query.get(host, name) as {
     encrypted_value: Uint8Array
   }

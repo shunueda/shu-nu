@@ -3,15 +3,15 @@ import { EOL } from 'node:os'
 import { basename } from 'node:path'
 import { setTimeout } from 'node:timers/promises'
 import { experiences } from '~/assets/resume.json' with { type: 'json' }
+import { getChromeCookie } from '~/scripts/upload/cookie'
 import { Endpoint } from '#lib/endpoint'
 import { File } from '#lib/file'
-import { readChromeCookie } from './cookie'
 
 const host = '.simplify.jobs'
 
 const headers = {
-  Cookie: `authorization=${readChromeCookie(host, 'authorization')}`,
-  'X-CSRF-TOKEN': readChromeCookie(host, 'csrf')
+  Cookie: `authorization=${getChromeCookie(host, 'authorization')}`,
+  'X-CSRF-TOKEN': getChromeCookie(host, 'csrf')
 } as const
 
 const blob = await openAsBlob(File.RESUME, {
