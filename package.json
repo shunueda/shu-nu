@@ -2,6 +2,7 @@
   "name": "shu-nu",
   "version": "1.0.0",
   "private": true,
+  "description": "Everything about me.",
   "author": {
     "name": "Shun Ueda",
     "email": "me@shu.nu"

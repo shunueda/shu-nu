@@ -1,5 +1,6 @@
 /**
  * Chrome Cookie Decryption
+ *
  * {@see https://gist.github.com/creachadair/937179894a24571ce9860e2475a2d2ec}
  */
 import { createDecipheriv, pbkdf2Sync } from 'node:crypto'
@@ -24,7 +25,7 @@ const salt = 'saltysalt'
 const key = pbkdf2Sync(keychain!, salt, iterations, keylen, digest)
 
 export function decrypt(cookie: Uint8Array): string {
-  const iv = Buffer.alloc(ivlen)
+  const iv = new Uint8Array(ivlen)
   const decipher = createDecipheriv(algorithm, key, iv)
   const encrypted = cookie.slice(prefix.length)
   return (decipher.update(encrypted) + decipher.final('utf-8')).slice(padding)

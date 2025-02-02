@@ -8,7 +8,9 @@ const path = join(
   'Library/Application Support/Google/Chrome/Default/Cookies'
 )
 
-const db = new DatabaseSync(path)
+const db = new DatabaseSync(path, {
+  readOnly: true
+})
 
 const query = db.prepare(`
     SELECT encrypted_value

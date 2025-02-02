@@ -17,9 +17,8 @@ Promise.all(
       width: size,
       height: size,
       fonts: []
-    })
-    const buffer = Buffer.from(svg)
-    const png = await sharp(buffer).png().toBuffer()
+    }).then(it => new TextEncoder().encode(it))
+    const png = await sharp(svg).png().toBuffer()
     // save icon files
     if (size === sizes.at(-1)) {
       await writeFile(File.ICON_SVG, svg)
