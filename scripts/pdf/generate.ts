@@ -19,7 +19,7 @@ export async function generate<T>({
 
     Steps:
      1: Parse the provided resume JSON and the LaTeX template.
-     2: Populate the LaTeX template with the resume information, integrating the keywords dynamically.
+     2: Populate the LaTeX template with the resume information.
 
     Important:
      - Only output the LaTeX code. No Markdown syntax is required.
