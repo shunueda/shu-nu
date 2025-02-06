@@ -1,16 +1,13 @@
 import type { ReactElement } from 'react'
-import pkg from '~/package.json' with { type: 'json' }
+import { Endpoint } from '#lib/endpoint'
 
 export default async function Page(): Promise<ReactElement> {
+  const response = await fetch(Endpoint.GITHUB_USER)
+  const { name, bio } = await response.json()
   return (
     <section>
-      <h1 className='text-2xl font-medium tracking-tighter'>
-        {pkg.author.name}.
-      </h1>
-      <div className='mt-4 flex flex-col gap-2'>
-        Software engineer. Passionate about using technology to solve real-world
-        problems.
-      </div>
+      <h1 className='text-2xl font-medium tracking-tighter'>{name}.</h1>
+      <div className='mt-4 flex flex-col gap-2'>{bio}</div>
     </section>
   )
 }
