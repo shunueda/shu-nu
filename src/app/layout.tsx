@@ -4,13 +4,13 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GeistSans } from 'geist/font/sans'
 import type { Metadata } from 'next'
 import type { ReactElement, ReactNode } from 'react'
+import resume from '~/assets/resume.json' with { type: 'json' }
 import { Footer } from '#components/footer'
 import { Nav } from '#components/nav'
-import { name } from '#lib/user'
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: name
+    title: resume.name
   } satisfies Metadata
 }
 

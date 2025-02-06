@@ -1,11 +1,17 @@
 {
   "name": "Shun Ueda",
-  "contact": {
-    "phone": "+1 (203) 979-5285",
-    "email": "me@shu.nu",
-    "linkedin": "linkedin.com/in/shunueda",
-    "github": "github.com/shunueda"
-  },
+  "phone": "+1 (203) 979-5285",
+  "email": "me@shu.nu",
+  "profiles": [
+    {
+      "network": "LinkedIn",
+      "url": "linkedin.com/in/shunueda"
+    },
+    {
+      "network": "GitHub",
+      "url": "github.com/shunueda"
+    }
+  ],
   "education": [
     {
       "institution": "Lehigh University",

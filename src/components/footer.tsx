@@ -1,10 +1,10 @@
 import type { ReactElement } from 'react'
-import { name } from '#lib/user'
+import resume from '~/assets/resume.json' with { type: 'json' }
 
 export async function Footer(): Promise<ReactElement> {
   return (
     <footer className='my-12 text-xs text-gray-400'>
-      © {new Date().getUTCFullYear()} {name}.
+      © {new Date().getUTCFullYear()} {resume.name}.
     </footer>
   )
 }
