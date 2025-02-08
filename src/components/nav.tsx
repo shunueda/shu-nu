@@ -26,8 +26,8 @@ const items: Item[] = [
 
 export async function Nav(): Promise<ReactElement> {
   return (
-    <nav className='pt-12 pb-12 flex gap-6'>
-      <div className='relative w-5 h-5 my-auto'>
+    <nav className='py-12 flex gap-6'>
+      <div className='relative size-5 my-auto'>
         <Image src={icon} alt={icon} fill />
       </div>
       {items.map(({ href, label, target }) => (

@@ -1,9 +1,10 @@
 import type { ReactElement } from 'react'
+import { user } from '#lib/user'
 
 export function Icon(): ReactElement {
   return (
     <img
-      src={'https://avatars.githubusercontent.com/shunueda'}
+      src={user.avatar_url}
       style={{
         borderRadius: '15%'
       }}
