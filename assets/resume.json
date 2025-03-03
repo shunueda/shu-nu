@@ -1,6 +1,12 @@
 {
+  "name": "Shun Ueda",
   "contacts": {
-    "phone": "+1 (203) 979-5285"
+    "phone": "+1 (203) 979-5285",
+    "email": "me@shu.nu"
+  },
+  "socials": {
+    "linkedin": "linkedin.com/in/shunueda",
+    "github": "github.com/shunueda"
   },
   "educations": [
     {

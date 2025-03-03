@@ -1,28 +1,29 @@
 import './globals.css'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import { GeistSans } from 'geist/font/sans'
 import type { Metadata } from 'next'
-import type { ReactElement, ReactNode } from 'react'
+import { Geist } from 'next/font/google'
+import type { ReactElement } from 'react'
+import resume from '~/assets/resume.json' with { type: 'json' }
 import { Footer } from '#components/footer'
 import { Nav } from '#components/nav'
-import { user } from '#lib/user'
+import type { LayoutProps } from '#types'
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: user.name
+    title: resume.name
   } satisfies Metadata
 }
 
-export interface Props {
-  children: ReactNode
-}
+const geist = Geist({
+  subsets: ['latin']
+})
 
 export default async function Layout({
   children
-}: Props): Promise<ReactElement> {
+}: LayoutProps): Promise<ReactElement> {
   return (
-    <html lang='en' className={GeistSans.className}>
+    <html lang='en' className={geist.className}>
       <body>
         <main className='mt-8 mx-auto max-w-xl w-10/12'>
           <Nav />
