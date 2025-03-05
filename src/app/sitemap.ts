@@ -1,7 +1,7 @@
 import type { MetadataRoute, Route } from 'next'
 import { absolute } from '#lib/utils'
 
-const entries: MetadataRoute.Sitemap[number][] = [
+const entries: MetadataRoute.Sitemap = [
   {
     url: '/',
     priority: 1,
