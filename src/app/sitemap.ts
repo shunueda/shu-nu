@@ -3,7 +3,7 @@ import { absolute } from '#lib/utils'
 
 const entries: MetadataRoute.Sitemap = [
   {
-    url: '/',
+    url: '/' satisfies Route,
     priority: 1,
     changeFrequency: 'weekly'
   }

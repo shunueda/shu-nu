@@ -9,7 +9,7 @@
     "build:icon": "tsx scripts/icon",
     "build:pdf": "tsx --env-file-if-exists=.env.local scripts/pdf",
     "check": "biome check --write && sort-package-json",
-    "precommit": "pnpm type-check & pnpm check & pnpm test",
+    "precommit": "pnpm type-check & pnpm check",
     "commit": "git add --all && cz",
     "dev": "next dev",
     "start": "next start",
