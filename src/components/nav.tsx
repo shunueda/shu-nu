@@ -1,3 +1,4 @@
+import { track } from '@vercel/analytics'
 import type { Route } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -31,7 +32,13 @@ export async function Nav(): Promise<ReactElement> {
         <Image src={icon} alt={icon} fill />
       </div>
       {items.map(({ href, label, target }) => (
-        <Link className='text-gray-700' href={href} target={target} key={label}>
+        <Link
+          className='text-gray-700'
+          href={href}
+          target={target}
+          key={label}
+          onClick={(): void => track(href)}
+        >
           {label}
         </Link>
       ))}
