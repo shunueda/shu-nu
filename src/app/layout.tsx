@@ -25,7 +25,7 @@ export default async function Layout({
   return (
     <html lang='en' className={geist.className}>
       <body>
-        <main className='mt-8 mx-auto max-w-xl w-10/12'>
+        <main className='mx-auto mt-8 w-10/12 max-w-xl'>
           <Nav />
           {children}
           <Footer />
