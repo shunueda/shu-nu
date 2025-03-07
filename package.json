@@ -27,7 +27,7 @@
   "devDependencies": {
     "@ai-sdk/google": "^1.1.20",
     "@biomejs/biome": "^1.9.4",
-    "@tailwindcss/postcss": "^4.0.11",
+    "@tailwindcss/postcss": "^4.0.12",
     "@types/node": "^22.13.9",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
@@ -42,7 +42,7 @@
     "satori": "^0.12.1",
     "sharp": "^0.33.5",
     "sort-package-json": "^3.0.0",
-    "tailwindcss": "^4.0.11",
+    "tailwindcss": "^4.0.12",
     "to-ico": "^1.1.5",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2",
