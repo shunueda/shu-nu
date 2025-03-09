@@ -4,7 +4,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "prebuild": "run-p build:*",
     "build": "next build",
     "build:icon": "tsx scripts/icon",
     "build:pdf": "tsx --env-file-if-exists=.env.local scripts/pdf",
@@ -28,7 +27,7 @@
     "@ai-sdk/google": "^1.1.20",
     "@biomejs/biome": "^1.9.4",
     "@tailwindcss/postcss": "^4.0.12",
-    "@types/node": "^22.13.9",
+    "@types/node": "^22.13.10",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@types/to-ico": "^1.1.3",
@@ -48,7 +47,7 @@
     "typescript": "^5.8.2",
     "vercel": "^41.3.2"
   },
-  "packageManager": "pnpm@10.5.2",
+  "packageManager": "pnpm@10.6.1",
   "pnpm": {
     "onlyBuiltDependencies": [
       "@vercel/speed-insights",

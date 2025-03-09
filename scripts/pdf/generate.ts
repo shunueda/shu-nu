@@ -4,9 +4,9 @@ import { type LanguageModel, generateText } from 'ai'
 import dedent from 'dedent'
 
 interface Args<T> {
-  data: T
-  template: PathLike
-  model: LanguageModel
+  readonly data: T
+  readonly template: PathLike
+  readonly model: LanguageModel
 }
 
 export async function generate<T>({
