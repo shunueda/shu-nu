@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "prebuild": "run-p build:*",
     "build": "next build",
     "build:icon": "tsx scripts/icon",
     "build:pdf": "tsx --env-file-if-exists=.env.local scripts/pdf",
