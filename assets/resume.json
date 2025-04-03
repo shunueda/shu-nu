@@ -8,15 +8,14 @@
     "linkedin": "linkedin.com/in/shunueda",
     "github": "github.com/shunueda"
   },
-  "educations": [
-    {
-      "institution": "Lehigh University",
-      "location": "Bethlehem, PA",
-      "duration": "January 2025",
-      "degree": "B.S., Computer Science & Engineering"
-    }
-  ],
   "experiences": [
+    {
+      "company": "Anterior",
+      "role": "Member of Technical Staff",
+      "location": "New York City, NY",
+      "duration": "April 2025 – Present",
+      "descriptions": ["Incoming."]
+    },
     {
       "simplify_id": "7984186d-05a9-41da-8e12-104af01263c2",
       "company": "Apple",
@@ -60,18 +59,6 @@
       "descriptions": [
         "Designed a custom ARM64-based device for internet caching, boosting access speeds by 600% and improving rural connectivity.",
         "Integrated device telemetry using AWS IoT Core and MQTT, enabling efficient data integration."
-      ]
-    }
-  ],
-  "research_experiences": [
-    {
-      "title": "Lehigh University, HCI Lab",
-      "location": "Bethlehem, PA",
-      "role": "Undergraduate Researcher",
-      "duration": "January 2023 – May 2023",
-      "descriptions": [
-        "Contributed to a $1.2M NSF-funded research project on computational framing analysis, leveraging hierarchical topic modeling techniques.",
-        "Developed a large-scale data pipeline to collect, clean, and process social media data, enabling scalable distributed training."
       ]
     }
   ],
@@ -140,6 +127,14 @@
     {
       "category": "Operating Systems",
       "items": ["Linux", "Unix"]
+    }
+  ],
+  "educations": [
+    {
+      "institution": "Lehigh University",
+      "location": "Bethlehem, PA",
+      "duration": "January 2025",
+      "degree": "B.S., Computer Science & Engineering"
     }
   ]
 }
